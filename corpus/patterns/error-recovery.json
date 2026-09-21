@@ -1,0 +1,57 @@
+{
+  "id": "error-recovery",
+  "kind": "pattern",
+  "title": "Actionable error recovery",
+  "summary": "Error states should explain what failed, preserve recoverable user input, and provide the clearest next action rather than merely announcing failure.",
+  "problem": "Generic error messages leave users without a recovery path and often cause repeated work or data loss.",
+  "use_when": [
+    "Forms, uploads, authentication, payments, saves, sync, network requests, and destructive actions can fail",
+    "A user may need to correct input or retry an operation"
+  ],
+  "avoid_when": [
+    "The system can transparently recover without interrupting the user",
+    "A transient non-critical event does not require user action"
+  ],
+  "rationale": [
+    "A failure message is useful only when the user can understand the consequence and next step.",
+    "Preserving valid input reduces repeated work.",
+    "Inline errors are usually more actionable when the problem belongs to a specific field or control."
+  ],
+  "tags": [
+    "errors",
+    "feedback",
+    "forms",
+    "resilience"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "feedback",
+  "implementation": {
+    "states": [
+      "invalid-input",
+      "request-failed",
+      "permission-denied",
+      "offline",
+      "retrying",
+      "recovered"
+    ],
+    "requirements": [
+      "Preserve valid user-entered data where safe.",
+      "Associate field-specific errors with the relevant control.",
+      "Offer retry or correction when the user can resolve the failure.",
+      "Do not expose internal stack traces or implementation details."
+    ]
+  },
+  "sources": [
+    {
+      "type": "internal",
+      "title": "Design Distillation synthesis",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    }
+  ]
+}
