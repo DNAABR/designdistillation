@@ -1,0 +1,49 @@
+{
+  "id": "card-everything",
+  "kind": "anti-pattern",
+  "title": "Card everything",
+  "summary": "Wrapping every section in a rounded container weakens hierarchy when the containers do not represent meaningful grouping or interaction.",
+  "problem": "AI-generated interfaces frequently use cards as the default layout primitive, creating unnecessary boundaries, nested surfaces, and visual noise.",
+  "use_when": [
+    "Auditing dashboards, settings pages, and generated marketing/product screens",
+    "A layout contains repeated bordered or elevated surfaces with no semantic grouping"
+  ],
+  "avoid_when": [
+    "The card represents a genuinely independent object or action target",
+    "The information must remain grouped when reordered, scanned, or displayed responsively"
+  ],
+  "rationale": [
+    "Whitespace, typography, alignment, and dividers can establish hierarchy without adding another surface.",
+    "Excess containers consume visual attention and reduce the difference between important and ordinary groups.",
+    "Cards are useful when their boundary carries meaning; the anti-pattern is indiscriminate use, not cards themselves."
+  ],
+  "tags": [
+    "surfaces",
+    "hierarchy",
+    "ai-slop"
+  ],
+  "platforms": [
+    "web",
+    "mobile"
+  ],
+  "stage": "content",
+  "audit": {
+    "severity": "style-deviation",
+    "signals": [
+      "nested rounded containers",
+      "most page sections use identical card chrome",
+      "removing a border/background would not reduce comprehension"
+    ]
+  },
+  "sources": [
+    {
+      "type": "internal",
+      "title": "Design Distillation synthesis",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    }
+  ]
+}
