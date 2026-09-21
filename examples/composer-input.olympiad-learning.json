@@ -1,0 +1,57 @@
+{
+  "version": "0.5.0",
+  "product": {
+    "name": "Olympiad Learning",
+    "type": "education SaaS",
+    "description": "A responsive learning platform for teenagers preparing for academic Olympiads with guided lessons, practice quizzes, spaced review, progress dashboards, and searchable problem sets.",
+    "platform": "responsive-web",
+    "audience": "teenage self-learners and students",
+    "primary_task": "learn difficult concepts and practice problems repeatedly",
+    "category_hints": [
+      "education",
+      "saas"
+    ],
+    "capabilities": [
+      "onboarding",
+      "forms",
+      "search",
+      "autosave"
+    ]
+  },
+  "goals": [
+    "Make difficult material feel approachable without making the product childish.",
+    "Keep learning content and progress more prominent than decorative UI."
+  ],
+  "brand": {
+    "descriptors": [
+      "intelligent",
+      "serious",
+      "friendly"
+    ],
+    "prominence": 35
+  },
+  "personality": {
+    "playfulness": 40,
+    "formality": 55,
+    "technicality": 45
+  },
+  "accessibility": {
+    "target": "WCAG 2.2 AA",
+    "reduced_motion": true
+  },
+  "preferences": {
+    "theme": "light",
+    "require": [
+      "Keep learning content visually dominant over rewards, decoration, and navigation chrome."
+    ],
+    "avoid": [
+      "Do not turn every lesson, metric, or section into a separate rounded card."
+    ],
+    "avoid_anti_patterns": [
+      "card-everything"
+    ]
+  },
+  "recipe_selection": {
+    "mode": "auto"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "version": "0.5.0",
+  "product": {
+    "name": "Focused SaaS Example",
+    "type": "B2B productivity SaaS",
+    "description": "Task-oriented business software for knowledge workers who complete repeatable workflows, search records, edit forms, inspect data tables, and manage settings.",
+    "platform": "responsive-web",
+    "audience": "knowledge workers",
+    "primary_task": "complete repeatable business workflows efficiently",
+    "category_hints": ["saas"],
+    "capabilities": ["forms", "search", "data-tables", "settings", "autosave"]
+  },
+  "goals": [
+    "Keep repeated tasks fast and visually restrained.",
+    "Make system state and recoverable errors clear."
+  ],
+  "accessibility": {
+    "target": "WCAG 2.2 AA",
+    "reduced_motion": false
+  },
+  "preferences": {
+    "theme": "light"
+  },
+  "recipe_selection": {
+    "mode": "auto"
+  }
+}

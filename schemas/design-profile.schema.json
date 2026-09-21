@@ -6,40 +6,146 @@
   "required": [
     "version",
     "product",
+    "selection",
     "personality",
     "layout",
     "typography",
     "shape",
     "color",
     "motion",
+    "iconography",
+    "imagery",
     "accessibility",
-    "rules"
+    "patterns",
+    "content",
+    "rules",
+    "foundations",
+    "rationale",
+    "conflicts",
+    "decisions",
+    "provenance"
   ],
   "properties": {
     "version": {
-      "type": "string"
+      "const": "0.5.0"
     },
     "product": {
       "type": "object",
       "required": [
+        "name",
         "type",
+        "description",
         "platform",
+        "audience",
         "primaryTask"
       ],
       "properties": {
+        "name": {
+          "type": "string"
+        },
         "type": {
           "type": "string"
         },
-        "platform": {
+        "description": {
           "type": "string"
+        },
+        "platform": {
+          "enum": [
+            "web",
+            "responsive-web",
+            "mobile",
+            "desktop",
+            "cross-platform"
+          ]
         },
         "audience": {
           "type": "string"
         },
         "primaryTask": {
           "type": "string"
+        },
+        "capabilities": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
-      }
+      },
+      "additionalProperties": false
+    },
+    "selection": {
+      "type": "object",
+      "required": [
+        "mode",
+        "baseRecipe",
+        "recipes"
+      ],
+      "properties": {
+        "mode": {
+          "enum": [
+            "auto",
+            "explicit"
+          ]
+        },
+        "baseRecipe": {
+          "type": "string"
+        },
+        "recipes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "weight",
+              "role"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "weight": {
+                "type": "number",
+                "exclusiveMinimum": 0,
+                "maximum": 1
+              },
+              "role": {
+                "enum": [
+                  "base",
+                  "influence"
+                ]
+              },
+              "score": {
+                "type": "number"
+              },
+              "evidence": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "field",
+                    "term",
+                    "points"
+                  ],
+                  "properties": {
+                    "field": {
+                      "type": "string"
+                    },
+                    "term": {
+                      "type": "string"
+                    },
+                    "points": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
     },
     "personality": {
       "type": "object",
@@ -50,28 +156,194 @@
       }
     },
     "layout": {
-      "type": "object"
+      "type": "object",
+      "required": [
+        "strategy",
+        "density",
+        "navigation",
+        "spacing"
+      ],
+      "properties": {
+        "strategy": {
+          "type": "string"
+        },
+        "density": {
+          "type": "string"
+        },
+        "navigation": {
+          "type": "string"
+        },
+        "spacing": {
+          "type": "string"
+        }
+      }
     },
     "typography": {
-      "type": "object"
+      "type": "object",
+      "required": [
+        "strategy",
+        "body",
+        "heading"
+      ],
+      "properties": {
+        "strategy": {
+          "type": "string"
+        },
+        "body": {
+          "type": "string"
+        },
+        "heading": {
+          "type": "string"
+        }
+      }
     },
     "shape": {
-      "type": "object"
+      "type": "object",
+      "required": [
+        "strategy",
+        "controlRadius",
+        "surfaceRadius",
+        "elevation"
+      ],
+      "properties": {
+        "strategy": {
+          "type": "string"
+        },
+        "controlRadius": {
+          "type": "string"
+        },
+        "surfaceRadius": {
+          "type": "string"
+        },
+        "elevation": {
+          "type": "string"
+        }
+      }
     },
     "color": {
-      "type": "object"
+      "type": "object",
+      "required": [
+        "strategy",
+        "semanticOnly"
+      ],
+      "properties": {
+        "strategy": {
+          "type": "string"
+        },
+        "semanticOnly": {
+          "const": true
+        }
+      }
     },
     "motion": {
-      "type": "object"
+      "type": "object",
+      "required": [
+        "strategy",
+        "default",
+        "reduced"
+      ],
+      "properties": {
+        "strategy": {
+          "type": "string"
+        },
+        "default": {
+          "type": "string"
+        },
+        "reduced": {
+          "type": "string"
+        }
+      }
+    },
+    "iconography": {
+      "type": "object",
+      "required": [
+        "strategy"
+      ],
+      "properties": {
+        "strategy": {
+          "type": "string"
+        }
+      }
+    },
+    "imagery": {
+      "type": "object",
+      "required": [
+        "strategy"
+      ],
+      "properties": {
+        "strategy": {
+          "type": "string"
+        }
+      }
     },
     "accessibility": {
       "type": "object",
       "required": [
-        "target"
+        "target",
+        "reducedMotion"
       ],
       "properties": {
         "target": {
           "type": "string"
+        },
+        "reducedMotion": {
+          "enum": [
+            "supported",
+            "required"
+          ]
+        }
+      }
+    },
+    "patterns": {
+      "type": "object",
+      "required": [
+        "prioritize",
+        "consider",
+        "avoid"
+      ],
+      "properties": {
+        "prioritize": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "consider": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "avoid": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "content": {
+      "type": "object",
+      "required": [
+        "voice",
+        "density",
+        "guidance"
+      ],
+      "properties": {
+        "voice": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "density": {
+          "type": "string"
+        },
+        "guidance": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
@@ -100,14 +372,15 @@
       "type": "object",
       "required": [
         "tokenManifest",
-        "theme"
+        "theme",
+        "reducedMotionToken",
+        "overrides"
       ],
       "properties": {
         "tokenManifest": {
           "type": "string"
         },
         "theme": {
-          "type": "string",
           "enum": [
             "light",
             "dark",
@@ -125,15 +398,63 @@
         }
       }
     },
-    "inspirations": {
-      "type": "array"
-    },
     "rationale": {
       "type": "array",
       "items": {
         "type": "string"
       }
+    },
+    "conflicts": {
+      "type": "array"
+    },
+    "decisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "type",
+          "field",
+          "applied",
+          "reason"
+        ],
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "field": {
+            "type": "string"
+          },
+          "requested": {},
+          "applied": {},
+          "reason": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "composer",
+        "inputVersion",
+        "tokenManifest",
+        "recipeCorpusVersion"
+      ],
+      "properties": {
+        "composer": {
+          "type": "string"
+        },
+        "inputVersion": {
+          "type": "string"
+        },
+        "tokenManifest": {
+          "type": "string"
+        },
+        "recipeCorpusVersion": {
+          "type": "string"
+        }
+      }
     }
   },
-  "additionalProperties": true
+  "additionalProperties": false
 }
