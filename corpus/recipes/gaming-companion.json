@@ -1,0 +1,271 @@
+{
+  "id": "gaming-companion",
+  "kind": "recipe",
+  "title": "Gaming Companion",
+  "summary": "A high-energy companion recipe for game-adjacent apps that can use expressive color, shape, and motion while keeping controls, progression, and state functional.",
+  "problem": "Game-adjacent interfaces often mistake visual intensity for usability, producing unreadable HUD-like screens, constant animation, and decorative controls.",
+  "use_when": [
+    "Companion apps, party-game utilities, game communities, progression trackers, or playful utility products",
+    "Expressive identity is part of the value but the product still needs conventional task flows"
+  ],
+  "avoid_when": [
+    "High-stakes financial, medical, or government transactions",
+    "Long-form reading products"
+  ],
+  "rationale": [
+    "Playful visual language can create identity when functional state stays clear.",
+    "Motion is most effective when tied to feedback, progression, or continuity.",
+    "Conventional navigation prevents expressive UI from becoming confusing."
+  ],
+  "tags": [
+    "gaming-companion",
+    "design-recipe"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "foundation",
+  "category": "gaming-companion",
+  "intent": {
+    "primary_outcomes": [
+      "feel energetic",
+      "track progression",
+      "perform companion tasks quickly"
+    ],
+    "interaction_model": [
+      "playful application shell",
+      "progress feedback",
+      "touch-friendly actions"
+    ],
+    "trust_level": "standard"
+  },
+  "design_dna": {
+    "density": {
+      "target": 55,
+      "min": 37,
+      "max": 73,
+      "weight": 0.5
+    },
+    "whitespace": {
+      "target": 42,
+      "min": 24,
+      "max": 60,
+      "weight": 0.5
+    },
+    "visual-complexity": {
+      "target": 72,
+      "min": 54,
+      "max": 90,
+      "weight": 0.5
+    },
+    "contrast": {
+      "target": 72,
+      "min": 54,
+      "max": 90,
+      "weight": 0.5
+    },
+    "colorfulness": {
+      "target": 80,
+      "min": 70,
+      "max": 90,
+      "weight": 0.85
+    },
+    "warmth": {
+      "target": 55,
+      "min": 37,
+      "max": 73,
+      "weight": 0.5
+    },
+    "playfulness": {
+      "target": 85,
+      "min": 75,
+      "max": 95,
+      "weight": 0.85
+    },
+    "formality": {
+      "target": 10,
+      "min": 0,
+      "max": 28,
+      "weight": 0.5
+    },
+    "luxury": {
+      "target": 10,
+      "min": 0,
+      "max": 28,
+      "weight": 0.5
+    },
+    "technicality": {
+      "target": 45,
+      "min": 27,
+      "max": 63,
+      "weight": 0.5
+    },
+    "editorialness": {
+      "target": 10,
+      "min": 0,
+      "max": 28,
+      "weight": 0.5
+    },
+    "depth": {
+      "target": 45,
+      "min": 27,
+      "max": 63,
+      "weight": 0.5
+    },
+    "border-prominence": {
+      "target": 25,
+      "min": 7,
+      "max": 43,
+      "weight": 0.5
+    },
+    "radius": {
+      "target": 68,
+      "min": 50,
+      "max": 86,
+      "weight": 0.5
+    },
+    "symmetry": {
+      "target": 40,
+      "min": 22,
+      "max": 58,
+      "weight": 0.5
+    },
+    "typographic-expression": {
+      "target": 62,
+      "min": 44,
+      "max": 80,
+      "weight": 0.5
+    },
+    "motion-intensity": {
+      "target": 70,
+      "min": 60,
+      "max": 80,
+      "weight": 0.85
+    },
+    "motion-playfulness": {
+      "target": 85,
+      "min": 75,
+      "max": 95,
+      "weight": 0.85
+    },
+    "information-density": {
+      "target": 58,
+      "min": 40,
+      "max": 76,
+      "weight": 0.5
+    },
+    "icon-frequency": {
+      "target": 75,
+      "min": 57,
+      "max": 93,
+      "weight": 0.5
+    },
+    "illustration-frequency": {
+      "target": 65,
+      "min": 47,
+      "max": 83,
+      "weight": 0.5
+    },
+    "content-prominence": {
+      "target": 55,
+      "min": 37,
+      "max": 73,
+      "weight": 0.5
+    },
+    "navigation-complexity": {
+      "target": 55,
+      "min": 37,
+      "max": 73,
+      "weight": 0.5
+    },
+    "brand-prominence": {
+      "target": 70,
+      "min": 60,
+      "max": 80,
+      "weight": 0.85
+    }
+  },
+  "foundations": {
+    "layout": "companion-led",
+    "typography": "game-ui",
+    "color": "game-accented",
+    "shape": "playful-functional",
+    "elevation": "layered",
+    "motion": "expressive-functional",
+    "iconography": "expressive-controlled",
+    "imagery": "expressive"
+  },
+  "patterns": {
+    "prioritize": [
+      "progressive-onboarding",
+      "responsive-navigation",
+      "loading-feedback",
+      "just-in-time-permissions",
+      "save-status-feedback",
+      "empty-state-next-action"
+    ],
+    "consider": [
+      "primary-navigation",
+      "settings-by-user-goal",
+      "undo-reversible-actions"
+    ],
+    "avoid": [
+      "spinner-without-progress-context",
+      "toast-only-critical-feedback",
+      "modal-everything",
+      "card-everything"
+    ]
+  },
+  "content": {
+    "voice": [
+      "energetic",
+      "short",
+      "clear"
+    ],
+    "density": "medium",
+    "guidance": [
+      "Keep action labels conventional even when surrounding copy is playful.",
+      "Reserve celebratory language for genuine progress or success."
+    ]
+  },
+  "constraints": {
+    "hard": [
+      "Animation must respect reduced-motion preferences.",
+      "Gameplay styling must not make ordinary controls ambiguous."
+    ],
+    "strong_defaults": [
+      "Use motion for feedback and progression.",
+      "Keep touch targets generous.",
+      "Use a limited accent hierarchy despite high colorfulness."
+    ],
+    "exceptions": [
+      "Competitive dashboards can raise density and technicality while reducing illustration."
+    ]
+  },
+  "composition": {
+    "base_weight_min": 0.6,
+    "influence_weight_max": 0.3,
+    "protected_dimensions": [
+      "playfulness",
+      "motion-playfulness",
+      "brand-prominence",
+      "accessibility"
+    ]
+  },
+  "brand_safety": {
+    "copy_brand_assets": false,
+    "copy_proprietary_code": false,
+    "imitate_named_product": false
+  },
+  "sources": [
+    {
+      "type": "internal",
+      "title": "Design Distillation synthesis",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    }
+  ]
+}

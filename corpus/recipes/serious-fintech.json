@@ -1,0 +1,275 @@
+{
+  "id": "serious-fintech",
+  "kind": "recipe",
+  "title": "Serious Fintech",
+  "summary": "A high-trust financial recipe emphasizing legibility, explicit transaction state, restrained decoration, and confident review/recovery flows.",
+  "problem": "Financial interfaces become risky when visual novelty competes with amounts, account state, transaction consequences, or recovery information.",
+  "use_when": [
+    "Products handling money, balances, financial decisions, or consequential transactions",
+    "Trust and error prevention matter more than visual novelty"
+  ],
+  "avoid_when": [
+    "Purely educational finance content with no account or transaction state",
+    "Play-first experiences where financial data is incidental"
+  ],
+  "rationale": [
+    "Financial consequences require explicit state and confirmation.",
+    "Stable hierarchy and restrained motion support trust.",
+    "Numbers and status need stronger visual priority than branding."
+  ],
+  "tags": [
+    "fintech",
+    "design-recipe"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "foundation",
+  "category": "fintech",
+  "intent": {
+    "primary_outcomes": [
+      "accurate financial understanding",
+      "safe transaction completion",
+      "high trust"
+    ],
+    "interaction_model": [
+      "review-heavy transactions",
+      "data inspection",
+      "forms"
+    ],
+    "trust_level": "high"
+  },
+  "design_dna": {
+    "density": {
+      "target": 60,
+      "min": 42,
+      "max": 78,
+      "weight": 0.5
+    },
+    "whitespace": {
+      "target": 50,
+      "min": 32,
+      "max": 68,
+      "weight": 0.5
+    },
+    "visual-complexity": {
+      "target": 32,
+      "min": 14,
+      "max": 50,
+      "weight": 0.5
+    },
+    "contrast": {
+      "target": 72,
+      "min": 62,
+      "max": 82,
+      "weight": 0.85
+    },
+    "colorfulness": {
+      "target": 20,
+      "min": 2,
+      "max": 38,
+      "weight": 0.5
+    },
+    "warmth": {
+      "target": 38,
+      "min": 20,
+      "max": 56,
+      "weight": 0.5
+    },
+    "playfulness": {
+      "target": 8,
+      "min": 0,
+      "max": 26,
+      "weight": 0.5
+    },
+    "formality": {
+      "target": 82,
+      "min": 72,
+      "max": 92,
+      "weight": 0.85
+    },
+    "luxury": {
+      "target": 35,
+      "min": 17,
+      "max": 53,
+      "weight": 0.5
+    },
+    "technicality": {
+      "target": 55,
+      "min": 37,
+      "max": 73,
+      "weight": 0.5
+    },
+    "editorialness": {
+      "target": 20,
+      "min": 2,
+      "max": 38,
+      "weight": 0.5
+    },
+    "depth": {
+      "target": 15,
+      "min": 0,
+      "max": 33,
+      "weight": 0.5
+    },
+    "border-prominence": {
+      "target": 38,
+      "min": 20,
+      "max": 56,
+      "weight": 0.5
+    },
+    "radius": {
+      "target": 24,
+      "min": 6,
+      "max": 42,
+      "weight": 0.5
+    },
+    "symmetry": {
+      "target": 65,
+      "min": 47,
+      "max": 83,
+      "weight": 0.5
+    },
+    "typographic-expression": {
+      "target": 24,
+      "min": 6,
+      "max": 42,
+      "weight": 0.5
+    },
+    "motion-intensity": {
+      "target": 15,
+      "min": 5,
+      "max": 25,
+      "weight": 0.85
+    },
+    "motion-playfulness": {
+      "target": 5,
+      "min": 0,
+      "max": 23,
+      "weight": 0.5
+    },
+    "information-density": {
+      "target": 65,
+      "min": 55,
+      "max": 75,
+      "weight": 0.85
+    },
+    "icon-frequency": {
+      "target": 35,
+      "min": 17,
+      "max": 53,
+      "weight": 0.5
+    },
+    "illustration-frequency": {
+      "target": 5,
+      "min": 0,
+      "max": 23,
+      "weight": 0.5
+    },
+    "content-prominence": {
+      "target": 82,
+      "min": 72,
+      "max": 92,
+      "weight": 0.85
+    },
+    "navigation-complexity": {
+      "target": 55,
+      "min": 37,
+      "max": 73,
+      "weight": 0.5
+    },
+    "brand-prominence": {
+      "target": 35,
+      "min": 17,
+      "max": 53,
+      "weight": 0.5
+    }
+  },
+  "foundations": {
+    "layout": "trust-structured",
+    "typography": "authoritative-ui",
+    "color": "trust-neutral",
+    "shape": "precise",
+    "elevation": "flat",
+    "motion": "minimal",
+    "iconography": "sparse",
+    "imagery": "sparse"
+  },
+  "patterns": {
+    "prioritize": [
+      "labels-hints-and-optionality",
+      "error-recovery",
+      "preserve-form-input",
+      "review-before-submit",
+      "transaction-confirmation",
+      "destructive-confirmation",
+      "save-status-feedback"
+    ],
+    "consider": [
+      "question-focused-forms",
+      "forgiving-input",
+      "table-vs-grid",
+      "data-table-controls",
+      "offline-resilience"
+    ],
+    "avoid": [
+      "toast-only-critical-feedback",
+      "destructive-action-without-recovery",
+      "premature-validation",
+      "modal-everything"
+    ]
+  },
+  "content": {
+    "voice": [
+      "precise",
+      "calm",
+      "unambiguous"
+    ],
+    "density": "medium",
+    "guidance": [
+      "State amounts, status, and consequences explicitly.",
+      "Prefer concrete verbs over reassuring marketing language."
+    ]
+  },
+  "constraints": {
+    "hard": [
+      "Never hide consequential transaction state in transient feedback.",
+      "Never trade numeric legibility or accessible contrast for brand styling."
+    ],
+    "strong_defaults": [
+      "Require review for consequential submissions.",
+      "Use tabular numerals where financial comparison benefits.",
+      "Keep motion subtle and functional."
+    ],
+    "exceptions": [
+      "Higher brand expression is acceptable in non-transactional marketing or education surfaces."
+    ]
+  },
+  "composition": {
+    "base_weight_min": 0.7,
+    "influence_weight_max": 0.2,
+    "protected_dimensions": [
+      "contrast",
+      "formality",
+      "trust",
+      "transaction-clarity",
+      "accessibility"
+    ]
+  },
+  "brand_safety": {
+    "copy_brand_assets": false,
+    "copy_proprietary_code": false,
+    "imitate_named_product": false
+  },
+  "sources": [
+    {
+      "type": "internal",
+      "title": "Design Distillation synthesis",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    }
+  ]
+}

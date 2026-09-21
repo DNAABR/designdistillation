@@ -66,6 +66,20 @@ A valid contribution is not automatically a good contribution. Reviewers should 
 - Accessibility requirements are part of the pattern contract, not optional implementation notes.
 - Do not turn WAI-ARIA example code into a default implementation; prefer native platform semantics where they solve the task.
 
+## Design recipe rules
+
+- A recipe is a product-archetype starting design language, not a named-product style clone.
+- Every recipe must cover all Design DNA axes with target, min, max, and weight.
+- Keep target values inside their declared min/max range.
+- Use only foundation strategy values declared in taxonomy.
+- patterns.prioritize and patterns.consider must reference real UX patterns; patterns.avoid must reference anti-patterns.
+- Hard constraints are non-negotiable product qualities. Strong defaults may be overridden only with explicit rationale.
+- Protected dimensions in the base recipe win during blending.
+- Do not average categorical foundation strategies. Base recipe strategy is the default unless a later composer records an explicit reason to override it.
+- Recipe influences must obey global and per-recipe weight limits.
+- Never relax brand-safety fields or use a recipe as permission to copy brand assets, proprietary code, or exact named-product trade dress.
+- Prefer one canonical recipe with useful ranges over multiple cosmetic variants.
+
 ## Validation
 
 Run:
@@ -78,4 +92,4 @@ Do not bypass validation to land new corpus or token data.
 
 ## Scope control
 
-v0.3 establishes the first canonical UX pattern corpus. Do not prematurely turn this branch into the website, component library, Tailwind adapter, MCP server, design composer, or full auditor. Those layers depend on the pattern and token contracts and are scheduled separately in implementationplan.md.
+v0.4 establishes canonical design recipes and explicit recipe blending only. It does not select recipes from natural-language product requirements or generate final design contracts; that is v0.5. Do not prematurely turn this branch into the website, component library, Tailwind adapter, MCP server, or full auditor.

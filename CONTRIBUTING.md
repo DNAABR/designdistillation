@@ -68,6 +68,27 @@ Evidence levels are provenance classifications, not quality scores. standard-bac
 
 When using external standards or design-system guidance, distill the principle and interaction contract. Do not copy example code or proprietary assets merely because the source is public.
 
+## Design recipe contributions
+
+A recipe should exist only when it captures a reusable product-design posture that cannot be represented well by an existing recipe's ranges and constraints.
+
+Every recipe must:
+
+- use one declared recipe category;
+- define intent and trust level;
+- cover every Design DNA axis;
+- use approved foundation strategy values;
+- reference canonical UX patterns and anti-patterns;
+- separate hard constraints, strong defaults, and exceptions;
+- define composition limits and protected dimensions;
+- keep all brand-safety fields false.
+
+Design DNA values are bounded decisions, not aesthetic scores. The target is the preferred center, min/max is the coherent range, and weight communicates how strongly the axis defines the recipe.
+
+Do not submit a recipe whose primary purpose is to reproduce a named product, brand, visual trend, color palette, or component library. Abstract the reusable product logic instead.
+
+When a new recipe overlaps heavily with an existing one, prefer refining the existing recipe or treating the new idea as an influence during recipe composition.
+
 ## Token contributions
 
 Token files are infrastructure, not a palette gallery.

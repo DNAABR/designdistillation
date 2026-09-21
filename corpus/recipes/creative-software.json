@@ -1,0 +1,273 @@
+{
+  "id": "creative-software",
+  "kind": "recipe",
+  "title": "Creative Software",
+  "summary": "A professional creation-tool recipe balancing dense controls, canvas or asset focus, persistent state, and restrained chrome around expressive user work.",
+  "problem": "Creative tools fail when the product UI competes visually with the content being created or hides expert controls behind consumer-style simplification.",
+  "use_when": [
+    "Design, media, authoring, editing, or asset-management tools",
+    "Users spend long sessions manipulating content with repeated controls"
+  ],
+  "avoid_when": [
+    "Simple one-shot creation flows for casual users",
+    "Content-only viewing experiences"
+  ],
+  "rationale": [
+    "The created artifact should dominate the workspace.",
+    "Expert users benefit from persistent controls and compact density.",
+    "System chrome needs neutrality even when the output itself is expressive."
+  ],
+  "tags": [
+    "creative-software",
+    "design-recipe"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "foundation",
+  "category": "creative-software",
+  "intent": {
+    "primary_outcomes": [
+      "create and edit efficiently",
+      "preserve work state",
+      "manage tools and assets"
+    ],
+    "interaction_model": [
+      "canvas-led workspace",
+      "persistent controls",
+      "keyboard and pointer interaction"
+    ],
+    "trust_level": "elevated"
+  },
+  "design_dna": {
+    "density": {
+      "target": 72,
+      "min": 54,
+      "max": 90,
+      "weight": 0.5
+    },
+    "whitespace": {
+      "target": 35,
+      "min": 17,
+      "max": 53,
+      "weight": 0.5
+    },
+    "visual-complexity": {
+      "target": 65,
+      "min": 55,
+      "max": 75,
+      "weight": 0.85
+    },
+    "contrast": {
+      "target": 65,
+      "min": 47,
+      "max": 83,
+      "weight": 0.5
+    },
+    "colorfulness": {
+      "target": 55,
+      "min": 37,
+      "max": 73,
+      "weight": 0.5
+    },
+    "warmth": {
+      "target": 35,
+      "min": 17,
+      "max": 53,
+      "weight": 0.5
+    },
+    "playfulness": {
+      "target": 30,
+      "min": 12,
+      "max": 48,
+      "weight": 0.5
+    },
+    "formality": {
+      "target": 45,
+      "min": 27,
+      "max": 63,
+      "weight": 0.5
+    },
+    "luxury": {
+      "target": 20,
+      "min": 2,
+      "max": 38,
+      "weight": 0.5
+    },
+    "technicality": {
+      "target": 80,
+      "min": 70,
+      "max": 90,
+      "weight": 0.85
+    },
+    "editorialness": {
+      "target": 35,
+      "min": 17,
+      "max": 53,
+      "weight": 0.5
+    },
+    "depth": {
+      "target": 30,
+      "min": 12,
+      "max": 48,
+      "weight": 0.5
+    },
+    "border-prominence": {
+      "target": 25,
+      "min": 7,
+      "max": 43,
+      "weight": 0.5
+    },
+    "radius": {
+      "target": 35,
+      "min": 17,
+      "max": 53,
+      "weight": 0.5
+    },
+    "symmetry": {
+      "target": 45,
+      "min": 27,
+      "max": 63,
+      "weight": 0.5
+    },
+    "typographic-expression": {
+      "target": 35,
+      "min": 17,
+      "max": 53,
+      "weight": 0.5
+    },
+    "motion-intensity": {
+      "target": 30,
+      "min": 12,
+      "max": 48,
+      "weight": 0.5
+    },
+    "motion-playfulness": {
+      "target": 20,
+      "min": 2,
+      "max": 38,
+      "weight": 0.5
+    },
+    "information-density": {
+      "target": 78,
+      "min": 68,
+      "max": 88,
+      "weight": 0.85
+    },
+    "icon-frequency": {
+      "target": 78,
+      "min": 68,
+      "max": 88,
+      "weight": 0.85
+    },
+    "illustration-frequency": {
+      "target": 10,
+      "min": 0,
+      "max": 28,
+      "weight": 0.5
+    },
+    "content-prominence": {
+      "target": 60,
+      "min": 42,
+      "max": 78,
+      "weight": 0.5
+    },
+    "navigation-complexity": {
+      "target": 75,
+      "min": 65,
+      "max": 85,
+      "weight": 0.85
+    },
+    "brand-prominence": {
+      "target": 35,
+      "min": 17,
+      "max": 53,
+      "weight": 0.5
+    }
+  },
+  "foundations": {
+    "layout": "canvas-led",
+    "typography": "creative-ui",
+    "color": "creative-spectrum",
+    "shape": "tool-neutral",
+    "elevation": "contextual",
+    "motion": "functional",
+    "iconography": "expressive-controlled",
+    "imagery": "content-primary"
+  },
+  "patterns": {
+    "prioritize": [
+      "primary-navigation",
+      "tabs-for-peer-sections",
+      "progressive-disclosure",
+      "save-status-feedback",
+      "offline-resilience",
+      "settings-by-user-goal",
+      "search-query-state"
+    ],
+    "consider": [
+      "table-vs-grid",
+      "data-table-controls",
+      "bulk-selection-actions",
+      "undo-reversible-actions"
+    ],
+    "avoid": [
+      "hidden-primary-navigation",
+      "modal-everything",
+      "spinner-without-progress-context",
+      "card-everything"
+    ]
+  },
+  "content": {
+    "voice": [
+      "professional",
+      "compact",
+      "tool-oriented"
+    ],
+    "density": "high",
+    "guidance": [
+      "Prefer familiar domain terminology for expert controls.",
+      "Keep destructive and save state explicit."
+    ]
+  },
+  "constraints": {
+    "hard": [
+      "The user's created content must remain visually distinguishable from application chrome.",
+      "Never claim work is saved before persistence completes."
+    ],
+    "strong_defaults": [
+      "Keep expert controls persistent where repeated use justifies them.",
+      "Use icons only when meanings are stable or labeled.",
+      "Support undo for reversible editing actions."
+    ],
+    "exceptions": [
+      "Beginner modes may lower density and reveal advanced controls progressively."
+    ]
+  },
+  "composition": {
+    "base_weight_min": 0.6,
+    "influence_weight_max": 0.3,
+    "protected_dimensions": [
+      "technicality",
+      "information-density",
+      "navigation-complexity",
+      "save-state"
+    ]
+  },
+  "brand_safety": {
+    "copy_brand_assets": false,
+    "copy_proprietary_code": false,
+    "imitate_named_product": false
+  },
+  "sources": [
+    {
+      "type": "internal",
+      "title": "Design Distillation synthesis",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    }
+  ]
+}

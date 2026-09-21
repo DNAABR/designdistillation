@@ -1,5 +1,5 @@
 {
-  "version": "0.3.0",
+  "version": "0.4.0",
   "entryKinds": [
     "principle",
     "pattern",
@@ -122,5 +122,129 @@
     "standard-backed",
     "design-system-backed",
     "synthesis"
+  ],
+  "recipeCategories": [
+    "saas",
+    "fintech",
+    "education",
+    "developer-tools",
+    "consumer-social",
+    "commerce",
+    "editorial",
+    "health-wellness",
+    "gaming-companion",
+    "creative-software",
+    "public-service"
+  ],
+  "recipeStrategies": {
+    "layout": [
+      "task-dense",
+      "trust-structured",
+      "guided-learning",
+      "tool-dense",
+      "feed-led",
+      "catalog-led",
+      "content-led",
+      "calm-guided",
+      "companion-led",
+      "canvas-led",
+      "service-led"
+    ],
+    "typography": [
+      "neutral-ui",
+      "authoritative-ui",
+      "friendly-ui",
+      "technical-ui",
+      "social-ui",
+      "commerce-ui",
+      "editorial",
+      "humanist-ui",
+      "game-ui",
+      "creative-ui",
+      "service-ui"
+    ],
+    "color": [
+      "neutral-dominant",
+      "trust-neutral",
+      "friendly-balanced",
+      "technical-neutral",
+      "vibrant-controlled",
+      "commerce-brand-led",
+      "editorial-restrained",
+      "calm-natural",
+      "game-accented",
+      "creative-spectrum",
+      "service-high-clarity"
+    ],
+    "shape": [
+      "restrained",
+      "precise",
+      "friendly",
+      "compact",
+      "rounded-social",
+      "polished-commerce",
+      "minimal-editorial",
+      "soft-calm",
+      "playful-functional",
+      "tool-neutral",
+      "service-functional"
+    ],
+    "elevation": [
+      "flat",
+      "restrained",
+      "layered",
+      "contextual"
+    ],
+    "motion": [
+      "minimal",
+      "restrained",
+      "functional",
+      "expressive-functional"
+    ],
+    "iconography": [
+      "sparse",
+      "functional",
+      "moderate",
+      "expressive-controlled"
+    ],
+    "imagery": [
+      "none",
+      "sparse",
+      "supportive",
+      "content-primary",
+      "product-primary",
+      "expressive"
+    ]
+  },
+  "recipeProtectedDimensions": [
+    "density",
+    "whitespace",
+    "visual-complexity",
+    "contrast",
+    "colorfulness",
+    "warmth",
+    "playfulness",
+    "formality",
+    "luxury",
+    "technicality",
+    "editorialness",
+    "depth",
+    "border-prominence",
+    "radius",
+    "symmetry",
+    "typographic-expression",
+    "motion-intensity",
+    "motion-playfulness",
+    "information-density",
+    "icon-frequency",
+    "illustration-frequency",
+    "content-prominence",
+    "navigation-complexity",
+    "brand-prominence",
+    "accessibility",
+    "content-clarity",
+    "trust",
+    "transaction-clarity",
+    "save-state"
   ]
 }

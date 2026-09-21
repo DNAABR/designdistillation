@@ -1,0 +1,11 @@
+{
+  "version": "0.4.0",
+  "selections": [
+    { "id": "focused-saas", "weight": 0.7, "role": "base" },
+    { "id": "friendly-education", "weight": 0.3, "role": "influence" }
+  ],
+  "rationale": [
+    "Use the focused SaaS structure for repeated application tasks.",
+    "Borrow a controlled amount of warmth and playfulness from the education recipe without replacing the base navigation, information-density, or accessibility posture."
+  ]
+}

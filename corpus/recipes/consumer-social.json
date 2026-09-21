@@ -1,0 +1,271 @@
+{
+  "id": "consumer-social",
+  "kind": "recipe",
+  "title": "Consumer Social",
+  "summary": "An expressive but controlled consumer recipe for feed, community, and interpersonal products where identity, media, responsiveness, and fast feedback matter.",
+  "problem": "Social products can become visually chaotic when every interaction competes for attention or when engagement patterns override clear state and user control.",
+  "use_when": [
+    "Community, messaging-adjacent, sharing, profile, or feed-led products",
+    "Identity and content discovery are central to the experience"
+  ],
+  "avoid_when": [
+    "High-trust transactional tools",
+    "Dense professional workflows where expressive UI reduces throughput"
+  ],
+  "rationale": [
+    "Content and people should remain the visual focus.",
+    "Playfulness can support identity without making system state ambiguous.",
+    "Responsive and permission flows are core rather than edge cases."
+  ],
+  "tags": [
+    "consumer-social",
+    "design-recipe"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "foundation",
+  "category": "consumer-social",
+  "intent": {
+    "primary_outcomes": [
+      "discover content",
+      "express identity",
+      "interact quickly"
+    ],
+    "interaction_model": [
+      "feed-led browsing",
+      "lightweight creation",
+      "responsive social actions"
+    ],
+    "trust_level": "standard"
+  },
+  "design_dna": {
+    "density": {
+      "target": 48,
+      "min": 30,
+      "max": 66,
+      "weight": 0.5
+    },
+    "whitespace": {
+      "target": 50,
+      "min": 32,
+      "max": 68,
+      "weight": 0.5
+    },
+    "visual-complexity": {
+      "target": 60,
+      "min": 42,
+      "max": 78,
+      "weight": 0.5
+    },
+    "contrast": {
+      "target": 60,
+      "min": 42,
+      "max": 78,
+      "weight": 0.5
+    },
+    "colorfulness": {
+      "target": 70,
+      "min": 60,
+      "max": 80,
+      "weight": 0.85
+    },
+    "warmth": {
+      "target": 62,
+      "min": 44,
+      "max": 80,
+      "weight": 0.5
+    },
+    "playfulness": {
+      "target": 72,
+      "min": 62,
+      "max": 82,
+      "weight": 0.85
+    },
+    "formality": {
+      "target": 15,
+      "min": 0,
+      "max": 33,
+      "weight": 0.5
+    },
+    "luxury": {
+      "target": 12,
+      "min": 0,
+      "max": 30,
+      "weight": 0.5
+    },
+    "technicality": {
+      "target": 18,
+      "min": 0,
+      "max": 36,
+      "weight": 0.5
+    },
+    "editorialness": {
+      "target": 30,
+      "min": 12,
+      "max": 48,
+      "weight": 0.5
+    },
+    "depth": {
+      "target": 30,
+      "min": 12,
+      "max": 48,
+      "weight": 0.5
+    },
+    "border-prominence": {
+      "target": 18,
+      "min": 0,
+      "max": 36,
+      "weight": 0.5
+    },
+    "radius": {
+      "target": 70,
+      "min": 60,
+      "max": 80,
+      "weight": 0.85
+    },
+    "symmetry": {
+      "target": 35,
+      "min": 17,
+      "max": 53,
+      "weight": 0.5
+    },
+    "typographic-expression": {
+      "target": 45,
+      "min": 27,
+      "max": 63,
+      "weight": 0.5
+    },
+    "motion-intensity": {
+      "target": 55,
+      "min": 37,
+      "max": 73,
+      "weight": 0.5
+    },
+    "motion-playfulness": {
+      "target": 65,
+      "min": 55,
+      "max": 75,
+      "weight": 0.85
+    },
+    "information-density": {
+      "target": 50,
+      "min": 32,
+      "max": 68,
+      "weight": 0.5
+    },
+    "icon-frequency": {
+      "target": 70,
+      "min": 52,
+      "max": 88,
+      "weight": 0.5
+    },
+    "illustration-frequency": {
+      "target": 35,
+      "min": 17,
+      "max": 53,
+      "weight": 0.5
+    },
+    "content-prominence": {
+      "target": 80,
+      "min": 70,
+      "max": 90,
+      "weight": 0.85
+    },
+    "navigation-complexity": {
+      "target": 55,
+      "min": 37,
+      "max": 73,
+      "weight": 0.5
+    },
+    "brand-prominence": {
+      "target": 55,
+      "min": 37,
+      "max": 73,
+      "weight": 0.5
+    }
+  },
+  "foundations": {
+    "layout": "feed-led",
+    "typography": "social-ui",
+    "color": "vibrant-controlled",
+    "shape": "rounded-social",
+    "elevation": "contextual",
+    "motion": "expressive-functional",
+    "iconography": "expressive-controlled",
+    "imagery": "content-primary"
+  },
+  "patterns": {
+    "prioritize": [
+      "responsive-navigation",
+      "progressive-onboarding",
+      "minimal-account-creation",
+      "just-in-time-permissions",
+      "loading-feedback",
+      "empty-state-next-action",
+      "pagination-vs-infinite-scroll"
+    ],
+    "consider": [
+      "search-query-state",
+      "save-status-feedback",
+      "undo-reversible-actions"
+    ],
+    "avoid": [
+      "modal-everything",
+      "spinner-without-progress-context",
+      "hidden-primary-navigation",
+      "toast-only-critical-feedback"
+    ]
+  },
+  "content": {
+    "voice": [
+      "human",
+      "brief",
+      "conversational"
+    ],
+    "density": "medium",
+    "guidance": [
+      "Keep system messages distinct from user-generated content.",
+      "Use playful copy sparingly around errors and safety-relevant state."
+    ]
+  },
+  "constraints": {
+    "hard": [
+      "User content must remain more prominent than ornamental chrome.",
+      "Critical state must remain legible despite expressive branding."
+    ],
+    "strong_defaults": [
+      "Use motion for direct feedback and continuity.",
+      "Favor responsive touch-first interaction.",
+      "Use media as content rather than background decoration."
+    ],
+    "exceptions": [
+      "Moderation, privacy, billing, and account-security flows should adopt a more restrained high-trust posture."
+    ]
+  },
+  "composition": {
+    "base_weight_min": 0.6,
+    "influence_weight_max": 0.3,
+    "protected_dimensions": [
+      "content-prominence",
+      "playfulness",
+      "brand-prominence"
+    ]
+  },
+  "brand_safety": {
+    "copy_brand_assets": false,
+    "copy_proprietary_code": false,
+    "imitate_named_product": false
+  },
+  "sources": [
+    {
+      "type": "internal",
+      "title": "Design Distillation synthesis",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    }
+  ]
+}

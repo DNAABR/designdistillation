@@ -1,0 +1,270 @@
+{
+  "id": "editorial-content",
+  "kind": "recipe",
+  "title": "Editorial Content",
+  "summary": "A typography-led content recipe for reading, publishing, cultural, and knowledge experiences where hierarchy, rhythm, and text quality dominate chrome.",
+  "problem": "Editorial experiences lose character and readability when application-style cards, controls, and equal-weight sections overwhelm the content.",
+  "use_when": [
+    "Long-form publishing, magazines, essays, cultural archives, or knowledge-heavy reading",
+    "Typography and content hierarchy are the primary experience"
+  ],
+  "avoid_when": [
+    "Dense operational tools with frequent state-changing actions",
+    "Interfaces where rapid data manipulation matters more than reading"
+  ],
+  "rationale": [
+    "Typography can carry hierarchy without many surfaces.",
+    "Whitespace and measure improve reading rhythm.",
+    "Restrained motion and iconography preserve content focus."
+  ],
+  "tags": [
+    "editorial",
+    "design-recipe"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "foundation",
+  "category": "editorial",
+  "intent": {
+    "primary_outcomes": [
+      "read deeply",
+      "scan hierarchy",
+      "discover related content"
+    ],
+    "interaction_model": [
+      "content-led reading",
+      "search",
+      "hierarchical navigation"
+    ],
+    "trust_level": "standard"
+  },
+  "design_dna": {
+    "density": {
+      "target": 35,
+      "min": 17,
+      "max": 53,
+      "weight": 0.5
+    },
+    "whitespace": {
+      "target": 75,
+      "min": 65,
+      "max": 85,
+      "weight": 0.85
+    },
+    "visual-complexity": {
+      "target": 45,
+      "min": 27,
+      "max": 63,
+      "weight": 0.5
+    },
+    "contrast": {
+      "target": 75,
+      "min": 65,
+      "max": 85,
+      "weight": 0.85
+    },
+    "colorfulness": {
+      "target": 20,
+      "min": 2,
+      "max": 38,
+      "weight": 0.5
+    },
+    "warmth": {
+      "target": 45,
+      "min": 27,
+      "max": 63,
+      "weight": 0.5
+    },
+    "playfulness": {
+      "target": 15,
+      "min": 0,
+      "max": 33,
+      "weight": 0.5
+    },
+    "formality": {
+      "target": 58,
+      "min": 40,
+      "max": 76,
+      "weight": 0.5
+    },
+    "luxury": {
+      "target": 40,
+      "min": 22,
+      "max": 58,
+      "weight": 0.5
+    },
+    "technicality": {
+      "target": 10,
+      "min": 0,
+      "max": 28,
+      "weight": 0.5
+    },
+    "editorialness": {
+      "target": 92,
+      "min": 82,
+      "max": 100,
+      "weight": 0.85
+    },
+    "depth": {
+      "target": 5,
+      "min": 0,
+      "max": 23,
+      "weight": 0.5
+    },
+    "border-prominence": {
+      "target": 15,
+      "min": 0,
+      "max": 33,
+      "weight": 0.5
+    },
+    "radius": {
+      "target": 10,
+      "min": 0,
+      "max": 28,
+      "weight": 0.5
+    },
+    "symmetry": {
+      "target": 60,
+      "min": 42,
+      "max": 78,
+      "weight": 0.5
+    },
+    "typographic-expression": {
+      "target": 90,
+      "min": 80,
+      "max": 100,
+      "weight": 0.85
+    },
+    "motion-intensity": {
+      "target": 10,
+      "min": 0,
+      "max": 28,
+      "weight": 0.5
+    },
+    "motion-playfulness": {
+      "target": 5,
+      "min": 0,
+      "max": 23,
+      "weight": 0.5
+    },
+    "information-density": {
+      "target": 45,
+      "min": 27,
+      "max": 63,
+      "weight": 0.5
+    },
+    "icon-frequency": {
+      "target": 12,
+      "min": 0,
+      "max": 30,
+      "weight": 0.5
+    },
+    "illustration-frequency": {
+      "target": 25,
+      "min": 7,
+      "max": 43,
+      "weight": 0.5
+    },
+    "content-prominence": {
+      "target": 98,
+      "min": 88,
+      "max": 100,
+      "weight": 0.85
+    },
+    "navigation-complexity": {
+      "target": 35,
+      "min": 17,
+      "max": 53,
+      "weight": 0.5
+    },
+    "brand-prominence": {
+      "target": 40,
+      "min": 22,
+      "max": 58,
+      "weight": 0.5
+    }
+  },
+  "foundations": {
+    "layout": "content-led",
+    "typography": "editorial",
+    "color": "editorial-restrained",
+    "shape": "minimal-editorial",
+    "elevation": "flat",
+    "motion": "minimal",
+    "iconography": "sparse",
+    "imagery": "supportive"
+  },
+  "patterns": {
+    "prioritize": [
+      "primary-navigation",
+      "responsive-navigation",
+      "breadcrumbs-for-hierarchy",
+      "search-query-state",
+      "pagination-vs-infinite-scroll",
+      "progressive-disclosure"
+    ],
+    "consider": [
+      "zero-results-recovery",
+      "loading-feedback"
+    ],
+    "avoid": [
+      "card-everything",
+      "hidden-primary-navigation",
+      "spinner-without-progress-context",
+      "modal-everything"
+    ]
+  },
+  "content": {
+    "voice": [
+      "editorial",
+      "confident",
+      "readable"
+    ],
+    "density": "medium",
+    "guidance": [
+      "Use headings and rhythm to create hierarchy.",
+      "Keep reading measure intentional.",
+      "Separate editorial voice from system UI copy."
+    ]
+  },
+  "constraints": {
+    "hard": [
+      "Long-form reading must preserve comfortable measure and hierarchy.",
+      "Application chrome must not dominate the content body."
+    ],
+    "strong_defaults": [
+      "Use typography before containers to create structure.",
+      "Keep iconography sparse.",
+      "Keep nonessential motion near zero."
+    ],
+    "exceptions": [
+      "Home and feature-story surfaces may use more expressive art direction than article bodies."
+    ]
+  },
+  "composition": {
+    "base_weight_min": 0.6,
+    "influence_weight_max": 0.3,
+    "protected_dimensions": [
+      "editorialness",
+      "typographic-expression",
+      "content-prominence"
+    ]
+  },
+  "brand_safety": {
+    "copy_brand_assets": false,
+    "copy_proprietary_code": false,
+    "imitate_named_product": false
+  },
+  "sources": [
+    {
+      "type": "internal",
+      "title": "Design Distillation synthesis",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    }
+  ]
+}
