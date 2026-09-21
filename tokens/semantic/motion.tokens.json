@@ -1,0 +1,71 @@
+{
+  "semantic": {
+    "motion": {
+      "hover": {
+        "$type": "transition",
+        "$value": {
+          "duration": "{primitive.motion.duration.fast}",
+          "delay": "{primitive.motion.duration.instant}",
+          "timingFunction": "{primitive.motion.easing.standard}"
+        }
+      },
+      "feedback": {
+        "$type": "transition",
+        "$value": {
+          "duration": "{primitive.motion.duration.micro}",
+          "delay": "{primitive.motion.duration.instant}",
+          "timingFunction": "{primitive.motion.easing.standard}"
+        }
+      },
+      "enter": {
+        "$type": "transition",
+        "$value": {
+          "duration": "{primitive.motion.duration.standard}",
+          "delay": "{primitive.motion.duration.instant}",
+          "timingFunction": "{primitive.motion.easing.enter}"
+        }
+      },
+      "exit": {
+        "$type": "transition",
+        "$value": {
+          "duration": "{primitive.motion.duration.fast}",
+          "delay": "{primitive.motion.duration.instant}",
+          "timingFunction": "{primitive.motion.easing.exit}"
+        }
+      },
+      "expand": {
+        "$type": "transition",
+        "$value": {
+          "duration": "{primitive.motion.duration.standard}",
+          "delay": "{primitive.motion.duration.instant}",
+          "timingFunction": "{primitive.motion.easing.standard}"
+        }
+      },
+      "move": {
+        "$type": "transition",
+        "$value": {
+          "duration": "{primitive.motion.duration.emphasized}",
+          "delay": "{primitive.motion.duration.instant}",
+          "timingFunction": "{primitive.motion.easing.emphasized}"
+        }
+      },
+      "emphasized": {
+        "$type": "transition",
+        "$value": {
+          "duration": "{primitive.motion.duration.emphasized}",
+          "delay": "{primitive.motion.duration.instant}",
+          "timingFunction": "{primitive.motion.easing.emphasized}"
+        }
+      },
+      "reduced": {
+        "$type": "transition",
+        "$description": "Accessibility override for non-essential motion. Adapters should use this when the platform/user requests reduced motion.",
+        "$value": {
+          "duration": "{primitive.motion.duration.instant}",
+          "delay": "{primitive.motion.duration.instant}",
+          "timingFunction": "{primitive.motion.easing.linear}"
+        }
+      }
+    }
+  }
+}

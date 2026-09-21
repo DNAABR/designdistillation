@@ -24,14 +24,14 @@ Tokens, components, blocks, interaction recipes, motion recipes, adapters, and f
 
 Transforms product intent into a generated design contract. Expected outputs eventually include:
 
-- DESIGN.md
-- design-profile.json
-- design tokens
-- typography rules
-- motion rules
-- component constraints
-- anti-pattern constraints
-- agent instructions
+- `DESIGN.md`;
+- `design-profile.json`;
+- design-token selections/overrides;
+- typography rules;
+- motion rules;
+- component constraints;
+- anti-pattern constraints;
+- agent instructions.
 
 ### 6. Auditor
 
@@ -41,23 +41,31 @@ Checks implementation against the design contract and reports errors, warnings, 
 
 Machine-readable data is canonical. Markdown is for explanation and navigation.
 
-## Retrieval-first architecture
+## Visual-foundation pipeline
 
-AI agents should not ingest the entire repository. Later versions should expose targeted retrieval primitives such as:
+v0.2 makes the implementation layer explicit:
 
-- get_design_recipe
-- search_patterns
-- get_reference
-- compose_design_profile
-- get_motion_recipe
-- audit_design_profile
-- audit_page
+~~~text
+primitive tokens
+      ↓
+semantic tokens
+      ↓
+theme semantic colors
+      ↓
+design profile selection / future overrides
+      ↓
+future framework adapters
+      ↓
+components and blocks
+~~~
 
-The repository should therefore favor small, addressable, typed entries over monolithic prose.
+Individual token documents use DTCG 2025.10. `tokens/manifest.json` supplies a Design Distillation-specific composition contract across files and themes.
+
+The canonical layer remains framework-neutral. CSS variables, Tailwind configuration, shadcn registries, native resources, and other targets are generated/adapted views rather than the source of truth.
 
 ## Design profile
 
-A design profile is the normalized output of the composer. It combines:
+A design profile is the normalized output of the future composer. It combines:
 
 - product type and platform;
 - audience and task;
@@ -66,7 +74,24 @@ A design profile is the normalized output of the composer. It combines:
 - typography, shape, color, and motion strategies;
 - accessibility target;
 - explicit avoid/require rules;
+- a token-manifest/theme selection;
 - rationale and provenance.
+
+The example profile in `examples/` demonstrates how the v0.2 visual layer plugs into that future contract.
+
+## Retrieval-first architecture
+
+AI agents should not ingest the entire repository. Later versions should expose targeted retrieval primitives such as:
+
+- `get_design_recipe`;
+- `search_patterns`;
+- `get_reference`;
+- `compose_design_profile`;
+- `get_motion_recipe`;
+- `audit_design_profile`;
+- `audit_page`.
+
+The repository should therefore favor small, addressable, typed entries over monolithic prose.
 
 ## Anti-slop philosophy
 
@@ -74,9 +99,11 @@ The project must not ban individual aesthetics such as gradients, glass, cards, 
 
 The auditor should instead flag unjustified, inconsistent, or excessive use. The central question is whether a design decision follows from product intent and the design contract.
 
+The visual foundations support this by making arbitrary one-off decisions visible: a component that bypasses semantic tokens has intentionally departed from the contract.
+
 ## Future distribution
 
-Framework-neutral knowledge and tokens remain canonical. Adapters may later emit:
+Adapters may later emit:
 
 - CSS variables;
 - Tailwind configuration;
@@ -85,4 +112,4 @@ Framework-neutral knowledge and tokens remain canonical. Adapters may later emit
 - Vue/native targets;
 - MCP/agent retrieval tools.
 
-This keeps the corpus above any one component framework.
+Adapters may transform representation, but they must preserve semantic meaning.

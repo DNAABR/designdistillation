@@ -1,0 +1,63 @@
+{
+  "primitive": {
+    "radius": {
+      "0": {
+        "$value": {
+          "value": 0,
+          "unit": "px"
+        }
+      },
+      "2": {
+        "$value": {
+          "value": 2,
+          "unit": "px"
+        }
+      },
+      "4": {
+        "$value": {
+          "value": 4,
+          "unit": "px"
+        }
+      },
+      "6": {
+        "$value": {
+          "value": 6,
+          "unit": "px"
+        }
+      },
+      "8": {
+        "$value": {
+          "value": 8,
+          "unit": "px"
+        }
+      },
+      "12": {
+        "$value": {
+          "value": 12,
+          "unit": "px"
+        }
+      },
+      "16": {
+        "$value": {
+          "value": 16,
+          "unit": "px"
+        }
+      },
+      "24": {
+        "$value": {
+          "value": 24,
+          "unit": "px"
+        }
+      },
+      "$type": "dimension",
+      "$description": "Corner-radius primitives. Semantic roles decide where each radius is appropriate.",
+      "full": {
+        "$description": "Use only when a fully rounded shape has semantic purpose, such as an avatar or pill control.",
+        "$value": {
+          "value": 9999,
+          "unit": "px"
+        }
+      }
+    }
+  }
+}

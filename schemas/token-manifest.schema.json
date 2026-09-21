@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://designdistillation.dev/schemas/token-manifest.schema.json",
+  "title": "Design Distillation Token Manifest",
+  "type": "object",
+  "required": [
+    "version",
+    "format",
+    "composition",
+    "sources",
+    "themes"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "format": {
+      "type": "object",
+      "required": [
+        "name",
+        "version",
+        "url"
+      ],
+      "properties": {
+        "name": {
+          "const": "DTCG"
+        },
+        "version": {
+          "const": "2025.10"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "composition": {
+      "type": "object",
+      "required": [
+        "strategy"
+      ],
+      "properties": {
+        "strategy": {
+          "const": "deep-merge"
+        },
+        "scope": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "themes": {
+      "type": "object",
+      "required": [
+        "light",
+        "dark",
+        "high-contrast"
+      ],
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "scaleChecks": {
+      "type": "array"
+    },
+    "contrastPairs": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": false
+}

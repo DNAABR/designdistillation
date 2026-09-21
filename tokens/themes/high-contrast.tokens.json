@@ -1,0 +1,162 @@
+{
+  "semantic": {
+    "color": {
+      "surface": {
+        "canvas": {
+          "$value": "{primitive.color.neutral.0}"
+        },
+        "subtle": {
+          "$value": "{primitive.color.neutral.0}"
+        },
+        "muted": {
+          "$value": "{primitive.color.neutral.50}"
+        },
+        "raised": {
+          "$value": "{primitive.color.neutral.0}"
+        },
+        "inverse": {
+          "$value": "{primitive.color.neutral.1000}"
+        }
+      },
+      "text": {
+        "primary": {
+          "$value": "{primitive.color.neutral.1000}"
+        },
+        "secondary": {
+          "$value": "{primitive.color.neutral.1000}"
+        },
+        "muted": {
+          "$value": "{primitive.color.neutral.700}"
+        },
+        "inverse": {
+          "$value": "{primitive.color.neutral.0}"
+        },
+        "link": {
+          "$value": "{primitive.color.blue.900}"
+        },
+        "link-hover": {
+          "$value": "{primitive.color.blue.950}"
+        }
+      },
+      "border": {
+        "subtle": {
+          "$value": "{primitive.color.neutral.1000}"
+        },
+        "default": {
+          "$value": "{primitive.color.neutral.1000}"
+        },
+        "strong": {
+          "$value": "{primitive.color.neutral.1000}"
+        },
+        "focus": {
+          "$value": "{primitive.color.neutral.1000}"
+        }
+      },
+      "action": {
+        "primary": {
+          "background": {
+            "$value": "{primitive.color.neutral.1000}"
+          },
+          "foreground": {
+            "$value": "{primitive.color.neutral.0}"
+          },
+          "hover": {
+            "$value": "{primitive.color.neutral.900}"
+          },
+          "pressed": {
+            "$value": "{primitive.color.neutral.800}"
+          }
+        },
+        "secondary": {
+          "background": {
+            "$value": "{primitive.color.neutral.0}"
+          },
+          "foreground": {
+            "$value": "{primitive.color.neutral.1000}"
+          },
+          "hover": {
+            "$value": "{primitive.color.neutral.100}"
+          },
+          "pressed": {
+            "$value": "{primitive.color.neutral.200}"
+          }
+        },
+        "danger": {
+          "background": {
+            "$value": "{primitive.color.red.800}"
+          },
+          "foreground": {
+            "$value": "{primitive.color.neutral.0}"
+          },
+          "hover": {
+            "$value": "{primitive.color.red.900}"
+          }
+        }
+      },
+      "focus": {
+        "ring": {
+          "$value": "{primitive.color.neutral.1000}"
+        }
+      },
+      "status": {
+        "success": {
+          "background": {
+            "$value": "{primitive.color.neutral.0}"
+          },
+          "foreground": {
+            "$value": "{primitive.color.green.800}"
+          },
+          "border": {
+            "$value": "{primitive.color.green.800}"
+          }
+        },
+        "warning": {
+          "background": {
+            "$value": "{primitive.color.neutral.0}"
+          },
+          "foreground": {
+            "$value": "{primitive.color.amber.900}"
+          },
+          "border": {
+            "$value": "{primitive.color.amber.900}"
+          }
+        },
+        "danger": {
+          "background": {
+            "$value": "{primitive.color.neutral.0}"
+          },
+          "foreground": {
+            "$value": "{primitive.color.red.800}"
+          },
+          "border": {
+            "$value": "{primitive.color.red.800}"
+          }
+        },
+        "info": {
+          "background": {
+            "$value": "{primitive.color.neutral.0}"
+          },
+          "foreground": {
+            "$value": "{primitive.color.blue.900}"
+          },
+          "border": {
+            "$value": "{primitive.color.blue.900}"
+          }
+        }
+      },
+      "selection": {
+        "background": {
+          "$value": "{primitive.color.neutral.1000}"
+        },
+        "foreground": {
+          "$value": "{primitive.color.neutral.0}"
+        }
+      },
+      "overlay": {
+        "scrim": {
+          "$value": "{primitive.color.shadow.scrim}"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "version": "0.2.0",
+  "format": {
+    "name": "DTCG",
+    "version": "2025.10",
+    "url": "https://www.designtokens.org/TR/2025.10/format/"
+  },
+  "composition": {
+    "strategy": "deep-merge",
+    "scope": "repository",
+    "description": "Design Distillation composes multiple DTCG token documents into one logical token tree. This multi-file merge convention is a Design Distillation convention, not part of the DTCG file format."
+  },
+  "sources": [
+    "primitive/color.tokens.json",
+    "primitive/spacing.tokens.json",
+    "primitive/radius.tokens.json",
+    "primitive/border.tokens.json",
+    "primitive/typography.tokens.json",
+    "primitive/elevation.tokens.json",
+    "primitive/motion.tokens.json",
+    "semantic/dimensions.tokens.json",
+    "semantic/typography.tokens.json",
+    "semantic/elevation.tokens.json",
+    "semantic/motion.tokens.json"
+  ],
+  "themes": {
+    "light": "themes/light.tokens.json",
+    "dark": "themes/dark.tokens.json",
+    "high-contrast": "themes/high-contrast.tokens.json"
+  },
+  "scaleChecks": [
+    {
+      "group": "primitive.space",
+      "order": [
+        "0",
+        "2",
+        "4",
+        "6",
+        "8",
+        "12",
+        "16",
+        "20",
+        "24",
+        "32",
+        "40",
+        "48",
+        "64",
+        "80",
+        "96"
+      ],
+      "rule": "ascending-dimension"
+    },
+    {
+      "group": "primitive.radius",
+      "order": [
+        "0",
+        "2",
+        "4",
+        "6",
+        "8",
+        "12",
+        "16",
+        "24"
+      ],
+      "rule": "ascending-dimension"
+    },
+    {
+      "group": "primitive.type.size",
+      "order": [
+        "12",
+        "14",
+        "16",
+        "18",
+        "20",
+        "24",
+        "30",
+        "36",
+        "48",
+        "60"
+      ],
+      "rule": "ascending-dimension"
+    }
+  ],
+  "contrastPairs": [
+    {
+      "name": "primary text",
+      "foreground": "semantic.color.text.primary",
+      "background": "semantic.color.surface.canvas",
+      "minimum": 7
+    },
+    {
+      "name": "secondary text",
+      "foreground": "semantic.color.text.secondary",
+      "background": "semantic.color.surface.canvas",
+      "minimum": 4.5
+    },
+    {
+      "name": "muted text",
+      "foreground": "semantic.color.text.muted",
+      "background": "semantic.color.surface.canvas",
+      "minimum": 4.5
+    },
+    {
+      "name": "link text",
+      "foreground": "semantic.color.text.link",
+      "background": "semantic.color.surface.canvas",
+      "minimum": 4.5
+    },
+    {
+      "name": "primary action",
+      "foreground": "semantic.color.action.primary.foreground",
+      "background": "semantic.color.action.primary.background",
+      "minimum": 4.5
+    },
+    {
+      "name": "danger action",
+      "foreground": "semantic.color.action.danger.foreground",
+      "background": "semantic.color.action.danger.background",
+      "minimum": 4.5
+    },
+    {
+      "name": "selection",
+      "foreground": "semantic.color.selection.foreground",
+      "background": "semantic.color.selection.background",
+      "minimum": 4.5
+    },
+    {
+      "name": "success status",
+      "foreground": "semantic.color.status.success.foreground",
+      "background": "semantic.color.status.success.background",
+      "minimum": 4.5
+    },
+    {
+      "name": "warning status",
+      "foreground": "semantic.color.status.warning.foreground",
+      "background": "semantic.color.status.warning.background",
+      "minimum": 4.5
+    },
+    {
+      "name": "danger status",
+      "foreground": "semantic.color.status.danger.foreground",
+      "background": "semantic.color.status.danger.background",
+      "minimum": 4.5
+    },
+    {
+      "name": "info status",
+      "foreground": "semantic.color.status.info.foreground",
+      "background": "semantic.color.status.info.background",
+      "minimum": 4.5
+    }
+  ]
+}

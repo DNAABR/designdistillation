@@ -1,0 +1,77 @@
+{
+  "version": "0.2.0",
+  "product": {
+    "type": "saas",
+    "platform": "responsive-web",
+    "audience": "knowledge workers",
+    "primaryTask": "repeatable task completion"
+  },
+  "personality": {
+    "density": 68,
+    "whitespace": 45,
+    "visual-complexity": 38,
+    "contrast": 62,
+    "colorfulness": 24,
+    "warmth": 42,
+    "playfulness": 20,
+    "formality": 62,
+    "technicality": 60,
+    "depth": 18,
+    "border-prominence": 30,
+    "radius": 35,
+    "typographic-expression": 28,
+    "motion-intensity": 22,
+    "information-density": 72,
+    "icon-frequency": 42,
+    "illustration-frequency": 8,
+    "brand-prominence": 28
+  },
+  "layout": {
+    "density": "medium-high",
+    "navigation": "persistent",
+    "spacing": "semantic"
+  },
+  "typography": {
+    "strategy": "neutral-ui",
+    "body": "semantic.type.body-medium",
+    "heading": "semantic.type.heading-medium"
+  },
+  "shape": {
+    "controlRadius": "semantic.radius.control",
+    "surfaceRadius": "semantic.radius.surface",
+    "elevation": "restrained"
+  },
+  "color": {
+    "strategy": "neutral-dominant",
+    "semanticOnly": true
+  },
+  "motion": {
+    "strategy": "functional",
+    "default": "semantic.motion.enter",
+    "reduced": "semantic.motion.reduced"
+  },
+  "accessibility": {
+    "target": "WCAG 2.2 AA"
+  },
+  "rules": {
+    "require": [
+      "Consume semantic tokens rather than primitive palette values in components.",
+      "Provide complete loading, empty, error, disabled, and focus states."
+    ],
+    "avoid": [
+      "decorative gradients without product or brand rationale",
+      "nested cards used only for spacing",
+      "arbitrary one-off visual values"
+    ]
+  },
+  "foundations": {
+    "tokenManifest": "tokens/manifest.json",
+    "theme": "light",
+    "reducedMotionToken": "semantic.motion.reduced",
+    "overrides": []
+  },
+  "rationale": [
+    "The focused SaaS recipe favors clarity and information density over decorative surface treatment.",
+    "The token manifest supplies framework-neutral visual foundations while the selected theme supplies semantic color roles."
+  ]
+}

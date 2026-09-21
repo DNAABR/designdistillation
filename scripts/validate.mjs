@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { validateTokens } from "./token-validator.mjs";
 
 const root = process.cwd();
 const corpusRoot = path.join(root, "corpus");
@@ -7,7 +8,7 @@ const taxonomyPath = path.join(root, "taxonomy", "taxonomy.json");
 const errors = [];
 
 function fail(file, message) {
-  errors.push(path.relative(root, file) + ": " + message);
+  errors.push(path.relative(root, file).replaceAll("\\", "/") + ": " + message);
 }
 
 function readJson(file) {
@@ -42,26 +43,27 @@ for (const file of walk(corpusRoot).filter((candidate) => candidate.endsWith(".j
 
   const required = ["id", "kind", "title", "summary", "problem", "use_when", "avoid_when", "rationale", "sources"];
   for (const key of required) {
-    if (entry[key] === undefined || entry[key] === null) fail(file, "missing required field " + key);
+    if (entry[key] === undefined || entry[key] === null) fail(file, 'missing required field "' + key + '"');
   }
 
   if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(entry.id ?? "")) fail(file, "id must be lowercase kebab-case");
-  if (ids.has(entry.id)) fail(file, "duplicate id " + entry.id + " (already in " + ids.get(entry.id) + ")");
-  else if (entry.id) ids.set(entry.id, path.relative(root, file));
 
-  if (!knownKinds.has(entry.kind)) fail(file, "unknown kind " + entry.kind);
+  if (ids.has(entry.id)) fail(file, 'duplicate id "' + entry.id + '" (already in ' + ids.get(entry.id) + ")");
+  else if (entry.id) ids.set(entry.id, path.relative(root, file).replaceAll("\\", "/"));
+
+  if (!knownKinds.has(entry.kind)) fail(file, 'unknown kind "' + entry.kind + '"');
 
   for (const field of ["use_when", "avoid_when", "rationale", "sources"]) {
-    if (!Array.isArray(entry[field]) || entry[field].length === 0) fail(file, field + " must be a non-empty array");
+    if (!Array.isArray(entry[field]) || entry[field].length === 0) fail(file, '"' + field + '" must be a non-empty array');
   }
 
   for (const platform of entry.platforms ?? []) {
-    if (!knownPlatforms.has(platform)) fail(file, "unknown platform " + platform);
+    if (!knownPlatforms.has(platform)) fail(file, 'unknown platform "' + platform + '"');
   }
-  if (entry.stage && !knownStages.has(entry.stage)) fail(file, "unknown stage " + entry.stage);
+  if (entry.stage && !knownStages.has(entry.stage)) fail(file, 'unknown stage "' + entry.stage + '"');
 
   for (const source of entry.sources ?? []) {
-    if (!knownSources.has(source.type)) fail(file, "unknown source type " + source.type);
+    if (!knownSources.has(source.type)) fail(file, 'unknown source type "' + source.type + '"');
     if (!source.title) fail(file, "every source needs a title");
     if (source.type !== "internal") {
       if (!source.url) fail(file, "external sources need a url");
@@ -75,9 +77,11 @@ for (const file of walk(corpusRoot).filter((candidate) => candidate.endsWith(".j
   }
 }
 
-for (const dir of ["schemas", "taxonomy"]) {
+for (const dir of ["schemas", "taxonomy", "examples"]) {
   for (const file of walk(path.join(root, dir)).filter((candidate) => candidate.endsWith(".json"))) readJson(file);
 }
+
+const tokenStats = validateTokens({ root, errors });
 
 if (errors.length) {
   console.error("\nDesign Distillation validation failed:\n");
@@ -86,4 +90,9 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log("Design Distillation validation passed. " + ids.size + " corpus " + (ids.size === 1 ? "entry" : "entries") + " checked.");
+console.log(
+  "Design Distillation validation passed. " +
+  ids.size + " corpus " + (ids.size === 1 ? "entry" : "entries") +
+  ", " + tokenStats.tokenCount + " token paths, and " +
+  tokenStats.themeCount + " themes checked."
+);
