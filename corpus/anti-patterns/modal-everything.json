@@ -1,0 +1,46 @@
+{
+  "id": "modal-everything",
+  "kind": "anti-pattern",
+  "title": "Modal for everything",
+  "summary": "Using modal dialogs for ordinary navigation, onboarding, minor information, or reversible actions interrupts context and creates unnecessary focus complexity.",
+  "problem": "Frequent modals fragment workflows and train users to dismiss overlays without reading.",
+  "use_when": [
+    "Auditing interfaces with many dialogs that do not require an interruption or protected decision context"
+  ],
+  "avoid_when": [
+    "A true modal task must block interaction with the underlying page until resolved"
+  ],
+  "rationale": [
+    "Modal behavior has strong interaction consequences and should match the task.",
+    "Inline or navigable surfaces are often easier to understand and recover from."
+  ],
+  "tags": [
+    "dialogs",
+    "flow",
+    "ai-slop"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "feedback",
+  "audit": {
+    "severity": "style-deviation",
+    "signals": [
+      "informational content opens modal despite having a natural inline or page location",
+      "routine reversible actions require confirmation dialog"
+    ]
+  },
+  "sources": [
+    {
+      "type": "standard",
+      "title": "WAI-ARIA APG ? Dialog (Modal) Pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/",
+      "accessed": "2026-09-22",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "id": "bulk-selection-actions",
+  "kind": "pattern",
+  "title": "Explicit bulk selection and scoped actions",
+  "summary": "When users act on many items, make selection mode, selected count, action scope, and the path back to no selection explicit.",
+  "problem": "Bulk operations become dangerous when users cannot tell which items are selected or whether an action applies to visible, filtered, or all records.",
+  "use_when": [
+    "Users routinely act on multiple rows or items",
+    "Bulk work materially improves efficiency"
+  ],
+  "avoid_when": [
+    "Bulk actions are rare and add persistent complexity to every row"
+  ],
+  "rationale": [
+    "Selection changes the scope of actions and therefore needs its own visible state.",
+    "Danger increases when filters or pagination affect hidden selected items."
+  ],
+  "tags": [
+    "data-display",
+    "bulk-actions"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "input",
+  "family": "data-display",
+  "evidence": "synthesis",
+  "states": [
+    "default",
+    "selected",
+    "focus",
+    "success",
+    "error"
+  ],
+  "decision": {
+    "use_if": [
+      "Users routinely act on multiple rows or items",
+      "Bulk work materially improves efficiency"
+    ],
+    "prefer_alternatives_if": [
+      "Single-item actions dominate and bulk selection would add persistent noise"
+    ]
+  },
+  "accessibility": {
+    "requirements": [
+      "Expose selected state and selected count programmatically.",
+      "Keep select-all semantics clear, especially across pagination or filters.",
+      "Ensure bulk action controls are keyboard reachable."
+    ]
+  },
+  "implementation": {
+    "requirements": [
+      "Show selected count.",
+      "Define whether select-all means current page, current filter, or entire dataset.",
+      "Clear or preserve selection predictably after actions."
+    ]
+  },
+  "related": {
+    "patterns": [
+      "data-table-controls",
+      "destructive-confirmation"
+    ],
+    "anti_patterns": [
+      "destructive-action-without-recovery"
+    ]
+  },
+  "sources": [
+    {
+      "type": "internal",
+      "title": "Design Distillation synthesis",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    }
+  ]
+}

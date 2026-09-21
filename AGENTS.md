@@ -54,16 +54,28 @@ A valid contribution is not automatically a good contribution. Reviewers should 
 - entries that encourage inaccessible defaults;
 - rules presented as universal when they are context-dependent.
 
+## UX pattern rules
+
+- A pattern is a context-dependent design decision, not a screenshot or component example.
+- Every pattern needs a family, evidence level, relevant states, decision rules, accessibility requirements, implementation requirements, and related-entry arrays.
+- use_when / decision.use_if must explain when the pattern belongs.
+- avoid_when / decision.prefer_alternatives_if must prevent the pattern from becoming a universal rule.
+- Prefer extending an existing canonical pattern over adding a near-duplicate with different product vocabulary.
+- standard-backed entries require a standard source; design-system-backed entries require a design-system source.
+- Related pattern and anti-pattern IDs must resolve.
+- Accessibility requirements are part of the pattern contract, not optional implementation notes.
+- Do not turn WAI-ARIA example code into a default implementation; prefer native platform semantics where they solve the task.
+
 ## Validation
 
 Run:
 
 ~~~bash
-npm run validate
+npm run check
 ~~~
 
 Do not bypass validation to land new corpus or token data.
 
 ## Scope control
 
-v0.2 establishes visual foundations only. Do not prematurely turn this branch into the website, component library, Tailwind adapter, MCP server, or design composer. Those layers depend on the token contract and are scheduled separately in `implementationplan.md`.
+v0.3 establishes the first canonical UX pattern corpus. Do not prematurely turn this branch into the website, component library, Tailwind adapter, MCP server, design composer, or full auditor. Those layers depend on the pattern and token contracts and are scheduled separately in implementationplan.md.

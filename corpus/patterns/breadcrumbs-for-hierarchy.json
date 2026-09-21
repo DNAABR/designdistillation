@@ -1,0 +1,87 @@
+{
+  "id": "breadcrumbs-for-hierarchy",
+  "kind": "pattern",
+  "title": "Breadcrumbs for hierarchical location",
+  "summary": "Use breadcrumbs to show a user's location inside a meaningful hierarchy and provide direct access to ancestor levels.",
+  "problem": "Deep hierarchical products become difficult to navigate when users can only move with browser back or a global menu.",
+  "use_when": [
+    "Content or objects have stable parent-child hierarchy",
+    "Users may enter deep pages directly from search, links, or notifications"
+  ],
+  "avoid_when": [
+    "The product is shallow or sequence-based rather than hierarchical",
+    "The breadcrumb would repeat a single obvious parent"
+  ],
+  "rationale": [
+    "Breadcrumbs communicate both location and escape routes.",
+    "They complement rather than replace primary navigation."
+  ],
+  "tags": [
+    "navigation"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "navigation",
+  "family": "navigation",
+  "evidence": "standard-backed",
+  "states": [
+    "default",
+    "hover",
+    "focus",
+    "active",
+    "keyboard"
+  ],
+  "decision": {
+    "prefer_alternatives_if": [
+      "The relationship between pages is a linear workflow rather than a hierarchy"
+    ],
+    "use_if": [
+      "Content or objects have stable parent-child hierarchy",
+      "Users may enter deep pages directly from search, links, or notifications"
+    ]
+  },
+  "accessibility": {
+    "requirements": [
+      "Use navigational semantics and a descriptive label for the breadcrumb region.",
+      "Mark the current page without making it a misleading link."
+    ]
+  },
+  "implementation": {
+    "requirements": [
+      "Show ancestors in order from broad to specific.",
+      "Use stable human-readable labels.",
+      "Avoid truncation that removes the only differentiating text."
+    ]
+  },
+  "related": {
+    "patterns": [
+      "primary-navigation"
+    ],
+    "anti_patterns": []
+  },
+  "sources": [
+    {
+      "type": "standard",
+      "title": "WAI-ARIA APG ? Patterns",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/",
+      "accessed": "2026-09-22",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      },
+      "notes": "Accessibility guidance distilled; no example code redistributed."
+    },
+    {
+      "type": "internal",
+      "title": "Design Distillation synthesis",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      },
+      "notes": "Original synthesis; no external code or assets redistributed."
+    }
+  ]
+}

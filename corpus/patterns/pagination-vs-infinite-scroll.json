@@ -1,0 +1,79 @@
+{
+  "id": "pagination-vs-infinite-scroll",
+  "kind": "pattern",
+  "title": "Pagination versus continuous loading by task",
+  "summary": "Choose pagination, load-more, or continuous loading based on whether users need position, completion, comparison, or open-ended discovery.",
+  "problem": "Infinite scroll is often chosen by trend even when users need stable position, footer access, bulk work, or a sense of completion.",
+  "use_when": [
+    "A result set is too large to load at once",
+    "The product must choose how users move through many items"
+  ],
+  "avoid_when": [
+    "The full dataset is small enough to display efficiently"
+  ],
+  "rationale": [
+    "Navigation model should match task intent.",
+    "Open-ended browsing and precision work have different needs."
+  ],
+  "tags": [
+    "data-display",
+    "pagination"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "navigation",
+  "family": "data-display",
+  "evidence": "synthesis",
+  "states": [
+    "default",
+    "loading",
+    "partial-data",
+    "error",
+    "mobile",
+    "desktop"
+  ],
+  "decision": {
+    "use_if": [
+      "A result set is too large to load at once",
+      "The product must choose how users move through many items"
+    ],
+    "prefer_alternatives_if": [
+      "Users need stable page references, comparison, or task completion; prefer pagination or load-more over endless scroll"
+    ]
+  },
+  "accessibility": {
+    "requirements": [
+      "Do not move focus unexpectedly when more items load.",
+      "Provide meaningful status when content is appended.",
+      "Keep footer and navigation reachable."
+    ]
+  },
+  "implementation": {
+    "requirements": [
+      "Preserve position on back navigation.",
+      "Use stable URLs or page state when sharing or resuming matters.",
+      "Avoid endless auto-loading for precision or admin workflows."
+    ]
+  },
+  "related": {
+    "patterns": [
+      "data-table-controls",
+      "search-query-state"
+    ],
+    "anti_patterns": [
+      "infinite-scroll-for-precision-work"
+    ]
+  },
+  "sources": [
+    {
+      "type": "internal",
+      "title": "Design Distillation synthesis",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    }
+  ]
+}

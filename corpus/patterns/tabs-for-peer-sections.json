@@ -1,0 +1,82 @@
+{
+  "id": "tabs-for-peer-sections",
+  "kind": "pattern",
+  "title": "Tabs for peer sections",
+  "summary": "Use tabs when a small set of peer sections share one context and users benefit from switching between them without navigating away.",
+  "problem": "Tabs are often used for unrelated destinations or too many sections, creating hidden information and confusing keyboard behavior.",
+  "use_when": [
+    "Sections are peers inside the same object or task context",
+    "Users are likely to compare or switch between sections repeatedly"
+  ],
+  "avoid_when": [
+    "Sections are steps in a required sequence",
+    "Each section deserves its own navigable destination or deep-linking model"
+  ],
+  "rationale": [
+    "Tabs express one-of-many peer views.",
+    "They work best when switching is fast and the set is limited."
+  ],
+  "tags": [
+    "navigation"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "navigation",
+  "family": "navigation",
+  "evidence": "standard-backed",
+  "states": [
+    "default",
+    "focus",
+    "selected",
+    "keyboard",
+    "mobile"
+  ],
+  "decision": {
+    "prefer_alternatives_if": [
+      "The content should be visible simultaneously or the sections represent primary navigation"
+    ],
+    "use_if": [
+      "Sections are peers inside the same object or task context",
+      "Users are likely to compare or switch between sections repeatedly"
+    ]
+  },
+  "accessibility": {
+    "requirements": [
+      "Expose tablist, tab, and tabpanel relationships.",
+      "Selected state must be programmatically available.",
+      "Support documented keyboard movement between tabs."
+    ],
+    "keyboard": [
+      "Use arrow-key behavior when implementing a true tablist composite.",
+      "Keep focus behavior consistent with activation strategy."
+    ]
+  },
+  "implementation": {
+    "requirements": [
+      "Keep tab labels short and mutually exclusive.",
+      "Preserve direct links to meaningful tab state when users need to share or return to it."
+    ]
+  },
+  "related": {
+    "patterns": [
+      "primary-navigation",
+      "progressive-disclosure"
+    ],
+    "anti_patterns": []
+  },
+  "sources": [
+    {
+      "type": "standard",
+      "title": "WAI-ARIA APG ? Tabs Pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/tabs/",
+      "accessed": "2026-09-22",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      },
+      "notes": "Accessibility guidance distilled; no example code redistributed."
+    }
+  ]
+}

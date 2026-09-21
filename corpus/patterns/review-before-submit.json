@@ -1,0 +1,79 @@
+{
+  "id": "review-before-submit",
+  "kind": "pattern",
+  "title": "Review before consequential submission",
+  "summary": "Give users a structured opportunity to review and edit important information immediately before a consequential submission.",
+  "problem": "Users can complete a long transaction without noticing incorrect or outdated answers until after irreversible submission.",
+  "use_when": [
+    "Submitting creates a meaningful transaction, application, purchase, or account change",
+    "Errors would be costly or difficult to reverse"
+  ],
+  "avoid_when": [
+    "The action is low-risk, instantly reversible, and review would add friction without meaningful benefit"
+  ],
+  "rationale": [
+    "Review increases confidence and provides a final correction point.",
+    "Change paths should return users to review instead of replaying the whole flow."
+  ],
+  "tags": [
+    "forms"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "conversion",
+  "family": "forms",
+  "evidence": "design-system-backed",
+  "states": [
+    "default",
+    "focus",
+    "submitting",
+    "error",
+    "success",
+    "keyboard"
+  ],
+  "decision": {
+    "use_if": [
+      "Submitting creates a meaningful transaction, application, purchase, or account change",
+      "Errors would be costly or difficult to reverse"
+    ],
+    "prefer_alternatives_if": [
+      "The action is safely reversible and already offers immediate undo"
+    ]
+  },
+  "accessibility": {
+    "requirements": [
+      "Give repeated change actions contextual accessible names.",
+      "Keep reading order and section hierarchy clear.",
+      "Preserve focus and context when returning from edits."
+    ]
+  },
+  "implementation": {
+    "requirements": [
+      "Summarize relevant answers in understandable groups.",
+      "Provide direct edit paths.",
+      "Make the final action label describe the consequence."
+    ]
+  },
+  "related": {
+    "patterns": [
+      "preserve-form-input",
+      "transaction-confirmation",
+      "destructive-confirmation"
+    ],
+    "anti_patterns": []
+  },
+  "sources": [
+    {
+      "type": "design-system",
+      "title": "GOV.UK Design System ? Check answers",
+      "url": "https://design-system.service.gov.uk/patterns/check-answers/",
+      "accessed": "2026-09-22",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://designdistillation.dev/schemas/pattern-entry.schema.json",
+  "title": "Design Distillation UX Pattern Entry",
+  "allOf": [
+    {
+      "$ref": "./corpus-entry.schema.json"
+    },
+    {
+      "type": "object",
+      "required": [
+        "family",
+        "evidence",
+        "states",
+        "decision",
+        "accessibility",
+        "implementation",
+        "related"
+      ],
+      "properties": {
+        "kind": {
+          "const": "pattern"
+        },
+        "family": {
+          "enum": [
+            "navigation",
+            "forms",
+            "search",
+            "onboarding",
+            "permissions",
+            "feedback",
+            "destructive-actions",
+            "data-display",
+            "settings",
+            "responsive"
+          ]
+        },
+        "evidence": {
+          "enum": [
+            "standard-backed",
+            "design-system-backed",
+            "synthesis"
+          ]
+        },
+        "states": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "default",
+              "hover",
+              "focus",
+              "active",
+              "disabled",
+              "loading",
+              "empty",
+              "error",
+              "warning",
+              "success",
+              "partial-data",
+              "offline",
+              "permission-denied",
+              "unauthenticated",
+              "first-use",
+              "selected",
+              "expanded",
+              "collapsed",
+              "no-results",
+              "submitting",
+              "saved",
+              "unsaved",
+              "retrying",
+              "mobile",
+              "tablet",
+              "desktop",
+              "keyboard",
+              "reduced-motion"
+            ]
+          }
+        },
+        "decision": {
+          "type": "object",
+          "required": [
+            "use_if",
+            "prefer_alternatives_if"
+          ],
+          "properties": {
+            "use_if": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 5
+              }
+            },
+            "prefer_alternatives_if": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 5
+              }
+            }
+          }
+        },
+        "accessibility": {
+          "type": "object",
+          "required": [
+            "requirements"
+          ],
+          "properties": {
+            "requirements": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 5
+              }
+            }
+          }
+        },
+        "implementation": {
+          "type": "object",
+          "required": [
+            "requirements"
+          ],
+          "properties": {
+            "requirements": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 5
+              }
+            }
+          }
+        },
+        "related": {
+          "type": "object",
+          "required": [
+            "patterns",
+            "anti_patterns"
+          ],
+          "properties": {
+            "patterns": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "uniqueItems": true
+            },
+            "anti_patterns": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "uniqueItems": true
+            }
+          }
+        }
+      }
+    }
+  ]
+}

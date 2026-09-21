@@ -1,0 +1,81 @@
+{
+  "id": "loading-feedback",
+  "kind": "pattern",
+  "title": "Loading feedback proportional to wait and task",
+  "summary": "Communicate progress in a way proportional to the expected wait, preserving known content when possible and distinguishing loading from failure.",
+  "problem": "A generic spinner hides whether work started, what remains usable, and whether the system is stuck.",
+  "use_when": [
+    "An operation takes long enough for the user to notice",
+    "Data or processing may arrive incrementally"
+  ],
+  "avoid_when": [
+    "The operation completes effectively instantly and feedback would create flicker"
+  ],
+  "rationale": [
+    "Users need acknowledgement first, then progress detail as waits grow.",
+    "Retaining existing content reduces layout shifts and cognitive disruption."
+  ],
+  "tags": [
+    "feedback",
+    "loading"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "feedback",
+  "family": "feedback",
+  "evidence": "synthesis",
+  "states": [
+    "loading",
+    "partial-data",
+    "success",
+    "error",
+    "reduced-motion"
+  ],
+  "decision": {
+    "use_if": [
+      "An operation takes long enough for the user to notice",
+      "Data or processing may arrive incrementally"
+    ],
+    "prefer_alternatives_if": [
+      "The operation is instant or can be handled optimistically without ambiguity"
+    ]
+  },
+  "accessibility": {
+    "requirements": [
+      "Expose meaningful busy or status state without trapping focus.",
+      "Avoid indefinite motion as the only signal.",
+      "Respect reduced-motion preferences."
+    ],
+    "reduced_motion": [
+      "Use nonessential animation only when allowed by user or platform preference."
+    ]
+  },
+  "implementation": {
+    "requirements": [
+      "Acknowledge initiated work quickly.",
+      "Prefer skeleton or content preservation only when it reflects real layout, not decorative shimmer.",
+      "Use determinate progress when reliable progress is known."
+    ]
+  },
+  "related": {
+    "patterns": [
+      "save-status-feedback",
+      "error-recovery"
+    ],
+    "anti_patterns": [
+      "spinner-without-progress-context"
+    ]
+  },
+  "sources": [
+    {
+      "type": "internal",
+      "title": "Design Distillation synthesis",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    }
+  ]
+}

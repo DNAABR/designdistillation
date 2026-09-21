@@ -1,0 +1,78 @@
+{
+  "id": "empty-state-next-action",
+  "kind": "pattern",
+  "title": "Empty state with context and next action",
+  "summary": "Explain why a meaningful collection is empty and offer the most relevant way to populate, configure, or understand it.",
+  "problem": "Blank containers and generic illustrations leave users unsure whether setup is incomplete, filters are active, access is missing, or there is simply no data.",
+  "use_when": [
+    "A meaningful product area can contain zero objects or data",
+    "First-use and post-deletion emptiness require different guidance"
+  ],
+  "avoid_when": [
+    "The absence is self-explanatory and adding content would distract"
+  ],
+  "rationale": [
+    "Empty states are part of normal product lifecycle.",
+    "The next action should reflect the cause of emptiness."
+  ],
+  "tags": [
+    "feedback",
+    "empty-state"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "content",
+  "family": "feedback",
+  "evidence": "synthesis",
+  "states": [
+    "empty",
+    "first-use",
+    "permission-denied",
+    "no-results",
+    "offline"
+  ],
+  "decision": {
+    "use_if": [
+      "A meaningful product area can contain zero objects or data",
+      "First-use and post-deletion emptiness require different guidance"
+    ],
+    "prefer_alternatives_if": [
+      "The state is actually loading, failure, or zero search results and should use that more specific state"
+    ]
+  },
+  "accessibility": {
+    "requirements": [
+      "Provide explanatory text; do not depend on illustration.",
+      "Keep the recommended action a normal operable control."
+    ]
+  },
+  "implementation": {
+    "requirements": [
+      "Distinguish first-use from filtered, access, or failure emptiness.",
+      "Offer one primary next action when there is a clear path.",
+      "Avoid marketing copy that obscures the state."
+    ]
+  },
+  "related": {
+    "patterns": [
+      "zero-results-recovery",
+      "loading-feedback",
+      "offline-resilience"
+    ],
+    "anti_patterns": [
+      "card-everything"
+    ]
+  },
+  "sources": [
+    {
+      "type": "internal",
+      "title": "Design Distillation synthesis",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "id": "filters-and-sort",
+  "kind": "pattern",
+  "title": "Visible, reversible filters and sorting",
+  "summary": "Make active filters and sort order visible, individually removable, resettable, and stable enough that users can understand why the result set changed.",
+  "problem": "Hidden filters and ambiguous sort state make result changes appear random and are hard to recover from.",
+  "use_when": [
+    "Users need to narrow or order a substantial result set",
+    "Multiple constraints may be active simultaneously"
+  ],
+  "avoid_when": [
+    "The dataset is small enough that filtering adds more complexity than value"
+  ],
+  "rationale": [
+    "Filters are part of query state and need visible consequences.",
+    "Reversibility encourages exploration without fear of losing context."
+  ],
+  "tags": [
+    "search"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "navigation",
+  "family": "search",
+  "evidence": "synthesis",
+  "states": [
+    "default",
+    "focus",
+    "active",
+    "selected",
+    "loading",
+    "no-results",
+    "mobile",
+    "desktop"
+  ],
+  "decision": {
+    "use_if": [
+      "Users need to narrow or order a substantial result set",
+      "Multiple constraints may be active simultaneously"
+    ],
+    "prefer_alternatives_if": [
+      "A single simple search field is sufficient"
+    ]
+  },
+  "accessibility": {
+    "requirements": [
+      "Expose selected states programmatically.",
+      "Keep filter controls operable by keyboard and touch.",
+      "Do not hide active constraints solely inside a closed panel."
+    ]
+  },
+  "implementation": {
+    "requirements": [
+      "Show active filters near results or in a clear summary.",
+      "Provide clear-all when several filters can accumulate.",
+      "Preserve filter state during result-detail navigation when useful."
+    ],
+    "responsive": [
+      "A collapsed mobile filter panel must still expose that filters are active."
+    ]
+  },
+  "related": {
+    "patterns": [
+      "search-query-state",
+      "zero-results-recovery",
+      "data-table-controls"
+    ],
+    "anti_patterns": []
+  },
+  "sources": [
+    {
+      "type": "internal",
+      "title": "Design Distillation synthesis",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    }
+  ]
+}

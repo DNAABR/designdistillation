@@ -1,0 +1,45 @@
+{
+  "id": "premature-validation",
+  "kind": "anti-pattern",
+  "title": "Premature disruptive validation",
+  "summary": "Showing errors while a user is still entering a valid answer can create noise, anxiety, and false failures.",
+  "problem": "Per-keystroke or immediate blur validation often reports incomplete values before users have finished.",
+  "use_when": [
+    "Auditing forms that display blocking errors before submission or before enough information exists to validate meaningfully"
+  ],
+  "avoid_when": [
+    "Immediate feedback is genuinely helpful, non-disruptive, and can be correct before completion"
+  ],
+  "rationale": [
+    "Validation timing is part of interaction design.",
+    "Preventing errors is better than repeatedly declaring temporary input invalid."
+  ],
+  "tags": [
+    "forms",
+    "validation"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "input",
+  "audit": {
+    "severity": "warning",
+    "signals": [
+      "error appears on first keystroke",
+      "blur immediately creates a blocking error for unfinished input"
+    ]
+  },
+  "sources": [
+    {
+      "type": "design-system",
+      "title": "GOV.UK Design System ? Recover from validation errors",
+      "url": "https://design-system.service.gov.uk/patterns/validation/",
+      "accessed": "2026-09-22",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    }
+  ]
+}

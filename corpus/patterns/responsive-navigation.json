@@ -1,0 +1,81 @@
+{
+  "id": "responsive-navigation",
+  "kind": "pattern",
+  "title": "Responsive navigation transformation",
+  "summary": "Change the presentation of navigation across breakpoints while preserving information architecture, labels, destination order, and access.",
+  "problem": "Responsive redesigns often remove or reorder important destinations, making mobile a functionally different product.",
+  "use_when": [
+    "Primary navigation cannot fit comfortably at narrow widths",
+    "The same product serves touch and desktop contexts"
+  ],
+  "avoid_when": [
+    "The navigation already fits and remains comfortably operable",
+    "A mobile-specific product has intentionally different information architecture backed by user needs"
+  ],
+  "rationale": [
+    "Responsive design should adapt presentation before it removes capability.",
+    "Stable labels and hierarchy reduce cross-device relearning."
+  ],
+  "tags": [
+    "responsive"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "navigation",
+  "family": "responsive",
+  "evidence": "synthesis",
+  "states": [
+    "mobile",
+    "tablet",
+    "desktop",
+    "focus",
+    "expanded",
+    "collapsed",
+    "keyboard"
+  ],
+  "decision": {
+    "prefer_alternatives_if": [
+      "The narrow layout can preserve the same navigation visibly without overflow"
+    ],
+    "use_if": [
+      "Primary navigation cannot fit comfortably at narrow widths",
+      "The same product serves touch and desktop contexts"
+    ]
+  },
+  "accessibility": {
+    "requirements": [
+      "Menu disclosure must expose expanded/collapsed state.",
+      "Do not require hover to reveal destinations.",
+      "Ensure touch targets and spacing remain operable."
+    ]
+  },
+  "implementation": {
+    "requirements": [
+      "Preserve destination set unless a documented product decision says otherwise.",
+      "Keep current-location indication.",
+      "Do not hide critical actions inside unrelated menus."
+    ]
+  },
+  "related": {
+    "patterns": [
+      "primary-navigation",
+      "progressive-disclosure"
+    ],
+    "anti_patterns": [
+      "hidden-primary-navigation"
+    ]
+  },
+  "sources": [
+    {
+      "type": "internal",
+      "title": "Design Distillation synthesis",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      },
+      "notes": "Original synthesis; no external code or assets redistributed."
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "id": "data-table-controls",
+  "kind": "pattern",
+  "title": "Task-oriented data table controls",
+  "summary": "Add sorting, filtering, column choices, row actions, and density controls only when they support real user tasks, with current state visible and reversible.",
+  "problem": "Generated admin tables often accumulate every possible control while hiding which constraints or sort states are active.",
+  "use_when": [
+    "Users repeatedly inspect or act on structured data",
+    "The dataset is large enough that control over ordering or visibility saves meaningful time"
+  ],
+  "avoid_when": [
+    "The table is small and read-only and extra controls add more complexity than value"
+  ],
+  "rationale": [
+    "Data tools should reflect jobs users perform, not a checklist of table features.",
+    "State visibility is essential when controls change what rows are shown."
+  ],
+  "tags": [
+    "data-display",
+    "tables"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "content",
+  "family": "data-display",
+  "evidence": "synthesis",
+  "states": [
+    "default",
+    "focus",
+    "loading",
+    "empty",
+    "error",
+    "selected",
+    "mobile",
+    "desktop"
+  ],
+  "decision": {
+    "use_if": [
+      "Users repeatedly inspect or act on structured data",
+      "The dataset is large enough that control over ordering or visibility saves meaningful time"
+    ],
+    "prefer_alternatives_if": [
+      "A simpler list or static table supports the task"
+    ]
+  },
+  "accessibility": {
+    "requirements": [
+      "Label sort and filter state programmatically.",
+      "Keep row actions discoverable without hover-only controls.",
+      "Preserve usable reading order under responsive transformations."
+    ]
+  },
+  "implementation": {
+    "requirements": [
+      "Start from user tasks before adding controls.",
+      "Show active sort and filter state.",
+      "Keep row actions near the affected row and avoid ambiguous icon-only actions."
+    ]
+  },
+  "related": {
+    "patterns": [
+      "table-vs-grid",
+      "filters-and-sort",
+      "bulk-selection-actions",
+      "pagination-vs-infinite-scroll"
+    ],
+    "anti_patterns": [
+      "card-everything"
+    ]
+  },
+  "sources": [
+    {
+      "type": "internal",
+      "title": "Design Distillation synthesis",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    }
+  ]
+}

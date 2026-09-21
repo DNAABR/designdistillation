@@ -1,0 +1,93 @@
+{
+  "id": "question-focused-forms",
+  "kind": "pattern",
+  "title": "Question-focused forms",
+  "summary": "Break complex data collection into understandable questions or sections, asking only for information needed for the user's goal.",
+  "problem": "Large undifferentiated forms increase scanning effort, error rates, and uncertainty about why information is required.",
+  "use_when": [
+    "A transaction asks for multiple concepts or conditional information",
+    "Users benefit from a clear sense of one decision at a time"
+  ],
+  "avoid_when": [
+    "The form is genuinely short and can be understood as one compact unit",
+    "Splitting would force unnecessary navigation for tightly related fields"
+  ],
+  "rationale": [
+    "Focused questions reduce simultaneous cognitive load.",
+    "Conditional questions can avoid collecting irrelevant data."
+  ],
+  "tags": [
+    "forms"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "input",
+  "family": "forms",
+  "evidence": "design-system-backed",
+  "states": [
+    "default",
+    "focus",
+    "error",
+    "submitting",
+    "mobile",
+    "desktop"
+  ],
+  "decision": {
+    "prefer_alternatives_if": [
+      "The entire form is only a few tightly related fields"
+    ],
+    "use_if": [
+      "A transaction asks for multiple concepts or conditional information",
+      "Users benefit from a clear sense of one decision at a time"
+    ]
+  },
+  "accessibility": {
+    "requirements": [
+      "Group related controls with semantic fieldsets/legends where applicable.",
+      "Maintain a logical heading and focus order.",
+      "Do not rely on visual grouping alone."
+    ]
+  },
+  "implementation": {
+    "requirements": [
+      "Ask only necessary questions.",
+      "Explain why sensitive or unexpected information is required.",
+      "Keep progress understandable for longer flows."
+    ]
+  },
+  "related": {
+    "patterns": [
+      "labels-hints-and-optionality",
+      "error-recovery",
+      "review-before-submit"
+    ],
+    "anti_patterns": [
+      "premature-validation"
+    ]
+  },
+  "sources": [
+    {
+      "type": "design-system",
+      "title": "GOV.UK Design System ? Question pages",
+      "url": "https://design-system.service.gov.uk/patterns/question-pages/",
+      "accessed": "2026-09-22",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      },
+      "notes": "Guidance paraphrased and distilled; no GOV.UK code or assets redistributed."
+    },
+    {
+      "type": "internal",
+      "title": "Design Distillation synthesis",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      },
+      "notes": "Original synthesis; no external code or assets redistributed."
+    }
+  ]
+}

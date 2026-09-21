@@ -1,0 +1,79 @@
+{
+  "id": "save-status-feedback",
+  "kind": "pattern",
+  "title": "Persistent save and sync status",
+  "summary": "For auto-save or background-sync workflows, show meaningful unsaved, saving, saved, and failed states without interrupting every success.",
+  "problem": "Users cannot trust auto-save when there is no visible distinction between local edits, pending sync, successful persistence, and failure.",
+  "use_when": [
+    "Edits save automatically or sync asynchronously",
+    "Closing or navigating before persistence could matter"
+  ],
+  "avoid_when": [
+    "Saving is a single explicit transaction with a clear submit and confirmation flow"
+  ],
+  "rationale": [
+    "Background persistence needs persistent state, not notification spam.",
+    "Failure should remain visible until resolved."
+  ],
+  "tags": [
+    "feedback",
+    "saving"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "feedback",
+  "family": "feedback",
+  "evidence": "synthesis",
+  "states": [
+    "unsaved",
+    "loading",
+    "saved",
+    "error",
+    "offline",
+    "retrying"
+  ],
+  "decision": {
+    "use_if": [
+      "Edits save automatically or sync asynchronously",
+      "Closing or navigating before persistence could matter"
+    ],
+    "prefer_alternatives_if": [
+      "An explicit Save action with transactional confirmation is more appropriate"
+    ]
+  },
+  "accessibility": {
+    "requirements": [
+      "Expose status text to assistive technology without announcing every routine save excessively.",
+      "Keep errors persistent enough to discover and recover."
+    ]
+  },
+  "implementation": {
+    "requirements": [
+      "Differentiate unsaved, saving, saved, and failed.",
+      "Do not claim saved before durable persistence.",
+      "Connect offline state to pending sync."
+    ]
+  },
+  "related": {
+    "patterns": [
+      "offline-resilience",
+      "loading-feedback",
+      "error-recovery"
+    ],
+    "anti_patterns": [
+      "toast-only-critical-feedback"
+    ]
+  },
+  "sources": [
+    {
+      "type": "internal",
+      "title": "Design Distillation synthesis",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": "infinite-scroll-for-precision-work",
+  "kind": "anti-pattern",
+  "title": "Infinite scroll for precision work",
+  "summary": "Endless automatic loading is a poor default when users need stable position, comparison, selection, completion, or repeatable navigation.",
+  "problem": "Precision workflows lose page boundaries, footer access, and reliable return position.",
+  "use_when": [
+    "Auditing admin, search, review, or bulk-action interfaces with endless scrolling"
+  ],
+  "avoid_when": [
+    "The task is intentionally open-ended browsing and position or completion do not matter"
+  ],
+  "rationale": [
+    "Discovery and task work have different navigation requirements.",
+    "Navigation mechanics should support the user's stopping rule."
+  ],
+  "tags": [
+    "data-display",
+    "navigation"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "navigation",
+  "audit": {
+    "severity": "warning",
+    "signals": [
+      "infinite scroll used in bulk-management table",
+      "back navigation loses prior scroll or result position"
+    ]
+  },
+  "sources": [
+    {
+      "type": "internal",
+      "title": "Design Distillation synthesis",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    }
+  ]
+}

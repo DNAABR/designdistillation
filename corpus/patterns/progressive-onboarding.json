@@ -1,0 +1,78 @@
+{
+  "id": "progressive-onboarding",
+  "kind": "pattern",
+  "title": "Progressive onboarding",
+  "summary": "Teach only the concepts needed to reach first value, then reveal advanced guidance in context instead of front-loading a product tour.",
+  "problem": "Long onboarding tours delay value and are forgotten before users reach the features being explained.",
+  "use_when": [
+    "The product has unfamiliar concepts but users can learn them while doing real tasks",
+    "Advanced features are not required for first success"
+  ],
+  "avoid_when": [
+    "Safety, compliance, or irreversible consequences require instruction before use",
+    "The product is so simple that onboarding adds friction"
+  ],
+  "rationale": [
+    "Contextual learning is easier to connect to a real goal.",
+    "First-use guidance should disappear or remain dismissible after it has served its purpose."
+  ],
+  "tags": [
+    "onboarding"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "retention",
+  "family": "onboarding",
+  "evidence": "synthesis",
+  "states": [
+    "first-use",
+    "default",
+    "success",
+    "mobile",
+    "desktop"
+  ],
+  "decision": {
+    "use_if": [
+      "The product has unfamiliar concepts but users can learn them while doing real tasks",
+      "Advanced features are not required for first success"
+    ],
+    "prefer_alternatives_if": [
+      "Users must understand critical safety or compliance information before acting"
+    ]
+  },
+  "accessibility": {
+    "requirements": [
+      "Do not make tutorials pointer-gesture dependent.",
+      "Keep dismiss or skip actions reachable and clearly named.",
+      "Avoid auto-advancing content before users can read it."
+    ]
+  },
+  "implementation": {
+    "requirements": [
+      "Identify the earliest meaningful user success.",
+      "Teach only what is needed to reach it.",
+      "Move advanced guidance to the context where the feature appears."
+    ]
+  },
+  "related": {
+    "patterns": [
+      "just-in-time-permissions",
+      "minimal-account-creation"
+    ],
+    "anti_patterns": [
+      "modal-everything"
+    ]
+  },
+  "sources": [
+    {
+      "type": "internal",
+      "title": "Design Distillation synthesis",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "id": "progressive-disclosure",
+  "kind": "pattern",
+  "title": "Progressive disclosure",
+  "summary": "Hide secondary or advanced detail until it becomes relevant, while keeping the disclosure control visible, understandable, and reversible.",
+  "problem": "Showing every option at once increases cognitive load, but hiding important information behind ambiguous controls makes features undiscoverable.",
+  "use_when": [
+    "Secondary detail is useful to some users but not required for the primary task",
+    "Advanced options would otherwise dominate the interface"
+  ],
+  "avoid_when": [
+    "The hidden content contains information needed to make the current decision",
+    "Most users need the content immediately"
+  ],
+  "rationale": [
+    "Progressive disclosure can reduce initial complexity without deleting capability.",
+    "The control must communicate that more content exists."
+  ],
+  "tags": [
+    "navigation"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "content",
+  "family": "navigation",
+  "evidence": "standard-backed",
+  "states": [
+    "default",
+    "focus",
+    "expanded",
+    "collapsed",
+    "keyboard"
+  ],
+  "decision": {
+    "prefer_alternatives_if": [
+      "The information is short and important enough to show directly"
+    ],
+    "use_if": [
+      "Secondary detail is useful to some users but not required for the primary task",
+      "Advanced options would otherwise dominate the interface"
+    ]
+  },
+  "accessibility": {
+    "requirements": [
+      "Use a real button/disclosure control.",
+      "Expose expanded state programmatically.",
+      "Do not make hover the only way to reveal content."
+    ],
+    "keyboard": [
+      "Enter and Space activate the disclosure control."
+    ]
+  },
+  "implementation": {
+    "requirements": [
+      "Keep the disclosed content adjacent or clearly related to its trigger.",
+      "Preserve user choice while they remain in the task."
+    ]
+  },
+  "related": {
+    "patterns": [
+      "responsive-navigation"
+    ],
+    "anti_patterns": []
+  },
+  "sources": [
+    {
+      "type": "standard",
+      "title": "WAI-ARIA APG ? Disclosure Pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/",
+      "accessed": "2026-09-22",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      },
+      "notes": "Accessibility guidance distilled; no example code redistributed."
+    }
+  ]
+}

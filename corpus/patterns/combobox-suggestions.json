@@ -1,0 +1,83 @@
+{
+  "id": "combobox-suggestions",
+  "kind": "pattern",
+  "title": "Combobox suggestions for large or searchable choices",
+  "summary": "Use an accessible combobox when users benefit from typing to filter or receive suggestions from a large choice set.",
+  "problem": "Long static selects are slow to scan, while custom autocomplete widgets often fail keyboard and assistive-technology behavior.",
+  "use_when": [
+    "The option set is large or searching by text materially helps selection",
+    "Suggestions can narrow choices without hiding the ability to type"
+  ],
+  "avoid_when": [
+    "There are only a few stable options",
+    "Free text is valid and suggestions would incorrectly imply a closed set"
+  ],
+  "rationale": [
+    "Comboboxes combine input with a controlled popup and require explicit interaction semantics.",
+    "Simpler controls remain preferable when they solve the problem."
+  ],
+  "tags": [
+    "forms"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "input",
+  "family": "forms",
+  "evidence": "standard-backed",
+  "states": [
+    "default",
+    "focus",
+    "expanded",
+    "collapsed",
+    "selected",
+    "no-results",
+    "keyboard"
+  ],
+  "decision": {
+    "use_if": [
+      "The option set is large or searching by text materially helps selection",
+      "Suggestions can narrow choices without hiding the ability to type"
+    ],
+    "prefer_alternatives_if": [
+      "A native select, radio group, or ordinary text input is simpler and sufficient"
+    ]
+  },
+  "accessibility": {
+    "requirements": [
+      "Implement the documented input and popup relationship.",
+      "Expose expanded state and active or selected options.",
+      "Maintain keyboard access without stealing text-editing keys unexpectedly."
+    ],
+    "keyboard": [
+      "Support appropriate arrow-key navigation in the popup and keep Tab behavior predictable."
+    ]
+  },
+  "implementation": {
+    "requirements": [
+      "Show meaningful matches and a no-results state.",
+      "Do not require selection when free text is valid.",
+      "Avoid loading huge option sets before needed."
+    ]
+  },
+  "related": {
+    "patterns": [
+      "search-query-state",
+      "zero-results-recovery"
+    ],
+    "anti_patterns": []
+  },
+  "sources": [
+    {
+      "type": "standard",
+      "title": "WAI-ARIA APG ? Combobox Pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/combobox/",
+      "accessed": "2026-09-22",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    }
+  ]
+}
