@@ -40,7 +40,7 @@ Exit criterion: a design profile can resolve into coherent framework-neutral vis
 
 ## v0.3 — UX pattern corpus
 
-Status: implementation complete on feat/v0.3-ux-pattern-corpus; awaiting review/merge.
+Status: implementation complete on `feat/v0.3-ux-pattern-corpus`; awaiting review/merge.
 
 - [x] Expand navigation, forms, search, onboarding, settings, data display, permissions, destructive actions, empty states, loading, offline, and recovery patterns.
 - [x] Create a dedicated UX pattern schema and taxonomy.
@@ -59,7 +59,7 @@ Exit criterion: the corpus covers the common product flows an AI usually improvi
 
 ## v0.4 — Design recipes
 
-Status: implementation complete on feat/v0.4-design-recipes; awaiting review/merge.
+Status: implementation complete on `feat/v0.4-design-recipes`; awaiting review/merge.
 
 - [x] Add product recipes for SaaS, fintech, education, consumer social, commerce, editorial, developer tooling, health/wellness, gaming companions, creative software, and public-service interfaces.
 - [x] Require complete 24-axis Design DNA coverage per recipe.
@@ -78,12 +78,21 @@ Exit criterion: product intent can select a coherent starting design language wi
 
 ## v0.5 — Composer
 
-- Build a CLI/library that converts product requirements into `design-profile.json`.
-- Generate `DESIGN.md` and agent instructions.
-- Resolve recipe + personality + platform + accessibility constraints.
-- Explain the rationale behind generated decisions.
+Status: implementation complete on `feat/v0.5-composer`; awaiting review/merge.
 
-Exit criterion: a new project can begin with a coherent design contract instead of a blank prompt.
+- [x] Add a deterministic library that converts product requirements into a design contract.
+- [x] Add a CLI that writes `design-profile.json`, `DESIGN.md`, and `AGENTS.design.md`.
+- [x] Resolve explicit recipe selection, product type, and transparent free-text keyword selection.
+- [x] Reuse bounded v0.4 recipe blending for explicit influences.
+- [x] Resolve all 24 personality axes against composed recipe ranges.
+- [x] Clamp out-of-range personality requests with visible diagnostics and rationale.
+- [x] Normalize platform aliases through a single composer taxonomy.
+- [x] Resolve theme, accessibility target, and reduced-motion preference without weakening accessibility support.
+- [x] Keep brand-safety invariants non-negotiable in generated contracts.
+- [x] Add a composer request schema, example request, documentation, and regression tests.
+- [x] Keep generated outputs deterministic and framework-neutral.
+
+Exit criterion: a new project can begin with a coherent, explainable design contract instead of a blank prompt.
 
 ## v0.6 — Registry and reusable implementation
 

@@ -1,0 +1,32 @@
+{
+  "version": "0.5.0",
+  "product": {
+    "name": "Operations Workspace",
+    "description": "A responsive web application for operations teams to manage recurring workflows, approvals, search, and data-heavy task views.",
+    "type": "saas",
+    "platform": "responsive-web",
+    "audience": "operations teams",
+    "primaryTask": "manage recurring operational workflows",
+    "features": [
+      "data tables",
+      "search",
+      "approvals",
+      "saved state"
+    ]
+  },
+  "preferences": {
+    "theme": "light",
+    "accessibilityTarget": "WCAG 2.2 AA",
+    "reducedMotion": false,
+    "personality": {
+      "warmth": 46,
+      "playfulness": 24
+    },
+    "influences": [
+      {
+        "id": "friendly-education",
+        "weight": 0.2
+      }
+    ]
+  }
+}

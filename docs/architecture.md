@@ -22,16 +22,28 @@ Tokens, components, blocks, interaction recipes, motion recipes, adapters, and f
 
 ### 5. Composer
 
-Transforms product intent into a generated design contract. Expected outputs eventually include:
+v0.5 transforms product requirements into a deterministic generated design contract.
 
-- `DESIGN.md`;
+Inputs may include free-text product description, product type, platform, audience, primary task, features, recipe preferences, explicit influence recipes, Design DNA preferences, theme, accessibility target, and reduced-motion preference.
+
+Selection and resolution order is explicit:
+
+1. explicit recipe preference;
+2. declared product type;
+3. transparent free-text keyword scoring;
+4. configured fallback with a warning;
+5. bounded recipe blending for explicit influences;
+6. personality clamping to composed recipe ranges;
+7. platform, theme, accessibility, and motion resolution.
+
+The composer emits:
+
 - `design-profile.json`;
-- design-token selections/overrides;
-- typography rules;
-- motion rules;
-- component constraints;
-- anti-pattern constraints;
-- agent instructions.
+- `DESIGN.md`;
+- `AGENTS.design.md`;
+- diagnostics that explain recipe selection, recipe conflicts, and personality clamps.
+
+The machine-readable profile remains canonical. Markdown outputs are generated explanations and instructions.
 
 ### 6. Auditor
 
@@ -52,7 +64,7 @@ semantic tokens
       ↓
 theme semantic colors
       ↓
-design profile selection / future overrides
+design profile selection / composer overrides
       ↓
 future framework adapters
       ↓
@@ -65,19 +77,21 @@ The canonical layer remains framework-neutral. CSS variables, Tailwind configura
 
 ## Design profile
 
-A design profile is the normalized output of the future composer. It combines:
+A design profile is the normalized output of the composer. It combines:
 
 - product type and platform;
 - audience and task;
-- brand/personality dimensions;
+- complete 24-axis Design DNA values;
 - layout and information-density decisions;
 - typography, shape, color, and motion strategies;
 - accessibility target;
 - explicit avoid/require rules;
+- UX pattern priorities;
 - a token-manifest/theme selection;
-- rationale and provenance.
+- recipe selection metadata, diagnostics, and rationale;
+- brand-safety invariants.
 
-The example profile in `examples/` demonstrates how the v0.2 visual layer plugs into that future contract.
+The legacy focused-SaaS example and the v0.5 composer request demonstrate the contract at different stages of the architecture.
 
 ## Retrieval-first architecture
 

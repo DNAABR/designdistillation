@@ -35,7 +35,7 @@ Design Distillation is a machine-readable design knowledge base and future desig
 
 ## Data changes
 
-Before adding a new field to corpus entries, schemas, token manifests, or generated contracts:
+Before adding a new field to corpus entries, schemas, token manifests, composer requests, or generated contracts:
 
 1. explain why existing fields cannot represent the concept;
 2. update the relevant schema/documentation;
@@ -75,10 +75,24 @@ A valid contribution is not automatically a good contribution. Reviewers should 
 - patterns.prioritize and patterns.consider must reference real UX patterns; patterns.avoid must reference anti-patterns.
 - Hard constraints are non-negotiable product qualities. Strong defaults may be overridden only with explicit rationale.
 - Protected dimensions in the base recipe win during blending.
-- Do not average categorical foundation strategies. Base recipe strategy is the default unless a later composer records an explicit reason to override it.
+- Do not average categorical foundation strategies. Base recipe strategy is the default unless the composer records an explicit reason to override it.
 - Recipe influences must obey global and per-recipe weight limits.
 - Never relax brand-safety fields or use a recipe as permission to copy brand assets, proprietary code, or exact named-product trade dress.
 - Prefer one canonical recipe with useful ranges over multiple cosmetic variants.
+
+## Composer rules
+
+- Keep the canonical composer deterministic and dependency-free unless the architecture is deliberately revised.
+- Prefer explicit recipe selection and declared product type over keyword inference.
+- Keyword selection must remain transparent, inspectable, and covered by tests.
+- Never guess influence recipes automatically. Influences are explicit inputs and must obey v0.4 blend limits.
+- Resolve requested Design DNA values inside the composed min/max contract. Clamp out-of-range values and surface the clamp in rationale/diagnostics.
+- Normalize platform aliases through `taxonomy/composer.json`; do not invent a second platform vocabulary.
+- Accessibility defaults may be strengthened, never silently weakened.
+- Reduced-motion support remains mandatory even when standard motion is selected.
+- Generated Markdown explains the machine-readable contract; it is not the source of truth.
+- Composer output must be deterministic for the same repository state and request.
+- Never use recipe selection or free-text matching to imitate a named product.
 
 ## Validation
 
@@ -88,8 +102,8 @@ Run:
 npm run check
 ~~~
 
-Do not bypass validation to land new corpus or token data.
+Do not bypass validation to land new corpus, token, recipe, or composer data.
 
 ## Scope control
 
-v0.4 establishes canonical design recipes and explicit recipe blending only. It does not select recipes from natural-language product requirements or generate final design contracts; that is v0.5. Do not prematurely turn this branch into the website, component library, Tailwind adapter, MCP server, or full auditor.
+v0.5 establishes deterministic requirement-to-design-contract composition. Do not turn this branch into the source-owned component registry, Tailwind/CSS adapters, full anti-slop auditor, website explorer, MCP server, or hosted AI service. Those belong to later milestones.

@@ -1,0 +1,73 @@
+{
+  "version": "0.5.0",
+  "default_recipe": "focused-saas",
+  "default_platform": "cross-platform",
+  "default_theme": "light",
+  "default_accessibility_target": "WCAG 2.2 AA",
+  "allowed_themes": ["light", "dark", "high-contrast", "auto"],
+  "platform_aliases": {
+    "web": "web",
+    "website": "web",
+    "browser": "web",
+    "web-app": "web",
+    "responsive-web": "web",
+    "mobile": "mobile",
+    "mobile-app": "mobile",
+    "ios": "mobile",
+    "android": "mobile",
+    "desktop": "desktop",
+    "desktop-app": "desktop",
+    "windows": "desktop",
+    "macos": "desktop",
+    "linux": "desktop",
+    "cross-platform": "cross-platform",
+    "multiplatform": "cross-platform",
+    "multi-platform": "cross-platform"
+  },
+  "recipe_selection": {
+    "saas": {
+      "recipe": "focused-saas",
+      "keywords": ["saas", "dashboard", "workflow", "productivity", "operations", "admin", "project management", "b2b", "recurring task"]
+    },
+    "fintech": {
+      "recipe": "serious-fintech",
+      "keywords": ["fintech", "finance", "banking", "wallet", "payment", "money", "investing", "trading", "transaction", "budget", "accounting"]
+    },
+    "education": {
+      "recipe": "friendly-education",
+      "keywords": ["education", "learning", "student", "teacher", "course", "quiz", "study", "classroom", "tutor", "lesson"]
+    },
+    "developer-tools": {
+      "recipe": "developer-tooling",
+      "keywords": ["developer", "code", "coding", "api", "cli", "terminal", "logs", "deploy", "database", "git", "debug"]
+    },
+    "consumer-social": {
+      "recipe": "consumer-social",
+      "keywords": ["social", "friends", "community", "messaging", "chat", "feed", "followers", "creator", "sharing"]
+    },
+    "commerce": {
+      "recipe": "commerce-conversion",
+      "keywords": ["commerce", "ecommerce", "shopping", "store", "catalog", "cart", "checkout", "marketplace", "retail", "product listing"]
+    },
+    "editorial": {
+      "recipe": "editorial-content",
+      "keywords": ["editorial", "article", "news", "publishing", "magazine", "blog", "reading", "publication", "content site"]
+    },
+    "health-wellness": {
+      "recipe": "calm-health-wellness",
+      "keywords": ["health", "wellness", "fitness", "workout", "nutrition", "mindfulness", "habit", "recovery", "wellbeing"]
+    },
+    "gaming-companion": {
+      "recipe": "gaming-companion",
+      "keywords": ["game", "gaming", "esports", "leaderboard", "quest", "inventory", "player", "party game", "companion"]
+    },
+    "creative-software": {
+      "recipe": "creative-software",
+      "keywords": ["creative", "design tool", "editor", "canvas", "drawing", "photo", "video editing", "music production", "media editor"]
+    },
+    "public-service": {
+      "recipe": "public-service",
+      "keywords": ["government", "civic", "benefits", "tax", "public service", "municipal", "permit", "public sector", "citizen"]
+    }
+  }
+}
