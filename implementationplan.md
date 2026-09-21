@@ -40,7 +40,7 @@ Exit criterion: a design profile can resolve into coherent framework-neutral vis
 
 ## v0.3 — UX pattern corpus
 
-Status: implementation complete on feat/v0.3-ux-pattern-corpus; awaiting review/merge.
+Status: implementation complete on `feat/v0.3-ux-pattern-corpus`; awaiting review/merge.
 
 - [x] Expand navigation, forms, search, onboarding, settings, data display, permissions, destructive actions, empty states, loading, offline, and recovery patterns.
 - [x] Create a dedicated UX pattern schema and taxonomy.
@@ -59,7 +59,7 @@ Exit criterion: the corpus covers the common product flows an AI usually improvi
 
 ## v0.4 — Design recipes
 
-Status: implementation complete on feat/v0.4-design-recipes; awaiting review/merge.
+Status: implementation complete on `feat/v0.4-design-recipes`; awaiting review/merge.
 
 - [x] Add product recipes for SaaS, fintech, education, consumer social, commerce, editorial, developer tooling, health/wellness, gaming companions, creative software, and public-service interfaces.
 - [x] Require complete 24-axis Design DNA coverage per recipe.
@@ -76,14 +76,27 @@ Status: implementation complete on feat/v0.4-design-recipes; awaiting review/mer
 
 Exit criterion: product intent can select a coherent starting design language without copying a brand.
 
-## v0.5 — Composer
+## v0.5 - Composer
 
-- Build a CLI/library that converts product requirements into `design-profile.json`.
-- Generate `DESIGN.md` and agent instructions.
-- Resolve recipe + personality + platform + accessibility constraints.
-- Explain the rationale behind generated decisions.
+Status: implementation complete on `feat/v0.5-composer`; awaiting review/merge.
 
-Exit criterion: a new project can begin with a coherent design contract instead of a blank prompt.
+- [x] Add a deterministic library that converts structured product requirements into a design contract.
+- [x] Add a CLI that writes `design-profile.json`, `DESIGN.md`, and `AGENTS.design.md`.
+- [x] Add transparent weighted recipe selection from category hints, type, task, description, goals, audience, and brand descriptors.
+- [x] Fail ambiguous automatic selection instead of silently generating a generic design.
+- [x] Add one optional bounded auto influence when secondary product intent has strong evidence.
+- [x] Preserve explicit one-to-three recipe selection and reuse the v0.4 recipe blender.
+- [x] Resolve all 24 Design DNA axes against composed recipe ranges.
+- [x] Clamp out-of-range personality requests with visible decisions and conflicts.
+- [x] Add canonical platform rules for web, responsive web, mobile, desktop, and cross-platform products.
+- [x] Map declared product capabilities to validated canonical UX patterns.
+- [x] Resolve theme, accessibility target, and reduced-motion requirements without weakening accessibility support.
+- [x] Treat named-product inspiration as reference-only and exclude it from recipe scoring.
+- [x] Add runtime schema checks for Composer input and generated design profiles.
+- [x] Add Composer input examples, documentation, configuration validation, and regression tests.
+- [x] Keep generated outputs deterministic, framework-neutral, and brand-safe.
+
+Exit criterion: a new project can begin with a coherent, explainable design contract instead of a blank prompt.
 
 ## v0.6 — Registry and reusable implementation
 

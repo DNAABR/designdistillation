@@ -160,6 +160,8 @@
     "require": [
       "Consume semantic tokens instead of hard-coded primitive design values in product components.",
       "Preserve explicit loading, empty, error, disabled, focus, and recovery states where the selected patterns require them.",
+      "Design for small through large viewports without removing core tasks at narrow widths.",
+      "Preserve visible keyboard focus and complete keyboard access for interactive controls.",
       "Preserve complete loading, empty, error, disabled, and focus behavior.",
       "Use semantic tokens rather than arbitrary component values.",
       "Use typography, spacing, and alignment before adding surfaces.",
@@ -186,7 +188,15 @@
     "Added UX patterns for declared product capabilities: forms, search, data-tables, settings, autosave."
   ],
   "conflicts": [],
-  "decisions": [],
+  "decisions": [
+    {
+      "type": "platform-constraint",
+      "field": "product.platform",
+      "requested": "responsive-web",
+      "applied": "responsive-web",
+      "reason": "Applied the canonical platform behavior and UX requirements for this target."
+    }
+  ],
   "provenance": {
     "composer": "deterministic-v0.5",
     "inputVersion": "0.5.0",

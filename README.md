@@ -15,9 +15,9 @@ Design Distillation is designed as six connected layers:
 5. **Design composer** — product intent + audience + brand personality -> a coherent design contract.
 6. **Design auditor** — automated checks for incoherence, accessibility failures, missing states, and common AI-design failure modes.
 
-## Current milestone: v0.4 design recipes
+## Current milestone: v0.5 composer
 
-v0.1 established the corpus contract and architecture. v0.2 added framework-neutral visual foundations. v0.3 added a structured UX pattern graph. v0.4 now combines those foundations into product-archetype design recipes that a future composer can select and adapt.
+v0.1 established the corpus contract and architecture. v0.2 added framework-neutral visual foundations. v0.3 added a structured UX pattern graph. v0.4 added canonical product-archetype recipes and bounded recipe composition. v0.5 adds the first deterministic design compiler.
 
 The current system includes:
 
@@ -28,10 +28,17 @@ The current system includes:
 - foundation strategies for layout, type, color, shape, elevation, motion, icons, and imagery;
 - hard constraints separated from strong defaults and exceptions;
 - bounded recipe composition with protected dimensions and conflict reporting;
+- deterministic weighted recipe selection from structured product intent, with no silent generic fallback;
+- one optional bounded auto influence when secondary intent is strongly supported;
+- bounded personality resolution with visible decisions and conflicts;
+- capability-to-pattern mapping plus canonical platform requirements;
+- accessibility targeting, theme selection, and required reduced-motion paths;
+- generated `design-profile.json`, `DESIGN.md`, and `AGENTS.design.md` artifacts;
+- named-product inspiration treated as reference-only rather than a cloning signal;
 - non-negotiable brand-safety rules;
-- validation for recipe coverage, references, strategies, Design DNA ranges, composition limits, and brand safety.
+- runtime schema checks plus regression tests across the corpus, tokens, recipes, blending, and Composer configuration.
 
-See [docs/design-recipes.md](./docs/design-recipes.md), [corpus/recipes/README.md](./corpus/recipes/README.md), and [docs/ux-pattern-corpus.md](./docs/ux-pattern-corpus.md).
+See [docs/composer.md](./docs/composer.md), [docs/design-recipes.md](./docs/design-recipes.md), and [docs/ux-pattern-corpus.md](./docs/ux-pattern-corpus.md).
 
 ## Token architecture
 
@@ -70,24 +77,32 @@ The project distinguishes observed design ideas from redistributable code and as
 corpus/       structured design knowledge
 tokens/       primitive, semantic, and theme foundations
 schemas/      machine-readable contracts
-taxonomy/     shared vocabulary
-examples/     example generated contracts
+taxonomy/     shared vocabulary and composer rules
+examples/     example requests and generated-contract inputs
 docs/         architecture and design rationale
-scripts/      validation tooling
+scripts/      validation, blending, and composer tooling
 .github/      CI
 ~~~
 
-Later milestones add the natural-language composer, source-owned components, adapters, the anti-slop auditor, website explorer, MCP retrieval, and benchmarks.
+Later milestones add source-owned components, adapters, the anti-slop auditor, website explorer, MCP retrieval, and benchmarks.
 
-## Validate
+## Compose a design contract
 
 Requires Node.js 20+.
 
 ~~~bash
-npm run validate
+npm run compose -- examples/composer-input.olympiad-learning.json --out ./generated-design
 ~~~
 
-Validation checks recipes, UX patterns, and visual foundations, including Design DNA coverage/ranges, composition limits, brand-safety invariants, pattern family/state contracts, accessibility requirements, related-entry references, token references, circular aliases, DTCG value shapes, scale ordering, theme semantic parity, and configured contrast pairs.
+The composer writes `design-profile.json`, `DESIGN.md`, and `AGENTS.design.md`. Recipe selection and all bounded resolutions are deterministic and explainable.
+
+## Validate
+
+~~~bash
+npm run check
+~~~
+
+Validation checks recipes, UX patterns, visual foundations, and composer behavior, including Design DNA coverage/ranges, composition limits, brand-safety invariants, pattern family/state contracts, accessibility requirements, related-entry references, token references, circular aliases, DTCG value shapes, scale ordering, theme semantic parity, configured contrast pairs, recipe selection, personality clamping, and deterministic contract generation.
 
 ## Status
 

@@ -32,6 +32,7 @@ test("current composer signal taxonomy validates", () => {
   assert.deepEqual(errors, []);
   assert.equal(stats.recipeSignalCount, 11);
   assert.equal(stats.capabilityCount, 13);
+  assert.equal(stats.platformRuleCount, 5);
 });
 
 test("every recipe needs composer selection signals", () => {
@@ -59,4 +60,31 @@ test("category aliases cannot be ambiguous between recipes", () => {
   });
   const { errors } = run(root);
   assert.ok(errors.some((error) => error.includes('alias "saas" is ambiguous')));
+});
+
+test("every declared platform needs a Composer rule", () => {
+  const root = makeFixture();
+  mutate(root, "taxonomy/composer-signals.json", (signals) => {
+    delete signals.platformRules.mobile;
+  });
+  const { errors } = run(root);
+  assert.ok(errors.some((error) => error.includes('platform "mobile" has no Composer rule')));
+});
+
+test("platform rules must reference real UX patterns", () => {
+  const root = makeFixture();
+  mutate(root, "taxonomy/composer-signals.json", (signals) => {
+    signals.platformRules.web.patterns.push("not-a-platform-pattern");
+  });
+  const { errors } = run(root);
+  assert.ok(errors.some((error) => error.includes('references unknown pattern "not-a-platform-pattern"')));
+});
+
+test("reduced-motion Composer rules cannot be empty", () => {
+  const root = makeFixture();
+  mutate(root, "taxonomy/composer-signals.json", (signals) => {
+    signals.accessibilityRules.reducedMotion.require = [];
+  });
+  const { errors } = run(root);
+  assert.ok(errors.some((error) => error.includes("accessibilityRules.reducedMotion.require")));
 });

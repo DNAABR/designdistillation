@@ -89,6 +89,23 @@ Do not submit a recipe whose primary purpose is to reproduce a named product, br
 
 When a new recipe overlaps heavily with an existing one, prefer refining the existing recipe or treating the new idea as an influence during recipe composition.
 
+## Composer contributions
+
+The Composer is a compiler over the canonical corpus, not a second design taxonomy.
+
+When changing Composer behavior:
+
+- keep input fields represented in `schemas/composer-input.schema.json`;
+- keep generated output represented in `schemas/design-profile.schema.json`;
+- put reusable selection, capability, platform, and accessibility configuration in `taxonomy/composer-signals.json`;
+- reuse `composeRecipeBlend` instead of reproducing recipe composition logic;
+- preserve protected dimensions and global/per-recipe influence limits;
+- make automatic selection evidence transparent and deterministic;
+- reject ambiguous intent instead of silently inventing a generic design;
+- surface clamped or conflicting requirements as decisions/conflicts rather than hiding them;
+- treat named-product references as inspiration only, never as a style-copying signal;
+- add regression tests whenever selection, constraints, or generated artifacts change.
+
 ## Token contributions
 
 Token files are infrastructure, not a palette gallery.
