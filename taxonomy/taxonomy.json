@@ -1,0 +1,79 @@
+{
+  "version": "0.1.0",
+  "entryKinds": [
+    "principle",
+    "pattern",
+    "anti-pattern",
+    "recipe",
+    "reference",
+    "token-set",
+    "typography",
+    "color",
+    "motion",
+    "branding",
+    "component",
+    "block"
+  ],
+  "sourceTypes": [
+    "internal",
+    "standard",
+    "design-system",
+    "product-observation",
+    "research",
+    "code"
+  ],
+  "platforms": [
+    "web",
+    "mobile",
+    "desktop",
+    "cross-platform"
+  ],
+  "stages": [
+    "foundation",
+    "navigation",
+    "input",
+    "feedback",
+    "content",
+    "conversion",
+    "retention",
+    "system"
+  ],
+  "severities": [
+    "error",
+    "warning",
+    "style-deviation",
+    "intentional-exception"
+  ],
+  "designAxes": {
+    "scale": {
+      "minimum": 0,
+      "maximum": 100
+    },
+    "axes": [
+      "density",
+      "whitespace",
+      "visual-complexity",
+      "contrast",
+      "colorfulness",
+      "warmth",
+      "playfulness",
+      "formality",
+      "luxury",
+      "technicality",
+      "editorialness",
+      "depth",
+      "border-prominence",
+      "radius",
+      "symmetry",
+      "typographic-expression",
+      "motion-intensity",
+      "motion-playfulness",
+      "information-density",
+      "icon-frequency",
+      "illustration-frequency",
+      "content-prominence",
+      "navigation-complexity",
+      "brand-prominence"
+    ]
+  }
+}
