@@ -107,6 +107,18 @@ A valid contribution is not automatically a good contribution. Reviewers should 
 - Keep generated adapter output deterministic for the same repository state.
 - The repository license is still undecided. Do not publish packages, registries, or redistributed bundles as open source until an explicit license is chosen.
 
+## Auditor rules
+
+- Treat the v0.7 auditor as deterministic source evidence, not proof of runtime UX or accessibility.
+- Every audit rule must have a stable ID, default category, and plain-language description in `taxonomy/audit-rules.json`.
+- Errors require stronger static evidence than warnings. Use warnings when runtime or product context could change the conclusion.
+- Style deviations compare implementation choices to the selected design profile; do not turn aesthetic preferences into universal errors.
+- Intentional exceptions must stay visible in reports with their original category and a meaningful reason. Never use exceptions as silent suppression.
+- Keep profile-aware thresholds/configuration machine-readable rather than scattering magic numbers through the scanner.
+- New prioritized-pattern source signals are heuristics and must remain warnings unless stronger evidence exists.
+- Source checks must report file, line, rule, message, and compact evidence so a coding agent can act on them.
+- Do not claim static source scanning replaces browser accessibility testing, computed-style inspection, responsive/device testing, or visual regression.
+
 ## Validation
 
 Run:
@@ -115,8 +127,8 @@ Run:
 npm run check
 ~~~
 
-Do not bypass validation to land new corpus, token, recipe, Composer, registry, or adapter data.
+Do not bypass validation to land new corpus, token, recipe, Composer, registry, adapter, or auditor data.
 
 ## Scope control
 
-v0.6 establishes the first source-owned registry plus CSS, Tailwind v4, and React adapters. Do not turn this branch into the full anti-slop auditor, website explorer, MCP server, hosted AI service, npm publication, or a broad component-library clone. Those belong to later milestones or require the license decision.
+v0.7 establishes the deterministic source auditor. Do not turn this branch into the website explorer, MCP server, hosted AI service, visual-regression/browser automation suite, npm publication, or a broad component-library clone. Those belong to later milestones or require separate architecture decisions.

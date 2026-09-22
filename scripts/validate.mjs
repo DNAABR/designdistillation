@@ -4,6 +4,7 @@ import { validateCorpus } from "./corpus-validator.mjs";
 import { validateTokens } from "./token-validator.mjs";
 import { validateComposerConfig } from "./composer-validator.mjs";
 import { validateRegistry } from "./registry-validator.mjs";
+import { validateAuditorConfig } from "./auditor-validator.mjs";
 
 const root = process.cwd();
 const errors = [];
@@ -15,16 +16,15 @@ function readJson(file) {
     return null;
   }
 }
-
 function walk(dir) {
   if (!fs.existsSync(dir)) return [];
-  return fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
+  return fs.readdirSync(dir, { withFileTypes:true }).flatMap((entry) => {
     const full = path.join(dir, entry.name);
     return entry.isDirectory() ? walk(full) : [full];
   });
 }
 
-for (const dir of ["schemas", "taxonomy", "examples", "registry"]) {
+for (const dir of ["schemas","taxonomy","examples","registry"]) {
   for (const file of walk(path.join(root, dir)).filter((candidate) => candidate.endsWith(".json"))) readJson(file);
 }
 
@@ -32,6 +32,7 @@ const corpusStats = validateCorpus({ root, errors });
 const tokenStats = validateTokens({ root, errors });
 const composerStats = validateComposerConfig({ root, errors });
 const registryStats = validateRegistry({ root, errors });
+const auditorStats = validateAuditorConfig({ root, errors });
 
 if (errors.length) {
   console.error("\nDesign Distillation validation failed:\n");
@@ -52,9 +53,11 @@ console.log(
   tokenStats.themeCount + " themes, " +
   composerStats.recipeSignalCount + " composer recipe signals, " +
   composerStats.capabilityCount + " capability mappings across " +
-  composerStats.platformRuleCount + " platform rules, and " +
+  composerStats.platformRuleCount + " platform rules, " +
   registryStats.entryCount + " registry entries (" +
   registryStats.componentCount + " components, " +
   registryStats.compositionCount + " compositions) across " +
-  registryStats.adapterCount + " adapters checked."
+  registryStats.adapterCount + " adapters, and " +
+  auditorStats.ruleCount + " audit rules with " +
+  auditorStats.patternSignalCount + " prioritized-pattern signal checks."
 );

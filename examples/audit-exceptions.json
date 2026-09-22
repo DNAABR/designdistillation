@@ -1,0 +1,10 @@
+{
+  "version": "0.7.0",
+  "exceptions": [
+    {
+      "rule": "unjustified-gradient",
+      "file": "src/marketing/Hero.tsx",
+      "reason": "The approved campaign art direction deliberately uses one gradient in this isolated marketing surface."
+    }
+  ]
+}

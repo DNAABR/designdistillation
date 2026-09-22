@@ -1,0 +1,159 @@
+{
+  "version": "0.7.0",
+  "source_extensions": [
+    ".css",
+    ".scss",
+    ".sass",
+    ".less",
+    ".html",
+    ".htm",
+    ".jsx",
+    ".tsx",
+    ".js",
+    ".ts",
+    ".vue"
+  ],
+  "ignore_directories": [
+    "node_modules",
+    ".git",
+    "dist",
+    "build",
+    ".next",
+    "coverage",
+    ".design-distillation"
+  ],
+  "thresholds": {
+    "surface_nesting_max": 2,
+    "low_depth_max": 30,
+    "restrained_colorfulness_max": 35,
+    "restrained_visual_complexity_max": 40
+  },
+  "rules": {
+    "primitive-token-use": {
+      "category": "style-deviation",
+      "description": "Implementation consumes primitive Design Distillation variables instead of semantic roles."
+    },
+    "arbitrary-color": {
+      "category": "style-deviation",
+      "description": "A literal color bypasses the semantic color contract."
+    },
+    "arbitrary-spacing": {
+      "category": "style-deviation",
+      "description": "A spacing declaration uses a raw dimension instead of the shared token system."
+    },
+    "arbitrary-radius": {
+      "category": "style-deviation",
+      "description": "A border radius uses a raw dimension instead of the shared radius contract."
+    },
+    "arbitrary-typography": {
+      "category": "style-deviation",
+      "description": "Typography uses a raw size/spacing value outside the semantic type contract."
+    },
+    "unjustified-gradient": {
+      "category": "style-deviation",
+      "description": "Gradient treatment conflicts with a restrained profile or an explicit avoid rule."
+    },
+    "unjustified-backdrop-effect": {
+      "category": "style-deviation",
+      "description": "Backdrop blur/filter adds visual complexity not supported by the profile."
+    },
+    "unjustified-shadow": {
+      "category": "style-deviation",
+      "description": "Raw shadow usage conflicts with a low-depth design profile."
+    },
+    "mixed-icon-families": {
+      "category": "warning",
+      "description": "Multiple icon-library families are imported in the audited source."
+    },
+    "excessive-surface-nesting": {
+      "category": "warning",
+      "description": "Card/panel/surface wrappers are nested beyond the configured threshold."
+    },
+    "missing-primary-heading": {
+      "category": "warning",
+      "description": "A heading hierarchy exists but no h1 was found in the audited source."
+    },
+    "skipped-heading-level": {
+      "category": "warning",
+      "description": "Static heading markup skips a level in reading order."
+    },
+    "missing-pattern-state": {
+      "category": "warning",
+      "description": "A prioritized UX pattern lacks a recognizable implementation signal."
+    },
+    "image-missing-alt": {
+      "category": "error",
+      "description": "A static img element has no alt attribute."
+    },
+    "focus-outline-suppressed": {
+      "category": "error",
+      "description": "CSS suppresses focus outlines without a detectable replacement on the same declaration line."
+    },
+    "input-accessible-name-review": {
+      "category": "warning",
+      "description": "A static input has no detectable label association or aria accessible name."
+    },
+    "missing-reduced-motion-path": {
+      "category": "warning",
+      "description": "Motion declarations exist without a prefers-reduced-motion path; severity becomes error when reduced motion is required."
+    }
+  },
+  "icon_families": {
+    "lucide": [
+      "lucide-react",
+      "lucide-vue-next",
+      "lucide"
+    ],
+    "heroicons": [
+      "@heroicons/react",
+      "@heroicons/vue"
+    ],
+    "react-icons": [
+      "react-icons"
+    ],
+    "mui-icons": [
+      "@mui/icons-material"
+    ],
+    "phosphor": [
+      "phosphor-react",
+      "@phosphor-icons/react"
+    ],
+    "fontawesome": [
+      "@fortawesome"
+    ]
+  },
+  "pattern_signals": {
+    "loading-feedback": [
+      "aria-busy",
+      "loading",
+      "skeleton",
+      "spinner",
+      "progress"
+    ],
+    "empty-state-next-action": [
+      "EmptyState",
+      "empty-state",
+      "empty state",
+      "no items",
+      "no results"
+    ],
+    "error-recovery": [
+      "retry",
+      "recover",
+      "try again",
+      "error-recovery"
+    ],
+    "save-status-feedback": [
+      "saving",
+      "saved",
+      "unsaved",
+      "save status"
+    ],
+    "offline-resilience": [
+      "navigator.onLine",
+      "offline",
+      "addEventListener(\"online\"",
+      "addEventListener('online'"
+    ]
+  }
+}

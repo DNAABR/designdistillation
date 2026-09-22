@@ -15,9 +15,9 @@ Design Distillation is designed as six connected layers:
 5. **Design composer** — product intent + audience + brand personality -> a coherent design contract.
 6. **Design auditor** — automated checks for incoherence, accessibility failures, missing states, and common AI-design failure modes.
 
-## Current milestone: v0.6 registry
+## Current milestone: v0.7 anti-slop auditor
 
-v0.1 established the corpus contract and architecture. v0.2 added framework-neutral visual foundations. v0.3 added a structured UX pattern graph. v0.4 added canonical product-archetype recipes and bounded recipe composition. v0.5 added the deterministic design compiler. v0.6 adds the first source-owned reusable implementation registry.
+v0.1 established the corpus contract and architecture. v0.2 added framework-neutral visual foundations. v0.3 added a structured UX pattern graph. v0.4 added canonical product-archetype recipes and bounded recipe composition. v0.5 added the deterministic design compiler. v0.6 added the first source-owned reusable implementation registry. v0.7 adds a deterministic source auditor that checks implementation evidence against the generated design contract.
 
 The current system includes:
 
@@ -33,9 +33,11 @@ The current system includes:
 - dependency-light React source entries for Vite/Next.js projects;
 - local registry list/build/install tooling;
 - validation tying registry entries back to canonical patterns, taxonomy, source files, and semantic tokens;
-- non-negotiable brand-safety and accessibility rules.
+- non-negotiable brand-safety and accessibility rules;
+- 17 anti-slop audit rules covering token drift, arbitrary visual values, excessive surface nesting, icon-family mixing, missing pattern signals, hierarchy, accessibility, and reduced motion;
+- separate error, warning, style-deviation, and intentional-exception reporting with file/line evidence.
 
-See [docs/registry.md](./docs/registry.md), [docs/composer.md](./docs/composer.md), and [docs/design-recipes.md](./docs/design-recipes.md).
+See [docs/auditor.md](./docs/auditor.md), [docs/registry.md](./docs/registry.md), and [docs/composer.md](./docs/composer.md).
 
 ## Token and implementation architecture
 
@@ -65,7 +67,7 @@ schemas/      machine-readable contracts
 taxonomy/     shared vocabulary and Composer rules
 examples/     example requests and generated-contract inputs
 docs/         architecture and design rationale
-scripts/      validation, Composer, registry, and adapter tooling
+scripts/      validation, Composer, registry, adapter, and audit tooling
 .github/      CI
 ~~~
 
@@ -87,13 +89,21 @@ npm run registry -- install --entries action-button,text-field --adapter react -
 
 The repository license is still undecided. Registry installation is therefore provided for local evaluation; public package publishing/redistribution waits for an explicit license decision.
 
+## Audit an implementation
+
+~~~bash
+npm run audit -- --profile ./generated-design/design-profile.json --root ../my-app/src --out ./audit-output
+~~~
+
+The source auditor is intentionally heuristic. It reports concrete source evidence and does not claim to replace browser/runtime accessibility, responsive, or visual-regression testing.
+
 ## Validate
 
 ~~~bash
 npm run check
 ~~~
 
-Validation covers corpus knowledge, recipes, visual foundations, Composer behavior, registry contracts, semantic-token references, source-owned implementation metadata, and deterministic adapter generation.
+Validation covers corpus knowledge, recipes, visual foundations, Composer behavior, registry contracts, semantic-token references, source-owned implementation metadata, deterministic adapter generation, and auditor configuration/regression tests.
 
 ## Status
 
