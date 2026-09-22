@@ -1,4 +1,4 @@
-name: Validate corpus and visual foundations
+name: Validate Design Distillation
 
 on:
   pull_request:

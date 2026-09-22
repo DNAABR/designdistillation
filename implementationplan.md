@@ -100,10 +100,20 @@ Exit criterion: a new project can begin with a coherent, explainable design cont
 
 ## v0.6 — Registry and reusable implementation
 
-- Add source-owned components and compositions.
-- Publish installable registry entries where practical.
-- Keep knowledge/tokens framework-neutral.
-- Add adapters for CSS/Tailwind and common web stacks first.
+Status: implementation complete on `feat/v0.6-registry`; awaiting review/merge.
+
+- [x] Define a canonical registry manifest and registry-entry schema.
+- [x] Add 3 source-owned components: action button, text field, and status banner.
+- [x] Add 3 source-owned compositions: empty state, application shell, and data toolbar.
+- [x] Link registry entries to canonical UX patterns, states, platforms, accessibility requirements, and semantic token dependencies.
+- [x] Add source-owned shared CSS that consumes semantic Design Distillation variables.
+- [x] Add a dependency-light React source adapter suitable for Vite and Next.js projects.
+- [x] Add a CSS custom-property adapter generated directly from DTCG token documents.
+- [x] Add a curated Tailwind CSS v4 `@theme inline` adapter over semantic variables.
+- [x] Add local registry list/build/install CLI commands.
+- [x] Add deterministic token resolution for dimensions, colors, font families, typography, shadows, motion, and themes.
+- [x] Add registry/adapter validation and regression tests.
+- [x] Keep public package publication blocked on the explicit repository-license decision.
 
 Exit criterion: agents can retrieve not only advice but vetted implementation primitives.
 

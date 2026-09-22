@@ -18,7 +18,27 @@ A normalized vocabulary for describing visual and interaction character, such as
 
 ### 4. Implementation
 
-Tokens, components, blocks, interaction recipes, motion recipes, adapters, and framework-specific distributions.
+v0.6 turns the implementation layer into a small source-owned registry.
+
+The canonical implementation contract is registry metadata: intent, supported platforms, states, slots, variants, UX-pattern relationships, accessibility requirements, and semantic token dependencies. Source code under `registry/source/` implements that contract.
+
+The initial registry contains three components and three compositions. CSS, Tailwind v4, and React are adapter/distribution views; none of them replaces the framework-neutral corpus or DTCG token source.
+
+The direction is:
+
+~~~text
+design knowledge + recipes + Composer
+              ↓
+        semantic DTCG tokens
+              ↓
+       registry entry contract
+              ↓
+      source-owned implementation
+              ↓
+       CSS / Tailwind / React
+~~~
+
+Adapters may change representation, but semantic meaning must survive the transformation.
 
 ### 5. Composer
 
@@ -76,7 +96,11 @@ components and blocks
 
 Individual token documents use DTCG 2025.10. `tokens/manifest.json` supplies a Design Distillation-specific composition contract across files and themes.
 
-The canonical layer remains framework-neutral. CSS variables, Tailwind configuration, shadcn registries, native resources, and other targets are generated/adapted views rather than the source of truth.
+The canonical layer remains framework-neutral. v0.6 now provides generated CSS variables, curated Tailwind v4 theme aliases, and source-owned React entries as adapted views rather than the source of truth.
+
+The CSS adapter resolves DTCG aliases and theme overrides deterministically. Light is the default root theme; dark and high-contrast replace the same semantic color variables. Composite typography and transition tokens expose both shorthand and named sub-properties so implementation CSS can preserve letter spacing and motion semantics.
+
+The registry installer is intentionally local while the repository license remains undecided. It is not an npm/public-registry publication mechanism.
 
 ## Design profile
 
@@ -118,15 +142,19 @@ The auditor should instead flag unjustified, inconsistent, or excessive use. The
 
 The visual foundations support this by making arbitrary one-off decisions visible: a component that bypasses semantic tokens has intentionally departed from the contract.
 
-## Future distribution
+## Distribution path
 
-Adapters may later emit:
+v0.6 currently emits:
 
-- CSS variables;
-- Tailwind configuration;
-- shadcn-compatible registries;
-- React/Vite and Next.js components;
+- CSS custom properties for canonical token/theme values;
+- Tailwind CSS v4 semantic theme aliases;
+- source-owned React components/compositions suitable for Vite and Next.js.
+
+Later adapters may add:
+
+- shadcn-compatible registry packaging where it adds value;
 - Vue/native targets;
+- additional platform-specific resources;
 - MCP/agent retrieval tools.
 
-Adapters may transform representation, but they must preserve semantic meaning.
+The repository license must be chosen before these artifacts are published as a redistributable package. Adapters may transform representation, but they must preserve semantic meaning.

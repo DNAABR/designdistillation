@@ -3,6 +3,7 @@ import path from "node:path";
 import { validateCorpus } from "./corpus-validator.mjs";
 import { validateTokens } from "./token-validator.mjs";
 import { validateComposerConfig } from "./composer-validator.mjs";
+import { validateRegistry } from "./registry-validator.mjs";
 
 const root = process.cwd();
 const errors = [];
@@ -23,13 +24,14 @@ function walk(dir) {
   });
 }
 
-for (const dir of ["schemas", "taxonomy", "examples"]) {
+for (const dir of ["schemas", "taxonomy", "examples", "registry"]) {
   for (const file of walk(path.join(root, dir)).filter((candidate) => candidate.endsWith(".json"))) readJson(file);
 }
 
 const corpusStats = validateCorpus({ root, errors });
 const tokenStats = validateTokens({ root, errors });
 const composerStats = validateComposerConfig({ root, errors });
+const registryStats = validateRegistry({ root, errors });
 
 if (errors.length) {
   console.error("\nDesign Distillation validation failed:\n");
@@ -48,7 +50,11 @@ console.log(
   corpusStats.recipeCategoryCount + " categories), " +
   tokenStats.tokenCount + " token paths, " +
   tokenStats.themeCount + " themes, " +
-  composerStats.recipeSignalCount + " composer recipe signals, and " +
+  composerStats.recipeSignalCount + " composer recipe signals, " +
   composerStats.capabilityCount + " capability mappings across " +
-  composerStats.platformRuleCount + " platform rules checked."
+  composerStats.platformRuleCount + " platform rules, and " +
+  registryStats.entryCount + " registry entries (" +
+  registryStats.componentCount + " components, " +
+  registryStats.compositionCount + " compositions) across " +
+  registryStats.adapterCount + " adapters checked."
 );

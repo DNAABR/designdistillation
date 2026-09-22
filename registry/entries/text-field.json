@@ -1,0 +1,92 @@
+{
+  "id": "text-field",
+  "version": "0.6.0",
+  "kind": "component",
+  "title": "Text Field",
+  "summary": "A labeled text input contract with persistent labeling, optional help text, error association, and native form semantics.",
+  "platforms": [
+    "web",
+    "responsive-web",
+    "desktop",
+    "cross-platform"
+  ],
+  "intent": {
+    "use_when": [
+      "Collecting short free-form text with a native input control",
+      "The field needs explicit help, validation, or error messaging"
+    ],
+    "avoid_when": [
+      "A constrained choice is better represented by a native select, radio group, checkbox, or purpose-built control",
+      "Placeholder text would be the only visible label"
+    ]
+  },
+  "states": [
+    "default",
+    "hover",
+    "focus",
+    "disabled",
+    "error"
+  ],
+  "slots": [
+    "label",
+    "input",
+    "description",
+    "error"
+  ],
+  "variants": [
+    "default"
+  ],
+  "token_refs": [
+    "semantic.size.control.md",
+    "semantic.space.stack.xs",
+    "semantic.space.inline.sm",
+    "semantic.radius.control",
+    "semantic.border-width.default",
+    "semantic.border-width.focus",
+    "semantic.color.surface.canvas",
+    "semantic.color.text.primary",
+    "semantic.color.text.secondary",
+    "semantic.color.border.default",
+    "semantic.color.focus.ring",
+    "semantic.color.status.danger.foreground",
+    "semantic.type.label-medium",
+    "semantic.type.body-medium",
+    "semantic.type.body-small"
+  ],
+  "patterns": {
+    "required": [
+      "labels-hints-and-optionality"
+    ],
+    "related": [
+      "forgiving-input",
+      "error-recovery",
+      "preserve-form-input"
+    ]
+  },
+  "accessibility": [
+    "Keep the label visible and programmatically associated with the input.",
+    "Associate help and error text through aria-describedby when present.",
+    "Use aria-invalid only when the current value is invalid."
+  ],
+  "implementation": {
+    "source_owned": true,
+    "adapters": {
+      "css": {
+        "selectors": [
+          ".dd-field",
+          ".dd-input"
+        ]
+      },
+      "react": {
+        "source": "registry/source/react/TextField.tsx",
+        "exports": [
+          "TextField"
+        ]
+      }
+    }
+  },
+  "provenance": {
+    "origin": "design-distillation",
+    "redistribution": "pending-repository-license"
+  }
+}

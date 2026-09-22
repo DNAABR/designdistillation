@@ -1,0 +1,92 @@
+{
+  "id": "status-banner",
+  "version": "0.6.0",
+  "kind": "component",
+  "title": "Status Banner",
+  "summary": "A persistent inline status surface for informational, success, warning, and danger feedback that remains available beyond a transient toast.",
+  "platforms": [
+    "web",
+    "responsive-web",
+    "desktop",
+    "cross-platform"
+  ],
+  "intent": {
+    "use_when": [
+      "Feedback should remain visible until the user has had a reasonable chance to act on it",
+      "A message belongs in the page context rather than a transient notification"
+    ],
+    "avoid_when": [
+      "The message is purely decorative or duplicates visible state",
+      "A blocking confirmation or modal decision is required instead"
+    ]
+  },
+  "states": [
+    "default",
+    "success",
+    "warning",
+    "error"
+  ],
+  "slots": [
+    "title",
+    "message",
+    "action"
+  ],
+  "variants": [
+    "info",
+    "success",
+    "warning",
+    "danger"
+  ],
+  "token_refs": [
+    "semantic.space.inline.md",
+    "semantic.space.stack.xs",
+    "semantic.radius.surface",
+    "semantic.border-width.default",
+    "semantic.color.status.info.background",
+    "semantic.color.status.info.foreground",
+    "semantic.color.status.info.border",
+    "semantic.color.status.success.background",
+    "semantic.color.status.success.foreground",
+    "semantic.color.status.success.border",
+    "semantic.color.status.warning.background",
+    "semantic.color.status.warning.foreground",
+    "semantic.color.status.warning.border",
+    "semantic.color.status.danger.background",
+    "semantic.color.status.danger.foreground",
+    "semantic.color.status.danger.border",
+    "semantic.type.body-medium",
+    "semantic.type.label-medium"
+  ],
+  "patterns": {
+    "required": [],
+    "related": [
+      "error-recovery",
+      "loading-feedback"
+    ]
+  },
+  "accessibility": [
+    "Use role=status for non-urgent updates and role=alert only for urgent danger feedback.",
+    "Keep actionable recovery controls keyboard reachable.",
+    "Do not encode severity using color alone; retain text and structure."
+  ],
+  "implementation": {
+    "source_owned": true,
+    "adapters": {
+      "css": {
+        "selectors": [
+          ".dd-banner"
+        ]
+      },
+      "react": {
+        "source": "registry/source/react/StatusBanner.tsx",
+        "exports": [
+          "StatusBanner"
+        ]
+      }
+    }
+  },
+  "provenance": {
+    "origin": "design-distillation",
+    "redistribution": "pending-repository-license"
+  }
+}

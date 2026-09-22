@@ -15,9 +15,9 @@ Design Distillation is designed as six connected layers:
 5. **Design composer** — product intent + audience + brand personality -> a coherent design contract.
 6. **Design auditor** — automated checks for incoherence, accessibility failures, missing states, and common AI-design failure modes.
 
-## Current milestone: v0.5 composer
+## Current milestone: v0.6 registry
 
-v0.1 established the corpus contract and architecture. v0.2 added framework-neutral visual foundations. v0.3 added a structured UX pattern graph. v0.4 added canonical product-archetype recipes and bounded recipe composition. v0.5 adds the first deterministic design compiler.
+v0.1 established the corpus contract and architecture. v0.2 added framework-neutral visual foundations. v0.3 added a structured UX pattern graph. v0.4 added canonical product-archetype recipes and bounded recipe composition. v0.5 added the deterministic design compiler. v0.6 adds the first source-owned reusable implementation registry.
 
 The current system includes:
 
@@ -25,22 +25,19 @@ The current system includes:
 - 9 anti-patterns with future auditor signals;
 - 11 design recipes across 11 product categories;
 - complete 24-axis Design DNA coverage for every recipe;
-- foundation strategies for layout, type, color, shape, elevation, motion, icons, and imagery;
-- hard constraints separated from strong defaults and exceptions;
-- bounded recipe composition with protected dimensions and conflict reporting;
-- deterministic weighted recipe selection from structured product intent, with no silent generic fallback;
-- one optional bounded auto influence when secondary intent is strongly supported;
-- bounded personality resolution with visible decisions and conflicts;
-- capability-to-pattern mapping plus canonical platform requirements;
-- accessibility targeting, theme selection, and required reduced-motion paths;
-- generated `design-profile.json`, `DESIGN.md`, and `AGENTS.design.md` artifacts;
-- named-product inspiration treated as reference-only rather than a cloning signal;
-- non-negotiable brand-safety rules;
-- runtime schema checks plus regression tests across the corpus, tokens, recipes, blending, and Composer configuration.
+- framework-neutral DTCG visual foundations with light, dark, and high-contrast themes;
+- deterministic Composer output with visible recipe/personality decisions and conflicts;
+- 6 source-owned registry entries: 3 components and 3 compositions;
+- CSS custom-property generation directly from canonical tokens;
+- a curated Tailwind CSS v4 semantic adapter;
+- dependency-light React source entries for Vite/Next.js projects;
+- local registry list/build/install tooling;
+- validation tying registry entries back to canonical patterns, taxonomy, source files, and semantic tokens;
+- non-negotiable brand-safety and accessibility rules.
 
-See [docs/composer.md](./docs/composer.md), [docs/design-recipes.md](./docs/design-recipes.md), and [docs/ux-pattern-corpus.md](./docs/ux-pattern-corpus.md).
+See [docs/registry.md](./docs/registry.md), [docs/composer.md](./docs/composer.md), and [docs/design-recipes.md](./docs/design-recipes.md).
 
-## Token architecture
+## Token and implementation architecture
 
 ~~~text
 primitive values
@@ -49,42 +46,28 @@ semantic intent
       ↓
 theme mapping
       ↓
-future adapters/components
+Composer design contract
+      ↓
+registry contract
+      ↓
+CSS / Tailwind / React adapters
 ~~~
 
-Components should consume semantic roles such as `semantic.color.text.primary` or `semantic.radius.control`, not hard-coded palette values such as `primitive.color.blue.600`.
-
-See [tokens/README.md](./tokens/README.md) and [docs/visual-foundations.md](./docs/visual-foundations.md).
-
-## Core philosophy
-
-A useful corpus entry must explain **why**, not only **what**.
-
-Every contribution should answer:
-
-- What problem does this solve?
-- When should it be used?
-- When should it not be used?
-- Why does it work?
-- What implementation guidance is available?
-- Where did the idea/code come from and what may be redistributed?
-
-The project distinguishes observed design ideas from redistributable code and assets. Proprietary products may be analyzed, but their source code, screenshots, logos, and copyrighted assets must not be copied into the corpus unless their license explicitly permits it.
+Components consume semantic roles such as `semantic.color.text.primary` or `semantic.radius.control`, not hard-coded palette values such as `primitive.color.blue.600`.
 
 ## Repository shape
 
 ~~~text
 corpus/       structured design knowledge
 tokens/       primitive, semantic, and theme foundations
+registry/     source-owned reusable implementation and metadata
 schemas/      machine-readable contracts
-taxonomy/     shared vocabulary and composer rules
+taxonomy/     shared vocabulary and Composer rules
 examples/     example requests and generated-contract inputs
 docs/         architecture and design rationale
-scripts/      validation, blending, and composer tooling
+scripts/      validation, Composer, registry, and adapter tooling
 .github/      CI
 ~~~
-
-Later milestones add source-owned components, adapters, the anti-slop auditor, website explorer, MCP retrieval, and benchmarks.
 
 ## Compose a design contract
 
@@ -94,7 +77,15 @@ Requires Node.js 20+.
 npm run compose -- examples/composer-input.olympiad-learning.json --out ./generated-design
 ~~~
 
-The composer writes `design-profile.json`, `DESIGN.md`, and `AGENTS.design.md`. Recipe selection and all bounded resolutions are deterministic and explainable.
+## Use the registry
+
+~~~bash
+npm run registry -- list
+npm run registry -- build --out .design-distillation/registry
+npm run registry -- install --entries action-button,text-field --adapter react --out ./src/design-distillation
+~~~
+
+The repository license is still undecided. Registry installation is therefore provided for local evaluation; public package publishing/redistribution waits for an explicit license decision.
 
 ## Validate
 
@@ -102,10 +93,10 @@ The composer writes `design-profile.json`, `DESIGN.md`, and `AGENTS.design.md`. 
 npm run check
 ~~~
 
-Validation checks recipes, UX patterns, visual foundations, and composer behavior, including Design DNA coverage/ranges, composition limits, brand-safety invariants, pattern family/state contracts, accessibility requirements, related-entry references, token references, circular aliases, DTCG value shapes, scale ordering, theme semantic parity, configured contrast pairs, recipe selection, personality clamping, and deterministic contract generation.
+Validation covers corpus knowledge, recipes, visual foundations, Composer behavior, registry contracts, semantic-token references, source-owned implementation metadata, and deterministic adapter generation.
 
 ## Status
 
 Design Distillation is currently building toward a stable public format. The repository license and public launch/announcement will be decided separately.
 
-See [implementationplan.md](./implementationplan.md), [docs/architecture.md](./docs/architecture.md), and [CONTRIBUTING.md](./CONTRIBUTING.md).
+See [implementationplan.md](./implementationplan.md), [docs/architecture.md](./docs/architecture.md), [CONTRIBUTING.md](./CONTRIBUTING.md), and [AGENTS.md](./AGENTS.md).

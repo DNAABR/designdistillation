@@ -95,6 +95,18 @@ A valid contribution is not automatically a good contribution. Reviewers should 
 - Composer output must be deterministic for the same repository state and request.
 - Named products are reference-only: exclude them from recipe scoring and never use them to authorize copying visual identity, assets, code, or trade dress.
 
+## Registry rules
+
+- Registry metadata defines reusable intent, states, slots, pattern links, accessibility requirements, and token dependencies; framework source is an implementation of that contract.
+- Keep source-owned registry entries small and justified by recurring product needs. Do not grow a component gallery for its own sake.
+- Registry CSS must consume generated semantic `--dd-*` variables whenever a semantic token exists. Do not hard-code palette colors or consume primitive palette variables.
+- Adapters may transform DTCG values into CSS, Tailwind, or framework source, but they must not create a second token system.
+- React registry source should prefer native HTML semantics and stay dependency-light. Do not add a headless/component-library dependency for behavior the platform already provides well.
+- Registry entries must reference real UX patterns and real token paths; keep those relationships validated.
+- Accessibility requirements are part of the reusable implementation contract, not comments around the code.
+- Keep generated adapter output deterministic for the same repository state.
+- The repository license is still undecided. Do not publish packages, registries, or redistributed bundles as open source until an explicit license is chosen.
+
 ## Validation
 
 Run:
@@ -103,8 +115,8 @@ Run:
 npm run check
 ~~~
 
-Do not bypass validation to land new corpus, token, recipe, or composer data.
+Do not bypass validation to land new corpus, token, recipe, Composer, registry, or adapter data.
 
 ## Scope control
 
-v0.5 establishes deterministic requirement-to-design-contract composition. Do not turn this branch into the source-owned component registry, Tailwind/CSS adapters, full anti-slop auditor, website explorer, MCP server, or hosted AI service. Those belong to later milestones.
+v0.6 establishes the first source-owned registry plus CSS, Tailwind v4, and React adapters. Do not turn this branch into the full anti-slop auditor, website explorer, MCP server, hosted AI service, npm publication, or a broad component-library clone. Those belong to later milestones or require the license decision.

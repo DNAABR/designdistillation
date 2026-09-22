@@ -1,0 +1,76 @@
+{
+  "version": "0.6.0",
+  "entry_schema": "schemas/registry-entry.schema.json",
+  "entries": [
+    "registry/entries/action-button.json",
+    "registry/entries/text-field.json",
+    "registry/entries/status-banner.json",
+    "registry/entries/empty-state.json",
+    "registry/entries/app-shell.json",
+    "registry/entries/data-toolbar.json"
+  ],
+  "adapters": {
+    "css": {
+      "type": "generated",
+      "artifacts": [
+        "design-tokens.css",
+        "components.css"
+      ]
+    },
+    "tailwind-v4": {
+      "type": "generated",
+      "artifacts": [
+        "design-tokens.css",
+        "tailwind-theme.css",
+        "components.css"
+      ],
+      "token_map": {
+        "color-dd-canvas": "semantic.color.surface.canvas",
+        "color-dd-subtle": "semantic.color.surface.subtle",
+        "color-dd-muted": "semantic.color.surface.muted",
+        "color-dd-raised": "semantic.color.surface.raised",
+        "color-dd-text": "semantic.color.text.primary",
+        "color-dd-text-secondary": "semantic.color.text.secondary",
+        "color-dd-text-muted": "semantic.color.text.muted",
+        "color-dd-link": "semantic.color.text.link",
+        "color-dd-border": "semantic.color.border.default",
+        "color-dd-border-subtle": "semantic.color.border.subtle",
+        "color-dd-focus": "semantic.color.focus.ring",
+        "color-dd-primary": "semantic.color.action.primary.background",
+        "color-dd-primary-foreground": "semantic.color.action.primary.foreground",
+        "color-dd-secondary": "semantic.color.action.secondary.background",
+        "color-dd-secondary-foreground": "semantic.color.action.secondary.foreground",
+        "color-dd-danger": "semantic.color.action.danger.background",
+        "color-dd-danger-foreground": "semantic.color.action.danger.foreground",
+        "radius-dd-control": "semantic.radius.control",
+        "radius-dd-surface": "semantic.radius.surface",
+        "radius-dd-dialog": "semantic.radius.dialog",
+        "shadow-dd-raised": "semantic.elevation.raised",
+        "shadow-dd-floating": "semantic.elevation.floating",
+        "spacing-dd-inline-sm": "semantic.space.inline.sm",
+        "spacing-dd-inline-md": "semantic.space.inline.md",
+        "spacing-dd-stack-sm": "semantic.space.stack.sm",
+        "spacing-dd-stack-md": "semantic.space.stack.md",
+        "spacing-dd-stack-lg": "semantic.space.stack.lg",
+        "spacing-dd-page": "semantic.space.page-gutter.regular"
+      }
+    },
+    "react": {
+      "type": "source",
+      "source_root": "registry/source/react",
+      "peer_dependencies": {
+        "react": ">=18"
+      },
+      "style_dependency": "registry/source/css/components.css"
+    }
+  },
+  "install": {
+    "default_theme": "light",
+    "supported_themes": [
+      "light",
+      "dark",
+      "high-contrast"
+    ],
+    "license_note": "The repository license is still undecided. The registry can be generated and installed locally for evaluation, but public redistribution/package publishing should wait for an explicit repository license."
+  }
+}
