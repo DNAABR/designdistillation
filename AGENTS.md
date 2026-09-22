@@ -130,6 +130,17 @@ A valid contribution is not automatically a good contribution. Reviewers should 
 - Do not introduce a frontend framework or backend solely for static browsing needs without a demonstrated requirement.
 - Preserve keyboard/focus usability and reduced-motion behavior in the explorer itself.
 
+## Retrieval / MCP rules
+
+- Prefer focused search results and fetch full entries only after relevance is established.
+- MCP tools must call the canonical Composer, auditor, token resolver, registry, and corpus functions rather than reimplementing their behavior.
+- Keep MCP tool inputs explicit and bounded; the source-audit tool accepts provided file content instead of arbitrary filesystem paths.
+- Treat MCP stdout as protocol-only. Diagnostics belong on stderr.
+- Use the official MCP SDK surface and explicit schema objects; keep protocol integration covered by a real client/server test.
+- Keep read-only tools annotated as read-only, idempotent, and closed-world where appropriate.
+- Retrieval scoring must remain deterministic, inspectable, and benchmarked for both relevance and response compactness.
+- Do not add a repository-dump tool merely for convenience; token efficiency is part of the product contract.
+
 ## Validation
 
 Run:
@@ -138,8 +149,8 @@ Run:
 npm run check
 ~~~
 
-Do not bypass validation to land new corpus, token, recipe, Composer, registry, adapter, auditor, or explorer data.
+Do not bypass validation to land new corpus, token, recipe, Composer, registry, adapter, auditor, explorer, retrieval, or MCP data.
 
 ## Scope control
 
-v0.8 establishes the static human explorer. Do not turn this branch into the MCP retrieval server, hosted AI service, account system, editable CMS, visual-regression/browser automation suite, npm publication, or a broad component-library clone. Those belong to later milestones or separate architecture decisions.
+v0.9 establishes focused retrieval and the local MCP stdio server. Do not turn this branch into a hosted MCP service, authentication/account system, remote persistence layer, arbitrary filesystem browser, public npm publication, or v1.0 stability declaration. Those require later milestones or explicit decisions.

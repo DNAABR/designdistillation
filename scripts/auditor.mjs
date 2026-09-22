@@ -27,9 +27,33 @@ export function auditProject({ root = process.cwd(), sourceRoot, profile, except
     content: fs.readFileSync(file, "utf8")
   }));
 
+  return auditSources({ root, profile, sources, exceptions });
+}
+
+export function auditSources({ root = process.cwd(), profile, sources, exceptions = [] }) {
+  if (!profile || typeof profile !== "object") throw new Error("Auditor requires a design profile object.");
+  if (!Array.isArray(sources)) throw new Error("Auditor requires a sources array.");
+
+  const config = readJson(path.join(root, "taxonomy", "audit-rules.json"));
+  const knownRules = new Set(Object.keys(config.rules ?? {}));
+  for (const exception of exceptions) {
+    if (!knownRules.has(exception.rule)) throw new Error('Audit exception references unknown rule "' + exception.rule + '".');
+    if (!exception.reason || String(exception.reason).trim().length < 10) {
+      throw new Error('Audit exception for "' + exception.rule + '" needs a meaningful reason.');
+    }
+  }
+
+  const normalizedSources = sources.map((source, index) => {
+    if (!source || typeof source !== "object") throw new Error("Audit source " + index + " must be an object.");
+    const relative = String(source.relative ?? source.path ?? "").replaceAll("\\", "/").trim();
+    const content = String(source.content ?? "");
+    if (!relative) throw new Error("Audit source " + index + " needs a relative path.");
+    return { relative, content };
+  });
+
   const findings = [];
-  for (const source of sources) auditSourceFile({ source, profile, config, findings });
-  auditGlobalSource({ sources, profile, config, findings });
+  for (const source of normalizedSources) auditSourceFile({ source, profile, config, findings });
+  auditGlobalSource({ sources:normalizedSources, profile, config, findings });
 
   const resolved = findings.map((finding) => applyException(finding, exceptions)).sort(compareFindings);
   return {
@@ -38,7 +62,7 @@ export function auditProject({ root = process.cwd(), sourceRoot, profile, except
       product: profile.product?.name || profile.product?.type || "unknown",
       baseRecipe: profile.selection?.baseRecipe || "unknown"
     },
-    scannedFiles: sources.length,
+    scannedFiles: normalizedSources.length,
     summary: summarize(resolved),
     findings: resolved
   };

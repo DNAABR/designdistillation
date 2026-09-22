@@ -6,6 +6,7 @@ import { validateComposerConfig } from "./composer-validator.mjs";
 import { validateRegistry } from "./registry-validator.mjs";
 import { validateAuditorConfig } from "./auditor-validator.mjs";
 import { validateExplorer } from "./explorer-validator.mjs";
+import { validateRetrieval } from "./retrieval-validator.mjs";
 
 const root = process.cwd();
 const errors = [];
@@ -32,6 +33,7 @@ const composerStats = validateComposerConfig({ root, errors });
 const registryStats = validateRegistry({ root, errors });
 const auditorStats = validateAuditorConfig({ root, errors });
 const explorerStats = validateExplorer({ root, errors });
+const retrievalStats = validateRetrieval({ root, errors });
 
 if (errors.length) {
   console.error("\nDesign Distillation validation failed:\n");
@@ -62,5 +64,7 @@ console.log(
   explorerStats.corpusCount + " corpus entries, " +
   explorerStats.registryCount + " registry entries, " +
   explorerStats.tokenRecordCount + " token records, and " +
-  explorerStats.profileCount + " generated recipe profiles."
+  explorerStats.profileCount + " generated recipe profiles, plus " +
+  retrievalStats.caseCount + " retrieval benchmark cases at recall " +
+  retrievalStats.recall + " and compact ratio " + retrievalStats.compactRatio + "."
 );

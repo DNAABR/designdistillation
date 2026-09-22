@@ -157,9 +157,21 @@ Exit criterion: non-agent users can understand and configure the system without 
 
 ## v0.9 — Retrieval / MCP layer
 
-- Add focused retrieval tools rather than dumping the repository into context.
-- Support pattern/reference search, recipe selection, profile composition, and audits.
-- Benchmark retrieval relevance and token efficiency.
+Status: implementation complete on `feat/v0.9-mcp-retrieval`; awaiting review/merge.
+
+- [x] Add deterministic compact search over corpus and registry data instead of repository-wide context dumps.
+- [x] Add focused pattern search and a forward-compatible reference-search surface.
+- [x] Add full-entry and full-recipe fetch tools after retrieval identifies the relevant item.
+- [x] Add compact deterministic recipe ranking/selection and full Composer profile generation.
+- [x] Add semantic DTCG token resolution by theme.
+- [x] Add explicit-content source auditing without arbitrary filesystem browsing through MCP.
+- [x] Implement a local stdio MCP server using the official TypeScript SDK v2.
+- [x] Mark the MCP tool surface read-only, idempotent, and closed-world where applicable.
+- [x] Add a real MCP client/server stdio integration test covering initialize, tools/list, and tools/call.
+- [x] Add eight retrieval benchmark cases spanning UX patterns and recipes.
+- [x] Require 100% benchmark recall at the configured result limits.
+- [x] Enforce compact retrieval responses relative to the serialized full corpus.
+- [x] Add documentation, validation, and pinned MCP SDK dependencies.
 
 Exit criterion: coding agents can pull only the design knowledge needed for the current task.
 

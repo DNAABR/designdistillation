@@ -164,6 +164,24 @@ When changing the explorer:
 
 Do not add an editable CMS or browser-side design taxonomy. Changes to design knowledge belong in the canonical machine-readable sources.
 
+## Retrieval / MCP contributions
+
+Retrieval exists to reduce agent context cost while preserving access to canonical reasoning.
+
+When changing retrieval or MCP behavior:
+
+- keep search ranking deterministic and expose compact matched-field evidence;
+- benchmark representative queries and protect recall/compactness thresholds;
+- use focused search plus explicit fetch instead of returning entire corpus collections;
+- reuse canonical Composer/auditor/registry/token functions rather than forking product logic;
+- keep MCP schemas explicit and bounded;
+- reserve stdout for the MCP wire protocol;
+- keep audit inputs host-supplied rather than granting broad path browsing through MCP;
+- add a real client/server integration test when the MCP surface changes;
+- pin protocol dependencies deliberately and review protocol-version changes before upgrades.
+
+Do not add a generic dump-everything tool merely to make one agent workflow easier.
+
 ## Token contributions
 
 Token files are infrastructure, not a palette gallery.
