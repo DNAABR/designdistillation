@@ -22,13 +22,21 @@ Exit criterion: contributors and coding agents can add structured design knowled
 
 ## v0.2 — Tokens and visual foundations
 
-- Adopt a standards-aligned design-token representation.
-- Add primitive and semantic token vocabularies.
-- Add spacing, typography, radius, elevation, color, and motion foundations.
-- Add contrast and token consistency checks.
-- Add reference token packs without coupling the canonical corpus to one framework.
+Status: implementation complete on `feat/v0.2-visual-foundations`; awaiting review/merge.
 
-Exit criterion: a design profile can resolve into coherent framework-neutral tokens.
+- [x] Pin the visual foundation to stable DTCG 2025.10 token documents.
+- [x] Define Design Distillation's explicit multi-file/token-theme composition manifest.
+- [x] Add primitive and semantic token vocabularies.
+- [x] Add spacing, typography, radius, border, elevation, color, and motion foundations.
+- [x] Add light, dark, and high-contrast themes with one semantic color contract.
+- [x] Add explicit reduced-motion semantics.
+- [x] Add missing/circular alias, type-shape, scale, and theme-parity validation.
+- [x] Add configured contrast checks across every theme.
+- [x] Keep the canonical foundation framework-neutral.
+- [x] Connect an example design profile to the token manifest/theme contract.
+- [x] Document visual-foundation and token contribution rules.
+
+Exit criterion: a design profile can resolve into coherent framework-neutral visual tokens without components inventing their own design values.
 
 ## v0.3 — UX pattern corpus
 
@@ -49,8 +57,8 @@ Exit criterion: product intent can select a coherent starting design language wi
 
 ## v0.5 — Composer
 
-- Build a CLI/library that converts product requirements into design-profile.json.
-- Generate DESIGN.md and agent instructions.
+- Build a CLI/library that converts product requirements into `design-profile.json`.
+- Generate `DESIGN.md` and agent instructions.
 - Resolve recipe + personality + platform + accessibility constraints.
 - Explain the rationale behind generated decisions.
 

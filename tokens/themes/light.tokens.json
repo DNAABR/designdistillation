@@ -1,0 +1,162 @@
+{
+  "semantic": {
+    "color": {
+      "surface": {
+        "canvas": {
+          "$value": "{primitive.color.neutral.0}"
+        },
+        "subtle": {
+          "$value": "{primitive.color.neutral.50}"
+        },
+        "muted": {
+          "$value": "{primitive.color.neutral.100}"
+        },
+        "raised": {
+          "$value": "{primitive.color.neutral.0}"
+        },
+        "inverse": {
+          "$value": "{primitive.color.neutral.950}"
+        }
+      },
+      "text": {
+        "primary": {
+          "$value": "{primitive.color.neutral.950}"
+        },
+        "secondary": {
+          "$value": "{primitive.color.neutral.600}"
+        },
+        "muted": {
+          "$value": "{primitive.color.neutral.500}"
+        },
+        "inverse": {
+          "$value": "{primitive.color.neutral.0}"
+        },
+        "link": {
+          "$value": "{primitive.color.blue.700}"
+        },
+        "link-hover": {
+          "$value": "{primitive.color.blue.800}"
+        }
+      },
+      "border": {
+        "subtle": {
+          "$value": "{primitive.color.neutral.200}"
+        },
+        "default": {
+          "$value": "{primitive.color.neutral.300}"
+        },
+        "strong": {
+          "$value": "{primitive.color.neutral.400}"
+        },
+        "focus": {
+          "$value": "{primitive.color.blue.600}"
+        }
+      },
+      "action": {
+        "primary": {
+          "background": {
+            "$value": "{primitive.color.blue.600}"
+          },
+          "foreground": {
+            "$value": "{primitive.color.neutral.0}"
+          },
+          "hover": {
+            "$value": "{primitive.color.blue.700}"
+          },
+          "pressed": {
+            "$value": "{primitive.color.blue.800}"
+          }
+        },
+        "secondary": {
+          "background": {
+            "$value": "{primitive.color.neutral.100}"
+          },
+          "foreground": {
+            "$value": "{primitive.color.neutral.950}"
+          },
+          "hover": {
+            "$value": "{primitive.color.neutral.200}"
+          },
+          "pressed": {
+            "$value": "{primitive.color.neutral.300}"
+          }
+        },
+        "danger": {
+          "background": {
+            "$value": "{primitive.color.red.600}"
+          },
+          "foreground": {
+            "$value": "{primitive.color.neutral.0}"
+          },
+          "hover": {
+            "$value": "{primitive.color.red.700}"
+          }
+        }
+      },
+      "focus": {
+        "ring": {
+          "$value": "{primitive.color.blue.600}"
+        }
+      },
+      "status": {
+        "success": {
+          "background": {
+            "$value": "{primitive.color.green.50}"
+          },
+          "foreground": {
+            "$value": "{primitive.color.green.700}"
+          },
+          "border": {
+            "$value": "{primitive.color.green.300}"
+          }
+        },
+        "warning": {
+          "background": {
+            "$value": "{primitive.color.amber.50}"
+          },
+          "foreground": {
+            "$value": "{primitive.color.amber.800}"
+          },
+          "border": {
+            "$value": "{primitive.color.amber.300}"
+          }
+        },
+        "danger": {
+          "background": {
+            "$value": "{primitive.color.red.50}"
+          },
+          "foreground": {
+            "$value": "{primitive.color.red.700}"
+          },
+          "border": {
+            "$value": "{primitive.color.red.300}"
+          }
+        },
+        "info": {
+          "background": {
+            "$value": "{primitive.color.blue.50}"
+          },
+          "foreground": {
+            "$value": "{primitive.color.blue.700}"
+          },
+          "border": {
+            "$value": "{primitive.color.blue.300}"
+          }
+        }
+      },
+      "selection": {
+        "background": {
+          "$value": "{primitive.color.blue.100}"
+        },
+        "foreground": {
+          "$value": "{primitive.color.blue.900}"
+        }
+      },
+      "overlay": {
+        "scrim": {
+          "$value": "{primitive.color.shadow.scrim}"
+        }
+      }
+    }
+  }
+}

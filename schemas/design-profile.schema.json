@@ -96,6 +96,35 @@
         }
       }
     },
+    "foundations": {
+      "type": "object",
+      "required": [
+        "tokenManifest",
+        "theme"
+      ],
+      "properties": {
+        "tokenManifest": {
+          "type": "string"
+        },
+        "theme": {
+          "type": "string",
+          "enum": [
+            "light",
+            "dark",
+            "high-contrast"
+          ]
+        },
+        "reducedMotionToken": {
+          "type": "string"
+        },
+        "overrides": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
     "inspirations": {
       "type": "array"
     },

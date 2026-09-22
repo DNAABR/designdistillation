@@ -1,10 +1,12 @@
 {
   "name": "design-distillation",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "Machine-readable design knowledge, design profiles, and anti-slop rules for humans and AI coding agents.",
   "scripts": {
-    "validate": "node scripts/validate.mjs"
+    "validate": "node scripts/validate.mjs",
+    "test": "node --test scripts/token-validator.test.mjs",
+    "check": "npm run validate && npm test"
   },
   "engines": {
     "node": ">=20"

@@ -1,0 +1,18 @@
+{
+  "semantic": {
+    "elevation": {
+      "raised": {
+        "$description": "Subtle lift for a genuinely raised interactive/surface layer.",
+        "$value": "{primitive.elevation.low}"
+      },
+      "floating": {
+        "$description": "Floating controls, menus, and other detached layers.",
+        "$value": "{primitive.elevation.medium}"
+      },
+      "modal": {
+        "$description": "High-priority modal layer; use alongside an overlay/scrim where appropriate.",
+        "$value": "{primitive.elevation.high}"
+      }
+    }
+  }
+}

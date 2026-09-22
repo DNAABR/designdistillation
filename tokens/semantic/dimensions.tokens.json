@@ -1,0 +1,106 @@
+{
+  "semantic": {
+    "space": {
+      "inline": {
+        "xs": {
+          "$value": "{primitive.space.4}"
+        },
+        "sm": {
+          "$value": "{primitive.space.8}"
+        },
+        "md": {
+          "$value": "{primitive.space.12}"
+        },
+        "lg": {
+          "$value": "{primitive.space.16}"
+        }
+      },
+      "stack": {
+        "xs": {
+          "$value": "{primitive.space.4}"
+        },
+        "sm": {
+          "$value": "{primitive.space.8}"
+        },
+        "md": {
+          "$value": "{primitive.space.16}"
+        },
+        "lg": {
+          "$value": "{primitive.space.24}"
+        },
+        "xl": {
+          "$value": "{primitive.space.32}"
+        }
+      },
+      "section": {
+        "sm": {
+          "$value": "{primitive.space.32}"
+        },
+        "md": {
+          "$value": "{primitive.space.48}"
+        },
+        "lg": {
+          "$value": "{primitive.space.64}"
+        }
+      },
+      "page-gutter": {
+        "compact": {
+          "$value": "{primitive.space.16}"
+        },
+        "regular": {
+          "$value": "{primitive.space.24}"
+        },
+        "wide": {
+          "$value": "{primitive.space.32}"
+        }
+      }
+    },
+    "size": {
+      "control": {
+        "sm": {
+          "$value": "{primitive.space.32}"
+        },
+        "md": {
+          "$value": "{primitive.space.40}"
+        },
+        "lg": {
+          "$value": "{primitive.space.48}"
+        }
+      },
+      "target": {
+        "comfortable-minimum": {
+          "$description": "Opinionated comfortable interaction target default; not a claim about a normative accessibility minimum.",
+          "$value": "{primitive.space.48}"
+        }
+      }
+    },
+    "radius": {
+      "control": {
+        "$value": "{primitive.radius.6}"
+      },
+      "surface": {
+        "$value": "{primitive.radius.8}"
+      },
+      "popover": {
+        "$value": "{primitive.radius.8}"
+      },
+      "dialog": {
+        "$value": "{primitive.radius.12}"
+      },
+      "pill": {
+        "$value": "{primitive.radius.full}"
+      }
+    },
+    "border-width": {
+      "default": {
+        "$value": "{primitive.border-width.1}"
+      },
+      "strong": {
+        "$value": "{primitive.border-width.2}"
+      },
+      "focus": {
+        "$value": "{primitive.border-width.2}"
+      }
+    }
+  }
+}

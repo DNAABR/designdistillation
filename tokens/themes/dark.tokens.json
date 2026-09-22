@@ -1,0 +1,162 @@
+{
+  "semantic": {
+    "color": {
+      "surface": {
+        "canvas": {
+          "$value": "{primitive.color.neutral.950}"
+        },
+        "subtle": {
+          "$value": "{primitive.color.neutral.900}"
+        },
+        "muted": {
+          "$value": "{primitive.color.neutral.800}"
+        },
+        "raised": {
+          "$value": "{primitive.color.neutral.900}"
+        },
+        "inverse": {
+          "$value": "{primitive.color.neutral.50}"
+        }
+      },
+      "text": {
+        "primary": {
+          "$value": "{primitive.color.neutral.50}"
+        },
+        "secondary": {
+          "$value": "{primitive.color.neutral.300}"
+        },
+        "muted": {
+          "$value": "{primitive.color.neutral.400}"
+        },
+        "inverse": {
+          "$value": "{primitive.color.neutral.950}"
+        },
+        "link": {
+          "$value": "{primitive.color.blue.200}"
+        },
+        "link-hover": {
+          "$value": "{primitive.color.blue.100}"
+        }
+      },
+      "border": {
+        "subtle": {
+          "$value": "{primitive.color.neutral.800}"
+        },
+        "default": {
+          "$value": "{primitive.color.neutral.700}"
+        },
+        "strong": {
+          "$value": "{primitive.color.neutral.600}"
+        },
+        "focus": {
+          "$value": "{primitive.color.blue.400}"
+        }
+      },
+      "action": {
+        "primary": {
+          "background": {
+            "$value": "{primitive.color.blue.400}"
+          },
+          "foreground": {
+            "$value": "{primitive.color.neutral.950}"
+          },
+          "hover": {
+            "$value": "{primitive.color.blue.300}"
+          },
+          "pressed": {
+            "$value": "{primitive.color.blue.200}"
+          }
+        },
+        "secondary": {
+          "background": {
+            "$value": "{primitive.color.neutral.800}"
+          },
+          "foreground": {
+            "$value": "{primitive.color.neutral.50}"
+          },
+          "hover": {
+            "$value": "{primitive.color.neutral.700}"
+          },
+          "pressed": {
+            "$value": "{primitive.color.neutral.600}"
+          }
+        },
+        "danger": {
+          "background": {
+            "$value": "{primitive.color.red.500}"
+          },
+          "foreground": {
+            "$value": "{primitive.color.neutral.950}"
+          },
+          "hover": {
+            "$value": "{primitive.color.red.400}"
+          }
+        }
+      },
+      "focus": {
+        "ring": {
+          "$value": "{primitive.color.blue.400}"
+        }
+      },
+      "status": {
+        "success": {
+          "background": {
+            "$value": "{primitive.color.green.950}"
+          },
+          "foreground": {
+            "$value": "{primitive.color.green.200}"
+          },
+          "border": {
+            "$value": "{primitive.color.green.700}"
+          }
+        },
+        "warning": {
+          "background": {
+            "$value": "{primitive.color.amber.950}"
+          },
+          "foreground": {
+            "$value": "{primitive.color.amber.200}"
+          },
+          "border": {
+            "$value": "{primitive.color.amber.700}"
+          }
+        },
+        "danger": {
+          "background": {
+            "$value": "{primitive.color.red.950}"
+          },
+          "foreground": {
+            "$value": "{primitive.color.red.200}"
+          },
+          "border": {
+            "$value": "{primitive.color.red.700}"
+          }
+        },
+        "info": {
+          "background": {
+            "$value": "{primitive.color.blue.950}"
+          },
+          "foreground": {
+            "$value": "{primitive.color.blue.200}"
+          },
+          "border": {
+            "$value": "{primitive.color.blue.700}"
+          }
+        }
+      },
+      "selection": {
+        "background": {
+          "$value": "{primitive.color.blue.800}"
+        },
+        "foreground": {
+          "$value": "{primitive.color.blue.50}"
+        }
+      },
+      "overlay": {
+        "scrim": {
+          "$value": "{primitive.color.shadow.scrim}"
+        }
+      }
+    }
+  }
+}
