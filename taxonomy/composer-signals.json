@@ -1,0 +1,129 @@
+{
+  "version": "0.5.0",
+  "fieldWeights": {
+    "category_hints": 50,
+    "type": 14,
+    "primary_task": 10,
+    "description": 5,
+    "goals": 6,
+    "audience": 3,
+    "brand_descriptors": 2
+  },
+  "autoSelection": {
+    "minimumBaseScore": 8,
+    "minimumInfluenceScore": 12,
+    "minimumInfluenceRatio": 0.45,
+    "strongInfluenceRatio": 0.8,
+    "mediumInfluenceRatio": 0.6,
+    "strongInfluenceWeight": 0.3,
+    "mediumInfluenceWeight": 0.25,
+    "lightInfluenceWeight": 0.2,
+    "maxAutoInfluences": 1
+  },
+  "recipes": {
+    "focused-saas": {
+      "aliases": ["saas", "b2b", "business software", "productivity"],
+      "keywords": ["workflow", "dashboard", "admin", "operations", "project", "task management", "crm", "business software", "productivity", "workspace"]
+    },
+    "serious-fintech": {
+      "aliases": ["fintech", "finance", "banking"],
+      "keywords": ["money", "payment", "wallet", "banking", "investment", "transaction", "balance", "loan", "accounting", "financial"]
+    },
+    "friendly-education": {
+      "aliases": ["education", "learning", "edtech"],
+      "keywords": ["student", "teacher", "tutor", "course", "lesson", "quiz", "study", "school", "olympiad", "flashcard", "practice", "learning"]
+    },
+    "developer-tooling": {
+      "aliases": ["developer-tools", "developer", "devtools"],
+      "keywords": ["developer", "code", "api", "devops", "deployment", "logs", "cli", "database", "repository", "sdk", "infrastructure", "debug"]
+    },
+    "consumer-social": {
+      "aliases": ["consumer-social", "social", "community"],
+      "keywords": ["social", "community", "feed", "creator", "profile", "share", "friends", "messaging", "followers", "post"]
+    },
+    "commerce-conversion": {
+      "aliases": ["commerce", "ecommerce", "retail"],
+      "keywords": ["shop", "store", "marketplace", "cart", "checkout", "catalog", "retail", "product listing", "purchase", "order"]
+    },
+    "editorial-content": {
+      "aliases": ["editorial", "publishing", "content"],
+      "keywords": ["article", "magazine", "news", "publishing", "blog", "reading", "essay", "journal", "editorial", "long-form"]
+    },
+    "calm-health-wellness": {
+      "aliases": ["health-wellness", "health", "wellness", "fitness"],
+      "keywords": ["health", "wellness", "fitness", "workout", "exercise", "nutrition", "habit", "progress", "appointment", "personal health"]
+    },
+    "gaming-companion": {
+      "aliases": ["gaming-companion", "gaming", "game"],
+      "keywords": ["game", "gaming", "party game", "leaderboard", "xp", "quest", "guild", "match", "companion app", "player"]
+    },
+    "creative-software": {
+      "aliases": ["creative-software", "creative", "authoring"],
+      "keywords": ["editor", "design tool", "video editing", "image editing", "authoring", "canvas", "asset", "creative", "timeline", "workspace"]
+    },
+    "public-service": {
+      "aliases": ["public-service", "government", "civic"],
+      "keywords": ["government", "public service", "benefits", "permit", "tax", "municipality", "citizen", "utility", "civic", "eligibility", "application form"]
+    }
+  },
+  "platformRules": {
+    "web": {
+      "patterns": ["responsive-navigation"],
+      "require": [
+        "Preserve visible keyboard focus and complete keyboard access for interactive controls.",
+        "Keep core tasks usable without hover-only interaction."
+      ]
+    },
+    "responsive-web": {
+      "patterns": ["responsive-navigation"],
+      "require": [
+        "Design for small through large viewports without removing core tasks at narrow widths.",
+        "Preserve visible keyboard focus and complete keyboard access for interactive controls."
+      ]
+    },
+    "mobile": {
+      "patterns": ["responsive-navigation"],
+      "require": [
+        "Use touch-friendly targets and spacing for primary interactive controls.",
+        "Do not require hover or pointer precision to complete a core task."
+      ]
+    },
+    "desktop": {
+      "patterns": ["primary-navigation"],
+      "require": [
+        "Preserve keyboard access and visible focus for recurring commands and navigation.",
+        "Use available screen space for clarity and task efficiency rather than decorative surface multiplication."
+      ]
+    },
+    "cross-platform": {
+      "patterns": ["primary-navigation", "responsive-navigation"],
+      "require": [
+        "Preserve the same task hierarchy across platforms while adapting interaction mechanics to each input mode.",
+        "Do not make a core workflow depend on hover, pointer precision, or a single viewport size."
+      ]
+    }
+  },
+  "accessibilityRules": {
+    "reducedMotion": {
+      "require": [
+        "Treat reduced-motion behavior as a required product path, not an optional enhancement.",
+        "Do not require motion to understand state, hierarchy, progress, or task completion."
+      ]
+    }
+  },
+  "capabilityPatterns": {
+    "search": ["search-query-state", "zero-results-recovery"],
+    "forms": ["labels-hints-and-optionality", "error-recovery", "preserve-form-input"],
+    "data-tables": ["table-vs-grid", "data-table-controls"],
+    "bulk-actions": ["bulk-selection-actions"],
+    "offline": ["offline-resilience"],
+    "settings": ["settings-by-user-goal"],
+    "permissions": ["just-in-time-permissions"],
+    "onboarding": ["progressive-onboarding"],
+    "transactions": ["review-before-submit", "transaction-confirmation"],
+    "destructive-actions": ["destructive-confirmation", "undo-reversible-actions"],
+    "feeds": ["pagination-vs-infinite-scroll"],
+    "filters": ["filters-and-sort"],
+    "autosave": ["save-status-feedback"]
+  }
+}

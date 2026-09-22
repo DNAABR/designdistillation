@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { validateCorpus } from "./corpus-validator.mjs";
 import { validateTokens } from "./token-validator.mjs";
+import { validateComposerConfig } from "./composer-validator.mjs";
 
 const root = process.cwd();
 const errors = [];
@@ -28,6 +29,7 @@ for (const dir of ["schemas", "taxonomy", "examples"]) {
 
 const corpusStats = validateCorpus({ root, errors });
 const tokenStats = validateTokens({ root, errors });
+const composerStats = validateComposerConfig({ root, errors });
 
 if (errors.length) {
   console.error("\nDesign Distillation validation failed:\n");
@@ -44,6 +46,9 @@ console.log(
   corpusStats.familyCount + " families, " +
   corpusStats.recipeCount + " recipes across " +
   corpusStats.recipeCategoryCount + " categories), " +
-  tokenStats.tokenCount + " token paths, and " +
-  tokenStats.themeCount + " themes checked."
+  tokenStats.tokenCount + " token paths, " +
+  tokenStats.themeCount + " themes, " +
+  composerStats.recipeSignalCount + " composer recipe signals, and " +
+  composerStats.capabilityCount + " capability mappings across " +
+  composerStats.platformRuleCount + " platform rules checked."
 );

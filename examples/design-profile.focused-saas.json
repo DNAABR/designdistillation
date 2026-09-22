@@ -1,10 +1,58 @@
 {
-  "version": "0.2.0",
+  "version": "0.5.0",
   "product": {
-    "type": "saas",
+    "name": "Focused SaaS Example",
+    "type": "B2B productivity SaaS",
+    "description": "Task-oriented business software for knowledge workers who complete repeatable workflows, search records, edit forms, inspect data tables, and manage settings.",
     "platform": "responsive-web",
     "audience": "knowledge workers",
-    "primaryTask": "repeatable task completion"
+    "primaryTask": "complete repeatable business workflows efficiently",
+    "capabilities": [
+      "forms",
+      "search",
+      "data-tables",
+      "settings",
+      "autosave"
+    ]
+  },
+  "selection": {
+    "mode": "auto",
+    "baseRecipe": "focused-saas",
+    "recipes": [
+      {
+        "id": "focused-saas",
+        "weight": 1,
+        "role": "base",
+        "score": 97,
+        "evidence": [
+          {
+            "field": "category_hints",
+            "term": "saas",
+            "points": 50
+          },
+          {
+            "field": "type",
+            "term": "productivity",
+            "points": 14
+          },
+          {
+            "field": "type",
+            "term": "saas",
+            "points": 14
+          },
+          {
+            "field": "type",
+            "term": "b2b",
+            "points": 14
+          },
+          {
+            "field": "description",
+            "term": "business software",
+            "points": 5
+          }
+        ]
+      }
+    ]
   },
   "personality": {
     "density": 68,
@@ -15,20 +63,27 @@
     "warmth": 42,
     "playfulness": 20,
     "formality": 62,
+    "luxury": 18,
     "technicality": 60,
+    "editorialness": 20,
     "depth": 18,
     "border-prominence": 30,
     "radius": 35,
+    "symmetry": 55,
     "typographic-expression": 28,
     "motion-intensity": 22,
+    "motion-playfulness": 12,
     "information-density": 72,
     "icon-frequency": 42,
     "illustration-frequency": 8,
+    "content-prominence": 70,
+    "navigation-complexity": 65,
     "brand-prominence": 28
   },
   "layout": {
+    "strategy": "task-dense",
     "density": "medium-high",
-    "navigation": "persistent",
+    "navigation": "persistent-adaptive",
     "spacing": "semantic"
   },
   "typography": {
@@ -37,6 +92,7 @@
     "heading": "semantic.type.heading-medium"
   },
   "shape": {
+    "strategy": "restrained",
     "controlRadius": "semantic.radius.control",
     "surfaceRadius": "semantic.radius.surface",
     "elevation": "restrained"
@@ -46,22 +102,78 @@
     "semanticOnly": true
   },
   "motion": {
-    "strategy": "functional",
+    "strategy": "restrained",
     "default": "semantic.motion.enter",
     "reduced": "semantic.motion.reduced"
   },
+  "iconography": {
+    "strategy": "functional"
+  },
+  "imagery": {
+    "strategy": "sparse"
+  },
   "accessibility": {
-    "target": "WCAG 2.2 AA"
+    "target": "WCAG 2.2 AA",
+    "reducedMotion": "supported"
+  },
+  "patterns": {
+    "prioritize": [
+      "primary-navigation",
+      "responsive-navigation",
+      "loading-feedback",
+      "empty-state-next-action",
+      "error-recovery",
+      "save-status-feedback",
+      "settings-by-user-goal",
+      "data-table-controls",
+      "labels-hints-and-optionality",
+      "preserve-form-input",
+      "search-query-state",
+      "zero-results-recovery",
+      "table-vs-grid"
+    ],
+    "consider": [
+      "filters-and-sort",
+      "pagination-vs-infinite-scroll",
+      "progressive-disclosure"
+    ],
+    "avoid": [
+      "card-everything",
+      "spinner-without-progress-context",
+      "modal-everything",
+      "hidden-primary-navigation"
+    ]
+  },
+  "content": {
+    "voice": [
+      "clear",
+      "direct",
+      "professional"
+    ],
+    "density": "medium-high",
+    "guidance": [
+      "Prefer action-oriented labels.",
+      "Keep help contextual rather than promotional."
+    ]
   },
   "rules": {
     "require": [
-      "Consume semantic tokens rather than primitive palette values in components.",
-      "Provide complete loading, empty, error, disabled, and focus states."
+      "Consume semantic tokens instead of hard-coded primitive design values in product components.",
+      "Preserve explicit loading, empty, error, disabled, focus, and recovery states where the selected patterns require them.",
+      "Design for small through large viewports without removing core tasks at narrow widths.",
+      "Preserve visible keyboard focus and complete keyboard access for interactive controls.",
+      "Preserve complete loading, empty, error, disabled, and focus behavior.",
+      "Use semantic tokens rather than arbitrary component values.",
+      "Use typography, spacing, and alignment before adding surfaces.",
+      "Keep one dominant accent strategy.",
+      "Prefer persistent navigation for recurring destinations."
     ],
     "avoid": [
-      "decorative gradients without product or brand rationale",
-      "nested cards used only for spacing",
-      "arbitrary one-off visual values"
+      "Avoid anti-pattern: card-everything.",
+      "Avoid anti-pattern: spinner-without-progress-context.",
+      "Avoid anti-pattern: modal-everything.",
+      "Avoid anti-pattern: hidden-primary-navigation.",
+      "Do not imitate a named product's exact visual identity, proprietary implementation, or brand assets."
     ]
   },
   "foundations": {
@@ -71,7 +183,24 @@
     "overrides": []
   },
   "rationale": [
-    "The focused SaaS recipe favors clarity and information density over decorative surface treatment.",
-    "The token manifest supplies framework-neutral visual foundations while the selected theme supplies semantic color roles."
-  ]
+    "Selected focused-saas as the base recipe from deterministic requirement signals: category_hints:saas (+50), type:productivity (+14), type:saas (+14), type:b2b (+14), description:business software (+5).",
+    "Resolved categorical foundations from the base recipe and merged compatible UX guidance from selected recipes.",
+    "Added UX patterns for declared product capabilities: forms, search, data-tables, settings, autosave."
+  ],
+  "conflicts": [],
+  "decisions": [
+    {
+      "type": "platform-constraint",
+      "field": "product.platform",
+      "requested": "responsive-web",
+      "applied": "responsive-web",
+      "reason": "Applied the canonical platform behavior and UX requirements for this target."
+    }
+  ],
+  "provenance": {
+    "composer": "deterministic-v0.5",
+    "inputVersion": "0.5.0",
+    "tokenManifest": "tokens/manifest.json",
+    "recipeCorpusVersion": "0.4.0"
+  }
 }

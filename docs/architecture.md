@@ -22,16 +22,31 @@ Tokens, components, blocks, interaction recipes, motion recipes, adapters, and f
 
 ### 5. Composer
 
-Transforms product intent into a generated design contract. Expected outputs eventually include:
+v0.5 transforms structured product requirements into a deterministic generated design contract.
 
-- `DESIGN.md`;
+Inputs include product identity, platform, audience, primary task, optional category hints and capabilities, goals, brand descriptors, bounded Design DNA preferences, accessibility requirements, theme/preferences, optional inspiration traits, and automatic or explicit recipe selection.
+
+Selection and resolution are explicit:
+
+1. score all recipes from transparent product-intent signals;
+2. require a credible base recipe rather than falling back to generic UI;
+3. optionally add one strongly supported bounded influence in auto mode;
+4. reuse the v0.4 recipe blender and preserve protected base dimensions;
+5. clamp requested Design DNA values to composed recipe ranges and report conflicts;
+6. add canonical UX patterns from declared capabilities and platform requirements;
+7. apply accessibility requirements as hard constraints;
+8. exclude named-product inspiration from recipe scoring and style generation.
+
+Explicit mode accepts one to three recipe selections and still delegates all composition limits and conflict behavior to v0.4.
+
+The Composer emits:
+
 - `design-profile.json`;
-- design-token selections/overrides;
-- typography rules;
-- motion rules;
-- component constraints;
-- anti-pattern constraints;
-- agent instructions.
+- `DESIGN.md`;
+- `AGENTS.design.md`;
+- machine-readable decisions and conflicts explaining selection, platform requirements, accessibility constraints, and personality clamps.
+
+The machine-readable profile remains canonical. Markdown outputs are generated explanations and instructions.
 
 ### 6. Auditor
 
@@ -52,7 +67,7 @@ semantic tokens
       ↓
 theme semantic colors
       ↓
-design profile selection / future overrides
+design profile selection / composer overrides
       ↓
 future framework adapters
       ↓
@@ -65,19 +80,21 @@ The canonical layer remains framework-neutral. CSS variables, Tailwind configura
 
 ## Design profile
 
-A design profile is the normalized output of the future composer. It combines:
+A design profile is the normalized output of the composer. It combines:
 
 - product type and platform;
 - audience and task;
-- brand/personality dimensions;
+- complete 24-axis Design DNA values;
 - layout and information-density decisions;
 - typography, shape, color, and motion strategies;
 - accessibility target;
 - explicit avoid/require rules;
+- UX pattern priorities;
 - a token-manifest/theme selection;
-- rationale and provenance.
+- recipe selection metadata, diagnostics, and rationale;
+- brand-safety invariants.
 
-The example profile in `examples/` demonstrates how the v0.2 visual layer plugs into that future contract.
+The legacy focused-SaaS example and the v0.5 composer request demonstrate the contract at different stages of the architecture.
 
 ## Retrieval-first architecture
 
