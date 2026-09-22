@@ -1,0 +1,76 @@
+{
+  "id": "focused-saas",
+  "kind": "recipe",
+  "title": "Focused SaaS",
+  "summary": "A restrained application recipe for task-oriented software that needs clarity, moderate-to-high information density, and low decorative overhead.",
+  "problem": "Generic SaaS generation often mixes excessive cards, large marketing spacing, decorative gradients, and inconsistent density inside a product interface.",
+  "use_when": [
+    "Building productivity, developer, operations, project, or business software",
+    "The primary value comes from repeated task completion rather than visual discovery"
+  ],
+  "avoid_when": [
+    "The core product is immersive entertainment or highly visual discovery",
+    "The audience requires unusually large touch targets and very low information density"
+  ],
+  "rationale": [
+    "Restrained surfaces preserve attention for content and actions.",
+    "A consistent compact spacing system supports repeated workflows.",
+    "Sparse accent usage keeps primary actions and state changes legible."
+  ],
+  "tags": [
+    "saas",
+    "productivity",
+    "dense-ui"
+  ],
+  "platforms": [
+    "web",
+    "desktop"
+  ],
+  "stage": "foundation",
+  "profile": {
+    "personality": {
+      "density": 68,
+      "whitespace": 45,
+      "visual-complexity": 38,
+      "contrast": 62,
+      "colorfulness": 24,
+      "warmth": 42,
+      "playfulness": 20,
+      "formality": 62,
+      "technicality": 60,
+      "depth": 18,
+      "border-prominence": 30,
+      "radius": 35,
+      "typographic-expression": 28,
+      "motion-intensity": 22,
+      "information-density": 72,
+      "icon-frequency": 42,
+      "illustration-frequency": 8,
+      "brand-prominence": 28
+    },
+    "rules": {
+      "require": [
+        "Use typography, spacing, and alignment before introducing new surfaces.",
+        "Keep one clearly dominant accent strategy.",
+        "Provide complete loading, empty, error, disabled, and focus states."
+      ],
+      "avoid": [
+        "decorative gradients without brand/product rationale",
+        "nested cards used only for spacing",
+        "hover scale effects on ordinary containers",
+        "multiple competing primary actions"
+      ]
+    }
+  },
+  "sources": [
+    {
+      "type": "internal",
+      "title": "Design Distillation synthesis",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    }
+  ]
+}

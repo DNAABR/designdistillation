@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://designdistillation.dev/schemas/design-profile.schema.json",
+  "title": "Generated Design Profile",
+  "type": "object",
+  "required": [
+    "version",
+    "product",
+    "personality",
+    "layout",
+    "typography",
+    "shape",
+    "color",
+    "motion",
+    "accessibility",
+    "rules"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "product": {
+      "type": "object",
+      "required": [
+        "type",
+        "platform",
+        "primaryTask"
+      ],
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "platform": {
+          "type": "string"
+        },
+        "audience": {
+          "type": "string"
+        },
+        "primaryTask": {
+          "type": "string"
+        }
+      }
+    },
+    "personality": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 100
+      }
+    },
+    "layout": {
+      "type": "object"
+    },
+    "typography": {
+      "type": "object"
+    },
+    "shape": {
+      "type": "object"
+    },
+    "color": {
+      "type": "object"
+    },
+    "motion": {
+      "type": "object"
+    },
+    "accessibility": {
+      "type": "object",
+      "required": [
+        "target"
+      ],
+      "properties": {
+        "target": {
+          "type": "string"
+        }
+      }
+    },
+    "rules": {
+      "type": "object",
+      "required": [
+        "require",
+        "avoid"
+      ],
+      "properties": {
+        "require": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "avoid": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "inspirations": {
+      "type": "array"
+    },
+    "rationale": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,45 @@
+{
+  "id": "intent-before-decoration",
+  "kind": "principle",
+  "title": "Intent before decoration",
+  "summary": "Choose visual treatments because they support product intent, hierarchy, interaction, or brand character—not because a treatment is fashionable.",
+  "problem": "Interfaces become generic when visual decisions are selected from current trends without a clear relationship to user tasks, content, or brand.",
+  "use_when": [
+    "Choosing stylistic direction for a new product",
+    "Reviewing AI-generated interfaces",
+    "Deciding whether a decorative treatment belongs in a component or page"
+  ],
+  "avoid_when": [
+    "A platform convention or accessibility requirement already determines the interaction",
+    "A decorative experiment is explicitly the product goal rather than a functional interface"
+  ],
+  "rationale": [
+    "The same visual technique can be excellent in one context and distracting in another.",
+    "Design coherence improves when choices can be traced back to product intent.",
+    "Agents need explicit rationale to avoid defaulting to fashionable but unrelated patterns."
+  ],
+  "tags": [
+    "coherence",
+    "ai-design",
+    "visual-language"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "foundation",
+  "audit": {
+    "question": "Can each prominent visual treatment be explained by product, interaction, content, accessibility, or brand intent?"
+  },
+  "sources": [
+    {
+      "type": "internal",
+      "title": "Design Distillation synthesis",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      },
+      "notes": "Original project principle distilled from the repository's anti-slop objective."
+    }
+  ]
+}
