@@ -1,0 +1,84 @@
+{
+  "id": "app-shell",
+  "version": "0.6.0",
+  "kind": "composition",
+  "title": "Application Shell",
+  "summary": "A responsive application shell that preserves primary navigation and main-content hierarchy without turning every region into a card.",
+  "platforms": [
+    "web",
+    "responsive-web",
+    "desktop",
+    "cross-platform"
+  ],
+  "intent": {
+    "use_when": [
+      "A product has recurring destinations and benefits from persistent application structure",
+      "Navigation and content need stable landmarks across repeated tasks"
+    ],
+    "avoid_when": [
+      "A single-purpose page does not need persistent application navigation",
+      "Marketing pages where the information architecture is fundamentally different"
+    ]
+  },
+  "states": [
+    "default",
+    "mobile",
+    "tablet",
+    "desktop"
+  ],
+  "slots": [
+    "header",
+    "navigation",
+    "main",
+    "aside"
+  ],
+  "variants": [
+    "sidebar",
+    "topbar"
+  ],
+  "token_refs": [
+    "semantic.space.page-gutter.regular",
+    "semantic.space.stack.md",
+    "semantic.color.surface.canvas",
+    "semantic.color.surface.subtle",
+    "semantic.color.border.subtle",
+    "semantic.border-width.default",
+    "semantic.type.body-medium"
+  ],
+  "patterns": {
+    "required": [
+      "primary-navigation",
+      "responsive-navigation"
+    ],
+    "related": [
+      "breadcrumbs-for-hierarchy"
+    ]
+  },
+  "accessibility": [
+    "Expose header, navigation, main, and complementary regions with appropriate native landmarks.",
+    "Provide a visible main-content target for skip navigation.",
+    "Do not remove core navigation destinations at narrow widths; adapt their presentation."
+  ],
+  "implementation": {
+    "source_owned": true,
+    "adapters": {
+      "css": {
+        "selectors": [
+          ".dd-app-shell",
+          ".dd-app-shell__nav",
+          ".dd-app-shell__main"
+        ]
+      },
+      "react": {
+        "source": "registry/source/react/AppShell.tsx",
+        "exports": [
+          "AppShell"
+        ]
+      }
+    }
+  },
+  "provenance": {
+    "origin": "design-distillation",
+    "redistribution": "pending-repository-license"
+  }
+}

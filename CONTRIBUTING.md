@@ -106,6 +106,29 @@ When changing Composer behavior:
 - treat named-product references as inspiration only, never as a style-copying signal;
 - add regression tests whenever selection, constraints, or generated artifacts change.
 
+## Registry contributions
+
+The registry is the source-owned reusable implementation layer. A new registry entry should exist only when it captures a recurring UI primitive or composition that benefits from a stable contract.
+
+Every registry contribution must:
+
+- document use and avoid conditions rather than only appearance;
+- declare supported platforms, states, slots, and variants;
+- reference canonical UX patterns when the implementation participates in those flows;
+- declare every semantic token dependency;
+- include accessibility requirements as part of the contract;
+- keep source implementation under `registry/source/`;
+- preserve `source_owned: true` and redistribution status `pending-repository-license` until the repository license is decided;
+- add validation/tests when adapter behavior changes.
+
+Source CSS should consume generated semantic variables. Do not introduce a second palette, spacing scale, radius system, or motion scale inside component CSS.
+
+React source should prefer native platform semantics, work in ordinary React/Vite or Next.js projects, and avoid new dependencies unless a more complex interaction contract clearly requires them.
+
+Adapters are transformations, not new design sources. A Tailwind alias may point to a semantic Design Distillation token; it should not redefine that token independently.
+
+Do not publish the registry as an npm package or claim redistributable open-source licensing while the repository remains UNLICENSED.
+
 ## Token contributions
 
 Token files are infrastructure, not a palette gallery.

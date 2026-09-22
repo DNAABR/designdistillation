@@ -1,0 +1,83 @@
+{
+  "id": "data-toolbar",
+  "version": "0.6.0",
+  "kind": "composition",
+  "title": "Data Toolbar",
+  "summary": "A compact toolbar composition for search, filters, selection-aware actions, and secondary controls above data-heavy views.",
+  "platforms": [
+    "web",
+    "responsive-web",
+    "desktop",
+    "cross-platform"
+  ],
+  "intent": {
+    "use_when": [
+      "Users repeatedly search, filter, sort, or act on a dataset",
+      "Controls should remain visually associated with the data they affect"
+    ],
+    "avoid_when": [
+      "The page has only one unrelated action",
+      "Controls belong to separate workflows rather than one dataset"
+    ]
+  },
+  "states": [
+    "default",
+    "selected",
+    "mobile",
+    "desktop"
+  ],
+  "slots": [
+    "search",
+    "filters",
+    "selection-summary",
+    "actions"
+  ],
+  "variants": [
+    "standard",
+    "selection"
+  ],
+  "token_refs": [
+    "semantic.space.inline.sm",
+    "semantic.space.inline.md",
+    "semantic.space.stack.sm",
+    "semantic.color.surface.canvas",
+    "semantic.color.border.subtle",
+    "semantic.border-width.default",
+    "semantic.type.body-small"
+  ],
+  "patterns": {
+    "required": [
+      "search-query-state",
+      "filters-and-sort"
+    ],
+    "related": [
+      "bulk-selection-actions",
+      "data-table-controls"
+    ]
+  },
+  "accessibility": [
+    "Keep controls in logical keyboard and reading order.",
+    "Provide accessible names for search, filter, and action controls.",
+    "When selection changes available actions, announce the selection count in text."
+  ],
+  "implementation": {
+    "source_owned": true,
+    "adapters": {
+      "css": {
+        "selectors": [
+          ".dd-data-toolbar"
+        ]
+      },
+      "react": {
+        "source": "registry/source/react/DataToolbar.tsx",
+        "exports": [
+          "DataToolbar"
+        ]
+      }
+    }
+  },
+  "provenance": {
+    "origin": "design-distillation",
+    "redistribution": "pending-repository-license"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id": "action-button",
+  "version": "0.6.0",
+  "kind": "component",
+  "title": "Action Button",
+  "summary": "A semantic action control with primary, secondary, danger, and quiet emphasis while preserving native button behavior.",
+  "platforms": [
+    "web",
+    "responsive-web",
+    "desktop",
+    "cross-platform"
+  ],
+  "intent": {
+    "use_when": [
+      "Triggering an immediate user action inside an interface",
+      "A native button can represent the interaction semantics"
+    ],
+    "avoid_when": [
+      "Navigating to another resource where a link is the correct semantic element",
+      "An icon-only action lacks an accessible name"
+    ]
+  },
+  "states": [
+    "default",
+    "hover",
+    "focus",
+    "active",
+    "disabled",
+    "loading"
+  ],
+  "slots": [
+    "label",
+    "leading-icon",
+    "trailing-icon"
+  ],
+  "variants": [
+    "primary",
+    "secondary",
+    "danger",
+    "quiet"
+  ],
+  "token_refs": [
+    "semantic.size.control.md",
+    "semantic.space.inline.sm",
+    "semantic.radius.control",
+    "semantic.border-width.focus",
+    "semantic.color.action.primary.background",
+    "semantic.color.action.primary.foreground",
+    "semantic.color.action.secondary.background",
+    "semantic.color.action.secondary.foreground",
+    "semantic.color.action.danger.background",
+    "semantic.color.action.danger.foreground",
+    "semantic.color.focus.ring",
+    "semantic.type.label-medium",
+    "semantic.motion.feedback"
+  ],
+  "patterns": {
+    "required": [],
+    "related": [
+      "review-before-submit",
+      "destructive-confirmation"
+    ]
+  },
+  "accessibility": [
+    "Use native button semantics for actions and preserve keyboard activation.",
+    "Expose loading with aria-busy and prevent duplicate activation while work is in progress.",
+    "Never rely on color alone to distinguish a destructive action."
+  ],
+  "implementation": {
+    "source_owned": true,
+    "adapters": {
+      "css": {
+        "selectors": [
+          ".dd-button"
+        ]
+      },
+      "react": {
+        "source": "registry/source/react/ActionButton.tsx",
+        "exports": [
+          "ActionButton"
+        ]
+      }
+    }
+  },
+  "provenance": {
+    "origin": "design-distillation",
+    "redistribution": "pending-repository-license"
+  }
+}

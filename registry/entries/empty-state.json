@@ -1,0 +1,82 @@
+{
+  "id": "empty-state",
+  "version": "0.6.0",
+  "kind": "composition",
+  "title": "Empty State",
+  "summary": "A content-first empty-state composition that explains the current condition and presents a useful next action without decorative filler.",
+  "platforms": [
+    "web",
+    "responsive-web",
+    "mobile",
+    "desktop",
+    "cross-platform"
+  ],
+  "intent": {
+    "use_when": [
+      "A view has no items or first-use content and the user needs orientation",
+      "A clear next action or recovery path exists"
+    ],
+    "avoid_when": [
+      "The absence is transient loading rather than an actual empty condition",
+      "The product has no meaningful next action to offer"
+    ]
+  },
+  "states": [
+    "empty",
+    "first-use",
+    "no-results"
+  ],
+  "slots": [
+    "title",
+    "description",
+    "primary-action",
+    "secondary-action"
+  ],
+  "variants": [
+    "first-use",
+    "no-results",
+    "filtered-empty"
+  ],
+  "token_refs": [
+    "semantic.space.stack.sm",
+    "semantic.space.stack.md",
+    "semantic.space.section.sm",
+    "semantic.color.text.primary",
+    "semantic.color.text.secondary",
+    "semantic.type.heading-small",
+    "semantic.type.body-medium"
+  ],
+  "patterns": {
+    "required": [
+      "empty-state-next-action"
+    ],
+    "related": [
+      "zero-results-recovery"
+    ]
+  },
+  "accessibility": [
+    "Keep the empty-state title in the document heading hierarchy.",
+    "Place the primary next action after the explanation in reading order.",
+    "Do not use illustration as the only explanation for why content is absent."
+  ],
+  "implementation": {
+    "source_owned": true,
+    "adapters": {
+      "css": {
+        "selectors": [
+          ".dd-empty-state"
+        ]
+      },
+      "react": {
+        "source": "registry/source/react/EmptyState.tsx",
+        "exports": [
+          "EmptyState"
+        ]
+      }
+    }
+  },
+  "provenance": {
+    "origin": "design-distillation",
+    "redistribution": "pending-repository-license"
+  }
+}
