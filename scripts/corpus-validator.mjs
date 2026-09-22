@@ -4,8 +4,10 @@ import path from "node:path";
 export function validateCorpus({ root, errors }) {
   const corpusRoot = path.join(root, "corpus");
   const taxonomyPath = path.join(root, "taxonomy", "taxonomy.json");
+  const recipeCompositionPath = path.join(root, "taxonomy", "recipe-composition.json");
   const taxonomy = readJson(taxonomyPath, root, errors);
   if (!taxonomy) return { entryCount: 0, patternCount: 0, antiPatternCount: 0, familyCount: 0 };
+  const recipeComposition = readJson(recipeCompositionPath, root, errors);
 
   const knownKinds = new Set(taxonomy.entryKinds ?? []);
   const knownSources = new Set(taxonomy.sourceTypes ?? []);
@@ -15,11 +17,17 @@ export function validateCorpus({ root, errors }) {
   const knownStates = new Set(taxonomy.patternStates ?? []);
   const knownEvidence = new Set(taxonomy.evidenceLevels ?? []);
   const knownSeverities = new Set(taxonomy.severities ?? []);
+  const knownRecipeCategories = new Set(taxonomy.recipeCategories ?? []);
+  const knownDesignAxes = new Set(taxonomy.designAxes?.axes ?? []);
+  const knownProtectedDimensions = new Set(taxonomy.recipeProtectedDimensions ?? []);
+  const recipeStrategies = taxonomy.recipeStrategies ?? {};
 
   const ids = new Map();
   const entries = new Map();
   const patternTitles = new Map();
+  const recipeTitles = new Map();
   const familiesSeen = new Set();
+  const recipeCategoriesSeen = new Set();
 
   for (const file of walk(corpusRoot).filter((candidate) => candidate.endsWith(".json"))) {
     const entry = readJson(file, root, errors);
@@ -66,23 +74,37 @@ export function validateCorpus({ root, errors }) {
 
     if (entry.kind === "pattern") validatePattern(entry, file);
     if (entry.kind === "anti-pattern") validateAntiPattern(entry, file);
+    if (entry.kind === "recipe") validateRecipe(entry, file);
   }
 
   for (const [id, { entry, file }] of entries) {
-    if (entry.kind !== "pattern") continue;
-    for (const relatedId of entry.related?.patterns ?? []) validateReference(id, file, relatedId, "pattern");
-    for (const relatedId of entry.related?.anti_patterns ?? []) validateReference(id, file, relatedId, "anti-pattern");
+    if (entry.kind === "pattern") {
+      for (const relatedId of entry.related?.patterns ?? []) validateReference(id, file, relatedId, "pattern");
+      for (const relatedId of entry.related?.anti_patterns ?? []) validateReference(id, file, relatedId, "anti-pattern");
+    }
+    if (entry.kind === "recipe") {
+      for (const patternId of entry.patterns?.prioritize ?? []) validateReference(id, file, patternId, "pattern");
+      for (const patternId of entry.patterns?.consider ?? []) validateReference(id, file, patternId, "pattern");
+      for (const antiPatternId of entry.patterns?.avoid ?? []) validateReference(id, file, antiPatternId, "anti-pattern");
+    }
   }
 
   for (const family of knownFamilies) {
     if (!familiesSeen.has(family)) errors.push('taxonomy/taxonomy.json: pattern family "' + family + '" has no corpus coverage');
   }
+  for (const category of knownRecipeCategories) {
+    if (!recipeCategoriesSeen.has(category)) errors.push('taxonomy/taxonomy.json: recipe category "' + category + '" has no corpus coverage');
+  }
+
+  validateRecipeComposition();
 
   return {
     entryCount: ids.size,
     patternCount: [...entries.values()].filter(({ entry }) => entry.kind === "pattern").length,
     antiPatternCount: [...entries.values()].filter(({ entry }) => entry.kind === "anti-pattern").length,
     familyCount: familiesSeen.size,
+    recipeCount: [...entries.values()].filter(({ entry }) => entry.kind === "recipe").length,
+    recipeCategoryCount: recipeCategoriesSeen.size,
   };
 
   function validatePattern(entry, file) {
@@ -129,6 +151,106 @@ export function validateCorpus({ root, errors }) {
     }
     if (!knownSeverities.has(entry.audit.severity)) fail(errors, root, file, 'unknown audit severity "' + entry.audit.severity + '"');
     requireArray(entry.audit.signals, file, "audit.signals");
+  }
+
+  function validateRecipe(entry, file) {
+    for (const key of ["category", "intent", "design_dna", "foundations", "patterns", "content", "constraints", "composition", "brand_safety"]) {
+      if (entry[key] === undefined || entry[key] === null) fail(errors, root, file, 'recipe missing required field "' + key + '"');
+    }
+
+    if (!knownRecipeCategories.has(entry.category)) fail(errors, root, file, 'unknown recipe category "' + entry.category + '"');
+    else recipeCategoriesSeen.add(entry.category);
+
+    const normalizedTitle = normalize(entry.title);
+    if (recipeTitles.has(normalizedTitle)) fail(errors, root, file, 'duplicate normalized recipe title with "' + recipeTitles.get(normalizedTitle) + '"');
+    else recipeTitles.set(normalizedTitle, entry.id);
+
+    requireArray(entry.intent?.primary_outcomes, file, "intent.primary_outcomes");
+    requireArray(entry.intent?.interaction_model, file, "intent.interaction_model");
+    if (!["standard", "elevated", "high"].includes(entry.intent?.trust_level)) fail(errors, root, file, 'invalid recipe trust level "' + entry.intent?.trust_level + '"');
+
+    const dna = entry.design_dna ?? {};
+    for (const axis of knownDesignAxes) {
+      if (!Object.prototype.hasOwnProperty.call(dna, axis)) {
+        fail(errors, root, file, 'design_dna missing axis "' + axis + '"');
+        continue;
+      }
+      validateAxis(axis, dna[axis], file);
+    }
+    for (const axis of Object.keys(dna)) {
+      if (!knownDesignAxes.has(axis)) fail(errors, root, file, 'design_dna has unknown axis "' + axis + '"');
+    }
+
+    for (const [strategyName, allowedValues] of Object.entries(recipeStrategies)) {
+      const actual = entry.foundations?.[strategyName];
+      if (!actual) fail(errors, root, file, 'foundations missing strategy "' + strategyName + '"');
+      else if (!allowedValues.includes(actual)) fail(errors, root, file, 'unknown ' + strategyName + ' strategy "' + actual + '"');
+    }
+    for (const strategyName of Object.keys(entry.foundations ?? {})) {
+      if (!Object.prototype.hasOwnProperty.call(recipeStrategies, strategyName)) fail(errors, root, file, 'unknown foundation strategy group "' + strategyName + '"');
+    }
+
+    requireArray(entry.patterns?.prioritize, file, "patterns.prioritize");
+    if (!Array.isArray(entry.patterns?.consider)) fail(errors, root, file, "patterns.consider must be an array");
+    requireArray(entry.patterns?.avoid, file, "patterns.avoid");
+    const prioritized = new Set(entry.patterns?.prioritize ?? []);
+    for (const id of entry.patterns?.consider ?? []) {
+      if (prioritized.has(id)) fail(errors, root, file, 'pattern "' + id + '" cannot be both prioritize and consider');
+    }
+
+    requireArray(entry.content?.voice, file, "content.voice");
+    requireArray(entry.content?.guidance, file, "content.guidance");
+    if (!["low", "medium", "medium-high", "high"].includes(entry.content?.density)) fail(errors, root, file, 'invalid content density "' + entry.content?.density + '"');
+
+    requireArray(entry.constraints?.hard, file, "constraints.hard");
+    requireArray(entry.constraints?.strong_defaults, file, "constraints.strong_defaults");
+    requireArray(entry.constraints?.exceptions, file, "constraints.exceptions");
+
+    const baseWeight = entry.composition?.base_weight_min;
+    const influenceWeight = entry.composition?.influence_weight_max;
+    if (!(typeof baseWeight === "number" && baseWeight >= 0.5 && baseWeight <= 1)) fail(errors, root, file, "composition.base_weight_min must be between 0.5 and 1");
+    if (!(typeof influenceWeight === "number" && influenceWeight >= 0 && influenceWeight <= 0.5)) fail(errors, root, file, "composition.influence_weight_max must be between 0 and 0.5");
+    if (recipeComposition) {
+      if (typeof recipeComposition.base_weight_min === "number" && baseWeight < recipeComposition.base_weight_min) fail(errors, root, file, "composition.base_weight_min is below global recipe minimum");
+      if (typeof recipeComposition.influence_weight_max === "number" && influenceWeight > recipeComposition.influence_weight_max) fail(errors, root, file, "composition.influence_weight_max exceeds global recipe maximum");
+    }
+
+    if (!Array.isArray(entry.composition?.protected_dimensions)) fail(errors, root, file, "composition.protected_dimensions must be an array");
+    else {
+      for (const dimension of entry.composition.protected_dimensions) {
+        if (!knownProtectedDimensions.has(dimension)) fail(errors, root, file, 'unknown protected dimension "' + dimension + '"');
+      }
+    }
+
+    for (const key of ["copy_brand_assets", "copy_proprietary_code", "imitate_named_product"]) {
+      if (entry.brand_safety?.[key] !== false) fail(errors, root, file, "brand_safety." + key + " must be false");
+    }
+  }
+
+  function validateAxis(axis, value, file) {
+    if (!value || typeof value !== "object") {
+      fail(errors, root, file, 'design_dna."' + axis + '" must be an object');
+      return;
+    }
+    const { target, min, max, weight } = value;
+    for (const [name, number] of [["target", target], ["min", min], ["max", max]]) {
+      if (!(Number.isInteger(number) && number >= 0 && number <= 100)) fail(errors, root, file, 'design_dna."' + axis + '".' + name + " must be an integer from 0 to 100");
+    }
+    if (Number.isInteger(min) && Number.isInteger(target) && Number.isInteger(max) && !(min <= target && target <= max)) {
+      fail(errors, root, file, 'design_dna."' + axis + '" must satisfy min <= target <= max');
+    }
+    if (!(typeof weight === "number" && weight >= 0 && weight <= 1)) fail(errors, root, file, 'design_dna."' + axis + '".weight must be from 0 to 1');
+  }
+
+  function validateRecipeComposition() {
+    if (!recipeComposition) return;
+    if (!(Number.isInteger(recipeComposition.max_recipes) && recipeComposition.max_recipes >= 1)) errors.push("taxonomy/recipe-composition.json: max_recipes must be a positive integer");
+    if (!(typeof recipeComposition.base_weight_min === "number" && recipeComposition.base_weight_min >= 0.5 && recipeComposition.base_weight_min <= 1)) errors.push("taxonomy/recipe-composition.json: base_weight_min must be between 0.5 and 1");
+    if (!(typeof recipeComposition.max_total_influence === "number" && recipeComposition.max_total_influence >= 0 && recipeComposition.max_total_influence <= 0.5)) errors.push("taxonomy/recipe-composition.json: max_total_influence must be between 0 and 0.5");
+    if (!(typeof recipeComposition.influence_weight_max === "number" && recipeComposition.influence_weight_max >= 0 && recipeComposition.influence_weight_max <= recipeComposition.max_total_influence)) errors.push("taxonomy/recipe-composition.json: influence_weight_max must not exceed max_total_influence");
+    for (const key of ["named_product_style_blending", "proprietary_asset_copying", "proprietary_code_copying"]) {
+      if (recipeComposition.brand_safety?.[key] !== false) errors.push("taxonomy/recipe-composition.json: brand_safety." + key + " must be false");
+    }
   }
 
   function validateReference(ownerId, file, targetId, expectedKind) {

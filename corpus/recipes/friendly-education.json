@@ -1,0 +1,271 @@
+{
+  "id": "friendly-education",
+  "kind": "recipe",
+  "title": "Friendly Education",
+  "summary": "A welcoming learning recipe that favors clear progression, supportive feedback, approachable color, and low-friction guidance without turning study into visual noise.",
+  "problem": "Education products often oscillate between sterile enterprise UI and excessive gamification that competes with comprehension.",
+  "use_when": [
+    "Learning products for self-directed students or guided practice",
+    "Progress and feedback should feel encouraging without obscuring content"
+  ],
+  "avoid_when": [
+    "Expert tools where dense professional workflows dominate",
+    "High-stakes assessment interfaces that require a more restrained posture"
+  ],
+  "rationale": [
+    "Warmth and progression can reduce friction while content remains primary.",
+    "Friendly hierarchy can coexist with rigorous feedback.",
+    "Motion and illustration should support learning state, not distract from it."
+  ],
+  "tags": [
+    "education",
+    "design-recipe"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "foundation",
+  "category": "education",
+  "intent": {
+    "primary_outcomes": [
+      "understand content",
+      "make visible progress",
+      "recover from mistakes"
+    ],
+    "interaction_model": [
+      "guided learning",
+      "practice",
+      "progress feedback"
+    ],
+    "trust_level": "elevated"
+  },
+  "design_dna": {
+    "density": {
+      "target": 42,
+      "min": 24,
+      "max": 60,
+      "weight": 0.5
+    },
+    "whitespace": {
+      "target": 62,
+      "min": 52,
+      "max": 72,
+      "weight": 0.85
+    },
+    "visual-complexity": {
+      "target": 50,
+      "min": 32,
+      "max": 68,
+      "weight": 0.5
+    },
+    "contrast": {
+      "target": 65,
+      "min": 55,
+      "max": 75,
+      "weight": 0.85
+    },
+    "colorfulness": {
+      "target": 60,
+      "min": 42,
+      "max": 78,
+      "weight": 0.5
+    },
+    "warmth": {
+      "target": 68,
+      "min": 58,
+      "max": 78,
+      "weight": 0.85
+    },
+    "playfulness": {
+      "target": 60,
+      "min": 50,
+      "max": 70,
+      "weight": 0.85
+    },
+    "formality": {
+      "target": 25,
+      "min": 7,
+      "max": 43,
+      "weight": 0.5
+    },
+    "luxury": {
+      "target": 5,
+      "min": 0,
+      "max": 23,
+      "weight": 0.5
+    },
+    "technicality": {
+      "target": 25,
+      "min": 7,
+      "max": 43,
+      "weight": 0.5
+    },
+    "editorialness": {
+      "target": 25,
+      "min": 7,
+      "max": 43,
+      "weight": 0.5
+    },
+    "depth": {
+      "target": 25,
+      "min": 7,
+      "max": 43,
+      "weight": 0.5
+    },
+    "border-prominence": {
+      "target": 25,
+      "min": 7,
+      "max": 43,
+      "weight": 0.5
+    },
+    "radius": {
+      "target": 62,
+      "min": 44,
+      "max": 80,
+      "weight": 0.5
+    },
+    "symmetry": {
+      "target": 45,
+      "min": 27,
+      "max": 63,
+      "weight": 0.5
+    },
+    "typographic-expression": {
+      "target": 45,
+      "min": 27,
+      "max": 63,
+      "weight": 0.5
+    },
+    "motion-intensity": {
+      "target": 42,
+      "min": 24,
+      "max": 60,
+      "weight": 0.5
+    },
+    "motion-playfulness": {
+      "target": 55,
+      "min": 37,
+      "max": 73,
+      "weight": 0.5
+    },
+    "information-density": {
+      "target": 42,
+      "min": 24,
+      "max": 60,
+      "weight": 0.5
+    },
+    "icon-frequency": {
+      "target": 55,
+      "min": 37,
+      "max": 73,
+      "weight": 0.5
+    },
+    "illustration-frequency": {
+      "target": 60,
+      "min": 42,
+      "max": 78,
+      "weight": 0.5
+    },
+    "content-prominence": {
+      "target": 78,
+      "min": 68,
+      "max": 88,
+      "weight": 0.85
+    },
+    "navigation-complexity": {
+      "target": 40,
+      "min": 22,
+      "max": 58,
+      "weight": 0.5
+    },
+    "brand-prominence": {
+      "target": 45,
+      "min": 27,
+      "max": 63,
+      "weight": 0.5
+    }
+  },
+  "foundations": {
+    "layout": "guided-learning",
+    "typography": "friendly-ui",
+    "color": "friendly-balanced",
+    "shape": "friendly",
+    "elevation": "restrained",
+    "motion": "functional",
+    "iconography": "moderate",
+    "imagery": "supportive"
+  },
+  "patterns": {
+    "prioritize": [
+      "progressive-onboarding",
+      "question-focused-forms",
+      "labels-hints-and-optionality",
+      "empty-state-next-action",
+      "loading-feedback",
+      "responsive-navigation",
+      "progressive-disclosure"
+    ],
+    "consider": [
+      "save-status-feedback",
+      "search-query-state",
+      "error-recovery"
+    ],
+    "avoid": [
+      "modal-everything",
+      "spinner-without-progress-context",
+      "toast-only-critical-feedback",
+      "premature-validation"
+    ]
+  },
+  "content": {
+    "voice": [
+      "encouraging",
+      "clear",
+      "age-appropriate"
+    ],
+    "density": "medium",
+    "guidance": [
+      "Explain mistakes in actionable language.",
+      "Celebrate progress without interrupting study flow."
+    ]
+  },
+  "constraints": {
+    "hard": [
+      "Learning content and feedback must remain more prominent than decoration.",
+      "Do not use motion as the only indicator of correctness or progress."
+    ],
+    "strong_defaults": [
+      "Use visible progression and supportive recovery.",
+      "Keep controls comfortably spaced.",
+      "Use illustration only when it explains, motivates, or orients."
+    ],
+    "exceptions": [
+      "Older expert learners may prefer denser layouts and much lower playfulness."
+    ]
+  },
+  "composition": {
+    "base_weight_min": 0.6,
+    "influence_weight_max": 0.3,
+    "protected_dimensions": [
+      "warmth",
+      "content-prominence",
+      "accessibility"
+    ]
+  },
+  "brand_safety": {
+    "copy_brand_assets": false,
+    "copy_proprietary_code": false,
+    "imitate_named_product": false
+  },
+  "sources": [
+    {
+      "type": "internal",
+      "title": "Design Distillation synthesis",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    }
+  ]
+}

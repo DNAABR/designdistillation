@@ -59,9 +59,20 @@ Exit criterion: the corpus covers the common product flows an AI usually improvi
 
 ## v0.4 — Design recipes
 
-- Add product recipes for SaaS, fintech, education, consumer social, commerce, editorial, developer tooling, health/wellness, gaming companions, creative software, and public-service interfaces.
-- Add rule-based composition between recipes.
-- Separate strong defaults from hard constraints.
+Status: implementation complete on feat/v0.4-design-recipes; awaiting review/merge.
+
+- [x] Add product recipes for SaaS, fintech, education, consumer social, commerce, editorial, developer tooling, health/wellness, gaming companions, creative software, and public-service interfaces.
+- [x] Require complete 24-axis Design DNA coverage per recipe.
+- [x] Add bounded target/min/max/weight semantics for Design DNA.
+- [x] Add foundation strategy taxonomy for layout, typography, color, shape, elevation, motion, iconography, and imagery.
+- [x] Connect recipes to canonical UX patterns and anti-patterns.
+- [x] Separate hard constraints from strong defaults and exceptions.
+- [x] Add protected dimensions and per-recipe composition limits.
+- [x] Add global rule-based recipe composition.
+- [x] Add deterministic recipe-blending logic and conflict reporting.
+- [x] Add recipe and blend schemas/examples.
+- [x] Add brand-safety invariants preventing named-product imitation and proprietary copying.
+- [x] Add recipe validation and regression tests.
 
 Exit criterion: product intent can select a coherent starting design language without copying a brand.
 

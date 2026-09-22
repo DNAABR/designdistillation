@@ -1,0 +1,287 @@
+{
+  "id": "developer-tooling",
+  "kind": "recipe",
+  "title": "Developer Tooling",
+  "summary": "A dense, keyboard-friendly recipe for technical products where speed, state visibility, search, and complex information structures matter more than decorative presentation.",
+  "problem": "Developer tools become inefficient when consumer-style spacing, hidden navigation, oversized cards, or decorative effects reduce information throughput.",
+  "use_when": [
+    "IDEs, API tools, infrastructure dashboards, developer platforms, or technical administration",
+    "Users repeatedly search, inspect, edit, and compare structured information"
+  ],
+  "avoid_when": [
+    "Beginner learning products where dense technical presentation increases cognitive load",
+    "Visual consumer discovery experiences"
+  ],
+  "rationale": [
+    "Technical work benefits from stable navigation and high information density.",
+    "Keyboard and search paths reduce repeated interaction cost.",
+    "Visual restraint leaves room for code, logs, state, and metadata."
+  ],
+  "tags": [
+    "developer-tools",
+    "design-recipe"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "foundation",
+  "category": "developer-tools",
+  "intent": {
+    "primary_outcomes": [
+      "fast technical navigation",
+      "inspect system state",
+      "edit structured information"
+    ],
+    "interaction_model": [
+      "keyboard-heavy application shell",
+      "search",
+      "dense data views"
+    ],
+    "trust_level": "elevated"
+  },
+  "design_dna": {
+    "density": {
+      "target": 78,
+      "min": 68,
+      "max": 88,
+      "weight": 0.85
+    },
+    "whitespace": {
+      "target": 32,
+      "min": 14,
+      "max": 50,
+      "weight": 0.5
+    },
+    "visual-complexity": {
+      "target": 42,
+      "min": 24,
+      "max": 60,
+      "weight": 0.5
+    },
+    "contrast": {
+      "target": 68,
+      "min": 50,
+      "max": 86,
+      "weight": 0.5
+    },
+    "colorfulness": {
+      "target": 20,
+      "min": 2,
+      "max": 38,
+      "weight": 0.5
+    },
+    "warmth": {
+      "target": 25,
+      "min": 7,
+      "max": 43,
+      "weight": 0.5
+    },
+    "playfulness": {
+      "target": 12,
+      "min": 0,
+      "max": 30,
+      "weight": 0.5
+    },
+    "formality": {
+      "target": 58,
+      "min": 40,
+      "max": 76,
+      "weight": 0.5
+    },
+    "luxury": {
+      "target": 5,
+      "min": 0,
+      "max": 23,
+      "weight": 0.5
+    },
+    "technicality": {
+      "target": 88,
+      "min": 78,
+      "max": 98,
+      "weight": 0.85
+    },
+    "editorialness": {
+      "target": 15,
+      "min": 0,
+      "max": 33,
+      "weight": 0.5
+    },
+    "depth": {
+      "target": 12,
+      "min": 0,
+      "max": 30,
+      "weight": 0.5
+    },
+    "border-prominence": {
+      "target": 35,
+      "min": 17,
+      "max": 53,
+      "weight": 0.5
+    },
+    "radius": {
+      "target": 25,
+      "min": 7,
+      "max": 43,
+      "weight": 0.5
+    },
+    "symmetry": {
+      "target": 55,
+      "min": 37,
+      "max": 73,
+      "weight": 0.5
+    },
+    "typographic-expression": {
+      "target": 22,
+      "min": 4,
+      "max": 40,
+      "weight": 0.5
+    },
+    "motion-intensity": {
+      "target": 15,
+      "min": 0,
+      "max": 33,
+      "weight": 0.5
+    },
+    "motion-playfulness": {
+      "target": 5,
+      "min": 0,
+      "max": 23,
+      "weight": 0.5
+    },
+    "information-density": {
+      "target": 85,
+      "min": 75,
+      "max": 95,
+      "weight": 0.85
+    },
+    "icon-frequency": {
+      "target": 58,
+      "min": 48,
+      "max": 68,
+      "weight": 0.85
+    },
+    "illustration-frequency": {
+      "target": 2,
+      "min": 0,
+      "max": 20,
+      "weight": 0.5
+    },
+    "content-prominence": {
+      "target": 75,
+      "min": 57,
+      "max": 93,
+      "weight": 0.5
+    },
+    "navigation-complexity": {
+      "target": 70,
+      "min": 60,
+      "max": 80,
+      "weight": 0.85
+    },
+    "brand-prominence": {
+      "target": 20,
+      "min": 2,
+      "max": 38,
+      "weight": 0.5
+    }
+  },
+  "foundations": {
+    "layout": "tool-dense",
+    "typography": "technical-ui",
+    "color": "technical-neutral",
+    "shape": "compact",
+    "elevation": "flat",
+    "motion": "minimal",
+    "iconography": "functional",
+    "imagery": "none"
+  },
+  "patterns": {
+    "prioritize": [
+      "primary-navigation",
+      "search-query-state",
+      "filters-and-sort",
+      "data-table-controls",
+      "table-vs-grid",
+      "save-status-feedback",
+      "progressive-disclosure",
+      "settings-by-user-goal"
+    ],
+    "consider": [
+      "breadcrumbs-for-hierarchy",
+      "tabs-for-peer-sections",
+      "offline-resilience",
+      "bulk-selection-actions",
+      "pagination-vs-infinite-scroll"
+    ],
+    "avoid": [
+      "card-everything",
+      "hidden-primary-navigation",
+      "modal-everything",
+      "spinner-without-progress-context"
+    ]
+  },
+  "content": {
+    "voice": [
+      "technical",
+      "concise",
+      "specific"
+    ],
+    "density": "high",
+    "guidance": [
+      "Prefer precise object and action names.",
+      "Expose useful state and metadata without explanatory filler."
+    ]
+  },
+  "constraints": {
+    "hard": [
+      "Do not hide frequently used technical state behind decorative layers.",
+      "Preserve keyboard and focus efficiency for repeated workflows."
+    ],
+    "strong_defaults": [
+      "Use compact spacing and stable navigation.",
+      "Prefer text labels where icon meaning is ambiguous.",
+      "Keep animation minimal."
+    ],
+    "exceptions": [
+      "Onboarding and documentation surfaces can use lower density and more explanation."
+    ]
+  },
+  "composition": {
+    "base_weight_min": 0.6,
+    "influence_weight_max": 0.3,
+    "protected_dimensions": [
+      "density",
+      "technicality",
+      "information-density",
+      "navigation-complexity"
+    ]
+  },
+  "brand_safety": {
+    "copy_brand_assets": false,
+    "copy_proprietary_code": false,
+    "imitate_named_product": false
+  },
+  "sources": [
+    {
+      "type": "internal",
+      "title": "Design Distillation synthesis",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    },
+    {
+      "type": "design-system",
+      "title": "Primer — Foundations",
+      "url": "https://primer.style/product/getting-started/foundations/",
+      "accessed": "2026-09-22",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      },
+      "notes": "Used as a design reference only; no source code, brand assets, or proprietary implementation is redistributed."
+    }
+  ]
+}

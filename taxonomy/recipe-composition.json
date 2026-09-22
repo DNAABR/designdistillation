@@ -1,0 +1,35 @@
+{
+  "version": "0.4.0",
+  "max_recipes": 3,
+  "base_weight_min": 0.5,
+  "max_total_influence": 0.5,
+  "influence_weight_max": 0.35,
+  "axis_merge": {
+    "target": "weighted-average",
+    "range": "intersection-if-nonempty-else-base-range-with-conflict",
+    "weight": "maximum",
+    "protected_dimension_behavior": "base-recipe-wins"
+  },
+  "categorical_merge": {
+    "default": "base-recipe-wins",
+    "override_requirement": "explicit-composer-rationale"
+  },
+  "pattern_merge": {
+    "prioritize": "union",
+    "consider": "union-minus-prioritize",
+    "avoid": "union-anti-patterns",
+    "conflict": "entry-kind-validation-prevents-pattern-anti-pattern-overlap"
+  },
+  "constraints_merge": {
+    "hard": "union",
+    "strong_defaults": "base-first-union",
+    "exceptions": "union",
+    "conflict": "hard-constraint-conflict-requires-explicit-resolution"
+  },
+  "brand_safety": {
+    "named_product_style_blending": false,
+    "proprietary_asset_copying": false,
+    "proprietary_code_copying": false,
+    "rule": "Recipes describe abstract design decisions and product needs, never a request to clone a named product."
+  }
+}

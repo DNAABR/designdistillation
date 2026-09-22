@@ -3,64 +3,260 @@
   "kind": "recipe",
   "title": "Focused SaaS",
   "summary": "A restrained application recipe for task-oriented software that needs clarity, moderate-to-high information density, and low decorative overhead.",
-  "problem": "Generic SaaS generation often mixes excessive cards, large marketing spacing, decorative gradients, and inconsistent density inside a product interface.",
+  "problem": "Generic SaaS generation often mixes excessive cards, oversized marketing spacing, decorative gradients, and inconsistent density inside a product interface.",
   "use_when": [
-    "Building productivity, developer, operations, project, or business software",
+    "Building productivity, operations, project, or business software",
     "The primary value comes from repeated task completion rather than visual discovery"
   ],
   "avoid_when": [
     "The core product is immersive entertainment or highly visual discovery",
-    "The audience requires unusually large touch targets and very low information density"
+    "The audience requires unusually low information density"
   ],
   "rationale": [
     "Restrained surfaces preserve attention for content and actions.",
-    "A consistent compact spacing system supports repeated workflows.",
+    "Consistent compact spacing supports repeated workflows.",
     "Sparse accent usage keeps primary actions and state changes legible."
   ],
   "tags": [
     "saas",
-    "productivity",
-    "dense-ui"
+    "design-recipe"
   ],
   "platforms": [
-    "web",
-    "desktop"
+    "cross-platform"
   ],
   "stage": "foundation",
-  "profile": {
-    "personality": {
-      "density": 68,
-      "whitespace": 45,
-      "visual-complexity": 38,
-      "contrast": 62,
-      "colorfulness": 24,
-      "warmth": 42,
-      "playfulness": 20,
-      "formality": 62,
-      "technicality": 60,
-      "depth": 18,
-      "border-prominence": 30,
-      "radius": 35,
-      "typographic-expression": 28,
-      "motion-intensity": 22,
-      "information-density": 72,
-      "icon-frequency": 42,
-      "illustration-frequency": 8,
-      "brand-prominence": 28
+  "category": "saas",
+  "intent": {
+    "primary_outcomes": [
+      "fast repeated task completion",
+      "clear system state"
+    ],
+    "interaction_model": [
+      "persistent application shell",
+      "frequent forms and data views"
+    ],
+    "trust_level": "elevated"
+  },
+  "design_dna": {
+    "density": {
+      "target": 68,
+      "min": 58,
+      "max": 78,
+      "weight": 0.85
     },
-    "rules": {
-      "require": [
-        "Use typography, spacing, and alignment before introducing new surfaces.",
-        "Keep one clearly dominant accent strategy.",
-        "Provide complete loading, empty, error, disabled, and focus states."
-      ],
-      "avoid": [
-        "decorative gradients without brand/product rationale",
-        "nested cards used only for spacing",
-        "hover scale effects on ordinary containers",
-        "multiple competing primary actions"
-      ]
+    "whitespace": {
+      "target": 45,
+      "min": 27,
+      "max": 63,
+      "weight": 0.5
+    },
+    "visual-complexity": {
+      "target": 38,
+      "min": 20,
+      "max": 56,
+      "weight": 0.5
+    },
+    "contrast": {
+      "target": 62,
+      "min": 52,
+      "max": 72,
+      "weight": 0.85
+    },
+    "colorfulness": {
+      "target": 24,
+      "min": 6,
+      "max": 42,
+      "weight": 0.5
+    },
+    "warmth": {
+      "target": 42,
+      "min": 24,
+      "max": 60,
+      "weight": 0.5
+    },
+    "playfulness": {
+      "target": 20,
+      "min": 2,
+      "max": 38,
+      "weight": 0.5
+    },
+    "formality": {
+      "target": 62,
+      "min": 44,
+      "max": 80,
+      "weight": 0.5
+    },
+    "luxury": {
+      "target": 18,
+      "min": 0,
+      "max": 36,
+      "weight": 0.5
+    },
+    "technicality": {
+      "target": 60,
+      "min": 42,
+      "max": 78,
+      "weight": 0.5
+    },
+    "editorialness": {
+      "target": 20,
+      "min": 2,
+      "max": 38,
+      "weight": 0.5
+    },
+    "depth": {
+      "target": 18,
+      "min": 0,
+      "max": 36,
+      "weight": 0.5
+    },
+    "border-prominence": {
+      "target": 30,
+      "min": 12,
+      "max": 48,
+      "weight": 0.5
+    },
+    "radius": {
+      "target": 35,
+      "min": 17,
+      "max": 53,
+      "weight": 0.5
+    },
+    "symmetry": {
+      "target": 55,
+      "min": 37,
+      "max": 73,
+      "weight": 0.5
+    },
+    "typographic-expression": {
+      "target": 28,
+      "min": 10,
+      "max": 46,
+      "weight": 0.5
+    },
+    "motion-intensity": {
+      "target": 22,
+      "min": 4,
+      "max": 40,
+      "weight": 0.5
+    },
+    "motion-playfulness": {
+      "target": 12,
+      "min": 0,
+      "max": 30,
+      "weight": 0.5
+    },
+    "information-density": {
+      "target": 72,
+      "min": 62,
+      "max": 82,
+      "weight": 0.85
+    },
+    "icon-frequency": {
+      "target": 42,
+      "min": 24,
+      "max": 60,
+      "weight": 0.5
+    },
+    "illustration-frequency": {
+      "target": 8,
+      "min": 0,
+      "max": 26,
+      "weight": 0.5
+    },
+    "content-prominence": {
+      "target": 70,
+      "min": 60,
+      "max": 80,
+      "weight": 0.85
+    },
+    "navigation-complexity": {
+      "target": 65,
+      "min": 55,
+      "max": 75,
+      "weight": 0.85
+    },
+    "brand-prominence": {
+      "target": 28,
+      "min": 10,
+      "max": 46,
+      "weight": 0.5
     }
+  },
+  "foundations": {
+    "layout": "task-dense",
+    "typography": "neutral-ui",
+    "color": "neutral-dominant",
+    "shape": "restrained",
+    "elevation": "restrained",
+    "motion": "restrained",
+    "iconography": "functional",
+    "imagery": "sparse"
+  },
+  "patterns": {
+    "prioritize": [
+      "primary-navigation",
+      "responsive-navigation",
+      "loading-feedback",
+      "empty-state-next-action",
+      "error-recovery",
+      "save-status-feedback",
+      "settings-by-user-goal",
+      "data-table-controls"
+    ],
+    "consider": [
+      "search-query-state",
+      "filters-and-sort",
+      "pagination-vs-infinite-scroll",
+      "progressive-disclosure"
+    ],
+    "avoid": [
+      "card-everything",
+      "spinner-without-progress-context",
+      "modal-everything",
+      "hidden-primary-navigation"
+    ]
+  },
+  "content": {
+    "voice": [
+      "clear",
+      "direct",
+      "professional"
+    ],
+    "density": "medium-high",
+    "guidance": [
+      "Prefer action-oriented labels.",
+      "Keep help contextual rather than promotional."
+    ]
+  },
+  "constraints": {
+    "hard": [
+      "Preserve complete loading, empty, error, disabled, and focus behavior.",
+      "Use semantic tokens rather than arbitrary component values."
+    ],
+    "strong_defaults": [
+      "Use typography, spacing, and alignment before adding surfaces.",
+      "Keep one dominant accent strategy.",
+      "Prefer persistent navigation for recurring destinations."
+    ],
+    "exceptions": [
+      "More expressive brand treatment is acceptable when it does not reduce task clarity."
+    ]
+  },
+  "composition": {
+    "base_weight_min": 0.6,
+    "influence_weight_max": 0.3,
+    "protected_dimensions": [
+      "information-density",
+      "navigation-complexity",
+      "content-clarity",
+      "accessibility"
+    ]
+  },
+  "brand_safety": {
+    "copy_brand_assets": false,
+    "copy_proprietary_code": false,
+    "imitate_named_product": false
   },
   "sources": [
     {

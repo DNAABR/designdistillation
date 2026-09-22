@@ -1,0 +1,273 @@
+{
+  "id": "commerce-conversion",
+  "kind": "recipe",
+  "title": "Commerce Conversion",
+  "summary": "A product-led commerce recipe balancing strong brand expression with search, comparison, trust, price clarity, and low-friction purchase flows.",
+  "problem": "Commerce interfaces underperform when brand spectacle obscures product information, filters, price, delivery state, or purchase consequences.",
+  "use_when": [
+    "Catalog, marketplace, retail, or direct-to-consumer purchasing experiences",
+    "Users need to discover, compare, evaluate, and purchase products"
+  ],
+  "avoid_when": [
+    "Pure editorial brand sites with no meaningful shopping flow",
+    "Back-office commerce administration"
+  ],
+  "rationale": [
+    "Product imagery and purchase information deserve primary visual weight.",
+    "Brand expression should reinforce rather than hide decision-critical details.",
+    "Search and filtering quality often matters more than decorative novelty."
+  ],
+  "tags": [
+    "commerce",
+    "design-recipe"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "foundation",
+  "category": "commerce",
+  "intent": {
+    "primary_outcomes": [
+      "discover products",
+      "compare choices",
+      "complete purchase confidently"
+    ],
+    "interaction_model": [
+      "catalog browsing",
+      "search and filtering",
+      "transaction flow"
+    ],
+    "trust_level": "high"
+  },
+  "design_dna": {
+    "density": {
+      "target": 52,
+      "min": 34,
+      "max": 70,
+      "weight": 0.5
+    },
+    "whitespace": {
+      "target": 58,
+      "min": 48,
+      "max": 68,
+      "weight": 0.85
+    },
+    "visual-complexity": {
+      "target": 58,
+      "min": 40,
+      "max": 76,
+      "weight": 0.5
+    },
+    "contrast": {
+      "target": 68,
+      "min": 58,
+      "max": 78,
+      "weight": 0.85
+    },
+    "colorfulness": {
+      "target": 50,
+      "min": 32,
+      "max": 68,
+      "weight": 0.5
+    },
+    "warmth": {
+      "target": 55,
+      "min": 37,
+      "max": 73,
+      "weight": 0.5
+    },
+    "playfulness": {
+      "target": 30,
+      "min": 12,
+      "max": 48,
+      "weight": 0.5
+    },
+    "formality": {
+      "target": 50,
+      "min": 32,
+      "max": 68,
+      "weight": 0.5
+    },
+    "luxury": {
+      "target": 45,
+      "min": 27,
+      "max": 63,
+      "weight": 0.5
+    },
+    "technicality": {
+      "target": 20,
+      "min": 2,
+      "max": 38,
+      "weight": 0.5
+    },
+    "editorialness": {
+      "target": 38,
+      "min": 20,
+      "max": 56,
+      "weight": 0.5
+    },
+    "depth": {
+      "target": 28,
+      "min": 10,
+      "max": 46,
+      "weight": 0.5
+    },
+    "border-prominence": {
+      "target": 22,
+      "min": 4,
+      "max": 40,
+      "weight": 0.5
+    },
+    "radius": {
+      "target": 45,
+      "min": 27,
+      "max": 63,
+      "weight": 0.5
+    },
+    "symmetry": {
+      "target": 55,
+      "min": 37,
+      "max": 73,
+      "weight": 0.5
+    },
+    "typographic-expression": {
+      "target": 48,
+      "min": 30,
+      "max": 66,
+      "weight": 0.5
+    },
+    "motion-intensity": {
+      "target": 38,
+      "min": 20,
+      "max": 56,
+      "weight": 0.5
+    },
+    "motion-playfulness": {
+      "target": 25,
+      "min": 7,
+      "max": 43,
+      "weight": 0.5
+    },
+    "information-density": {
+      "target": 55,
+      "min": 37,
+      "max": 73,
+      "weight": 0.5
+    },
+    "icon-frequency": {
+      "target": 45,
+      "min": 27,
+      "max": 63,
+      "weight": 0.5
+    },
+    "illustration-frequency": {
+      "target": 15,
+      "min": 0,
+      "max": 33,
+      "weight": 0.5
+    },
+    "content-prominence": {
+      "target": 82,
+      "min": 72,
+      "max": 92,
+      "weight": 0.85
+    },
+    "navigation-complexity": {
+      "target": 60,
+      "min": 50,
+      "max": 70,
+      "weight": 0.85
+    },
+    "brand-prominence": {
+      "target": 70,
+      "min": 60,
+      "max": 80,
+      "weight": 0.85
+    }
+  },
+  "foundations": {
+    "layout": "catalog-led",
+    "typography": "commerce-ui",
+    "color": "commerce-brand-led",
+    "shape": "polished-commerce",
+    "elevation": "restrained",
+    "motion": "functional",
+    "iconography": "functional",
+    "imagery": "product-primary"
+  },
+  "patterns": {
+    "prioritize": [
+      "primary-navigation",
+      "search-query-state",
+      "filters-and-sort",
+      "zero-results-recovery",
+      "labels-hints-and-optionality",
+      "error-recovery",
+      "review-before-submit",
+      "transaction-confirmation"
+    ],
+    "consider": [
+      "minimal-account-creation",
+      "pagination-vs-infinite-scroll",
+      "progressive-disclosure"
+    ],
+    "avoid": [
+      "toast-only-critical-feedback",
+      "premature-validation",
+      "spinner-without-progress-context",
+      "modal-everything"
+    ]
+  },
+  "content": {
+    "voice": [
+      "clear",
+      "benefit-focused",
+      "specific"
+    ],
+    "density": "medium",
+    "guidance": [
+      "Keep price, delivery, stock, and purchase conditions explicit.",
+      "Do not let promotional copy bury product facts."
+    ]
+  },
+  "constraints": {
+    "hard": [
+      "Price and transaction consequences must never depend on decorative interpretation.",
+      "Critical purchase feedback must remain persistent and recoverable."
+    ],
+    "strong_defaults": [
+      "Make product imagery prominent.",
+      "Keep active filters visible.",
+      "Minimize unnecessary account-creation friction."
+    ],
+    "exceptions": [
+      "Luxury categories may increase whitespace and typographic expression while preserving purchase clarity."
+    ]
+  },
+  "composition": {
+    "base_weight_min": 0.65,
+    "influence_weight_max": 0.25,
+    "protected_dimensions": [
+      "content-prominence",
+      "transaction-clarity",
+      "brand-prominence",
+      "accessibility"
+    ]
+  },
+  "brand_safety": {
+    "copy_brand_assets": false,
+    "copy_proprietary_code": false,
+    "imitate_named_product": false
+  },
+  "sources": [
+    {
+      "type": "internal",
+      "title": "Design Distillation synthesis",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    }
+  ]
+}

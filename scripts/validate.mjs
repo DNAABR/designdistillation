@@ -41,7 +41,9 @@ console.log(
   corpusStats.entryCount + " corpus entries (" +
   corpusStats.patternCount + " patterns, " +
   corpusStats.antiPatternCount + " anti-patterns across " +
-  corpusStats.familyCount + " families), " +
+  corpusStats.familyCount + " families, " +
+  corpusStats.recipeCount + " recipes across " +
+  corpusStats.recipeCategoryCount + " categories), " +
   tokenStats.tokenCount + " token paths, and " +
   tokenStats.themeCount + " themes checked."
 );

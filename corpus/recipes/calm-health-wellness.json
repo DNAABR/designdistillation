@@ -1,0 +1,273 @@
+{
+  "id": "calm-health-wellness",
+  "kind": "recipe",
+  "title": "Calm Health and Wellness",
+  "summary": "A calm, supportive recipe for personal health and wellness products emphasizing comprehension, reassurance, privacy-aware state, and low-pressure guidance.",
+  "problem": "Health and wellness interfaces can become stressful when dense dashboards, alarmist color, playful gamification, or vague status language compete with comprehension.",
+  "use_when": [
+    "Wellness tracking, fitness guidance, health education, appointment-adjacent, or personal progress products",
+    "Users benefit from calm explanation and visible progress"
+  ],
+  "avoid_when": [
+    "Emergency or acute-care interfaces requiring stronger alert hierarchy",
+    "Professional clinical systems needing much denser specialist information"
+  ],
+  "rationale": [
+    "Calm hierarchy reduces unnecessary stress.",
+    "Warmth can coexist with precise state and accessible contrast.",
+    "Progress should be informative without moralizing or excessive gamification."
+  ],
+  "tags": [
+    "health-wellness",
+    "design-recipe"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "foundation",
+  "category": "health-wellness",
+  "intent": {
+    "primary_outcomes": [
+      "understand personal state",
+      "follow guidance",
+      "track progress safely"
+    ],
+    "interaction_model": [
+      "guided dashboards",
+      "forms",
+      "progress feedback"
+    ],
+    "trust_level": "high"
+  },
+  "design_dna": {
+    "density": {
+      "target": 35,
+      "min": 17,
+      "max": 53,
+      "weight": 0.5
+    },
+    "whitespace": {
+      "target": 70,
+      "min": 60,
+      "max": 80,
+      "weight": 0.85
+    },
+    "visual-complexity": {
+      "target": 40,
+      "min": 22,
+      "max": 58,
+      "weight": 0.5
+    },
+    "contrast": {
+      "target": 65,
+      "min": 55,
+      "max": 75,
+      "weight": 0.85
+    },
+    "colorfulness": {
+      "target": 38,
+      "min": 20,
+      "max": 56,
+      "weight": 0.5
+    },
+    "warmth": {
+      "target": 72,
+      "min": 62,
+      "max": 82,
+      "weight": 0.85
+    },
+    "playfulness": {
+      "target": 35,
+      "min": 17,
+      "max": 53,
+      "weight": 0.5
+    },
+    "formality": {
+      "target": 48,
+      "min": 30,
+      "max": 66,
+      "weight": 0.5
+    },
+    "luxury": {
+      "target": 15,
+      "min": 0,
+      "max": 33,
+      "weight": 0.5
+    },
+    "technicality": {
+      "target": 25,
+      "min": 7,
+      "max": 43,
+      "weight": 0.5
+    },
+    "editorialness": {
+      "target": 20,
+      "min": 2,
+      "max": 38,
+      "weight": 0.5
+    },
+    "depth": {
+      "target": 15,
+      "min": 0,
+      "max": 33,
+      "weight": 0.5
+    },
+    "border-prominence": {
+      "target": 20,
+      "min": 2,
+      "max": 38,
+      "weight": 0.5
+    },
+    "radius": {
+      "target": 58,
+      "min": 40,
+      "max": 76,
+      "weight": 0.5
+    },
+    "symmetry": {
+      "target": 55,
+      "min": 37,
+      "max": 73,
+      "weight": 0.5
+    },
+    "typographic-expression": {
+      "target": 35,
+      "min": 17,
+      "max": 53,
+      "weight": 0.5
+    },
+    "motion-intensity": {
+      "target": 28,
+      "min": 18,
+      "max": 38,
+      "weight": 0.85
+    },
+    "motion-playfulness": {
+      "target": 20,
+      "min": 2,
+      "max": 38,
+      "weight": 0.5
+    },
+    "information-density": {
+      "target": 38,
+      "min": 20,
+      "max": 56,
+      "weight": 0.5
+    },
+    "icon-frequency": {
+      "target": 38,
+      "min": 20,
+      "max": 56,
+      "weight": 0.5
+    },
+    "illustration-frequency": {
+      "target": 45,
+      "min": 27,
+      "max": 63,
+      "weight": 0.5
+    },
+    "content-prominence": {
+      "target": 85,
+      "min": 75,
+      "max": 95,
+      "weight": 0.85
+    },
+    "navigation-complexity": {
+      "target": 35,
+      "min": 17,
+      "max": 53,
+      "weight": 0.5
+    },
+    "brand-prominence": {
+      "target": 38,
+      "min": 20,
+      "max": 56,
+      "weight": 0.5
+    }
+  },
+  "foundations": {
+    "layout": "calm-guided",
+    "typography": "humanist-ui",
+    "color": "calm-natural",
+    "shape": "soft-calm",
+    "elevation": "restrained",
+    "motion": "restrained",
+    "iconography": "moderate",
+    "imagery": "supportive"
+  },
+  "patterns": {
+    "prioritize": [
+      "progressive-onboarding",
+      "labels-hints-and-optionality",
+      "question-focused-forms",
+      "save-status-feedback",
+      "error-recovery",
+      "loading-feedback",
+      "just-in-time-permissions",
+      "empty-state-next-action"
+    ],
+    "consider": [
+      "offline-resilience",
+      "transaction-confirmation",
+      "progressive-disclosure"
+    ],
+    "avoid": [
+      "toast-only-critical-feedback",
+      "premature-validation",
+      "modal-everything",
+      "spinner-without-progress-context"
+    ]
+  },
+  "content": {
+    "voice": [
+      "calm",
+      "supportive",
+      "specific"
+    ],
+    "density": "medium",
+    "guidance": [
+      "Avoid shame, urgency theater, or ambiguous reassurance.",
+      "Explain status and next actions in plain language."
+    ]
+  },
+  "constraints": {
+    "hard": [
+      "Health-relevant status must remain understandable without relying on color alone.",
+      "Do not use gamification to obscure meaningful warnings or uncertainty."
+    ],
+    "strong_defaults": [
+      "Use generous spacing and restrained motion.",
+      "Make trends and progress explainable.",
+      "Keep permissions contextual and recoverable."
+    ],
+    "exceptions": [
+      "Fitness challenge or community areas may use higher energy while health-status surfaces stay calm."
+    ]
+  },
+  "composition": {
+    "base_weight_min": 0.6,
+    "influence_weight_max": 0.3,
+    "protected_dimensions": [
+      "warmth",
+      "content-prominence",
+      "accessibility",
+      "trust"
+    ]
+  },
+  "brand_safety": {
+    "copy_brand_assets": false,
+    "copy_proprietary_code": false,
+    "imitate_named_product": false
+  },
+  "sources": [
+    {
+      "type": "internal",
+      "title": "Design Distillation synthesis",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    }
+  ]
+}

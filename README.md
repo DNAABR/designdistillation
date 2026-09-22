@@ -15,22 +15,23 @@ Design Distillation is designed as six connected layers:
 5. **Design composer** — product intent + audience + brand personality -> a coherent design contract.
 6. **Design auditor** — automated checks for incoherence, accessibility failures, missing states, and common AI-design failure modes.
 
-## Current milestone: v0.3 UX pattern corpus
+## Current milestone: v0.4 design recipes
 
-v0.1 established the corpus contract and architecture. v0.2 added framework-neutral visual foundations. v0.3 now gives AI agents structured task-level UX decisions instead of forcing them to improvise entire flows from components.
+v0.1 established the corpus contract and architecture. v0.2 added framework-neutral visual foundations. v0.3 added a structured UX pattern graph. v0.4 now combines those foundations into product-archetype design recipes that a future composer can select and adapt.
 
-The current corpus includes:
+The current system includes:
 
 - 30 canonical UX patterns across 10 pattern families;
-- explicit use/avoid decision rules for every pattern;
-- relevant interaction-state coverage;
-- accessibility and implementation requirements;
-- evidence levels and source provenance;
-- graph links between related patterns and anti-patterns;
 - 9 anti-patterns with future auditor signals;
-- validation for family coverage, broken references, duplicate titles, evidence/source mismatches, and missing pattern requirements.
+- 11 design recipes across 11 product categories;
+- complete 24-axis Design DNA coverage for every recipe;
+- foundation strategies for layout, type, color, shape, elevation, motion, icons, and imagery;
+- hard constraints separated from strong defaults and exceptions;
+- bounded recipe composition with protected dimensions and conflict reporting;
+- non-negotiable brand-safety rules;
+- validation for recipe coverage, references, strategies, Design DNA ranges, composition limits, and brand safety.
 
-See [docs/ux-pattern-corpus.md](./docs/ux-pattern-corpus.md) and [corpus/patterns/README.md](./corpus/patterns/README.md).
+See [docs/design-recipes.md](./docs/design-recipes.md), [corpus/recipes/README.md](./corpus/recipes/README.md), and [docs/ux-pattern-corpus.md](./docs/ux-pattern-corpus.md).
 
 ## Token architecture
 
@@ -76,7 +77,7 @@ scripts/      validation tooling
 .github/      CI
 ~~~
 
-Later milestones add richer product recipes, the composer, source-owned components, adapters, the anti-slop auditor, website explorer, MCP retrieval, and benchmarks.
+Later milestones add the natural-language composer, source-owned components, adapters, the anti-slop auditor, website explorer, MCP retrieval, and benchmarks.
 
 ## Validate
 
@@ -86,7 +87,7 @@ Requires Node.js 20+.
 npm run validate
 ~~~
 
-Validation checks both the UX corpus and visual foundations, including pattern family/state contracts, accessibility requirements, evidence/source alignment, related-entry references, token references, circular aliases, DTCG value shapes, scale ordering, theme semantic parity, and configured contrast pairs.
+Validation checks recipes, UX patterns, and visual foundations, including Design DNA coverage/ranges, composition limits, brand-safety invariants, pattern family/state contracts, accessibility requirements, related-entry references, token references, circular aliases, DTCG value shapes, scale ordering, theme semantic parity, and configured contrast pairs.
 
 ## Status
 

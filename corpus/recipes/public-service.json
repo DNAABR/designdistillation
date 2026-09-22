@@ -1,0 +1,288 @@
+{
+  "id": "public-service",
+  "kind": "recipe",
+  "title": "Public Service",
+  "summary": "A high-clarity service recipe for broad public audiences, prioritizing plain language, accessible forms, predictable navigation, robust recovery, and low decorative burden.",
+  "problem": "Public-facing services become exclusionary when branding, jargon, complex layouts, or inaccessible interactions make essential tasks harder to complete.",
+  "use_when": [
+    "Government, civic, benefits, utility, or broadly accessible service transactions",
+    "Users may have varied digital confidence, devices, abilities, and urgency"
+  ],
+  "avoid_when": [
+    "Immersive entertainment, luxury storytelling, or highly expressive consumer discovery",
+    "Specialist internal tools used only by trained professionals"
+  ],
+  "rationale": [
+    "Service completion and comprehension outrank visual novelty.",
+    "Broad audiences require resilient forms and predictable interaction.",
+    "Accessibility must be treated as a baseline across the entire journey."
+  ],
+  "tags": [
+    "public-service",
+    "design-recipe"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "foundation",
+  "category": "public-service",
+  "intent": {
+    "primary_outcomes": [
+      "complete an essential service",
+      "understand eligibility and consequences",
+      "recover from errors"
+    ],
+    "interaction_model": [
+      "task-led forms",
+      "service navigation",
+      "confirmation"
+    ],
+    "trust_level": "high"
+  },
+  "design_dna": {
+    "density": {
+      "target": 40,
+      "min": 22,
+      "max": 58,
+      "weight": 0.5
+    },
+    "whitespace": {
+      "target": 65,
+      "min": 55,
+      "max": 75,
+      "weight": 0.85
+    },
+    "visual-complexity": {
+      "target": 25,
+      "min": 7,
+      "max": 43,
+      "weight": 0.5
+    },
+    "contrast": {
+      "target": 82,
+      "min": 72,
+      "max": 92,
+      "weight": 0.85
+    },
+    "colorfulness": {
+      "target": 18,
+      "min": 0,
+      "max": 36,
+      "weight": 0.5
+    },
+    "warmth": {
+      "target": 42,
+      "min": 24,
+      "max": 60,
+      "weight": 0.5
+    },
+    "playfulness": {
+      "target": 5,
+      "min": 0,
+      "max": 23,
+      "weight": 0.5
+    },
+    "formality": {
+      "target": 80,
+      "min": 70,
+      "max": 90,
+      "weight": 0.85
+    },
+    "luxury": {
+      "target": 0,
+      "min": 0,
+      "max": 18,
+      "weight": 0.5
+    },
+    "technicality": {
+      "target": 10,
+      "min": 0,
+      "max": 28,
+      "weight": 0.5
+    },
+    "editorialness": {
+      "target": 20,
+      "min": 2,
+      "max": 38,
+      "weight": 0.5
+    },
+    "depth": {
+      "target": 0,
+      "min": 0,
+      "max": 18,
+      "weight": 0.5
+    },
+    "border-prominence": {
+      "target": 45,
+      "min": 27,
+      "max": 63,
+      "weight": 0.5
+    },
+    "radius": {
+      "target": 15,
+      "min": 0,
+      "max": 33,
+      "weight": 0.5
+    },
+    "symmetry": {
+      "target": 70,
+      "min": 52,
+      "max": 88,
+      "weight": 0.5
+    },
+    "typographic-expression": {
+      "target": 30,
+      "min": 12,
+      "max": 48,
+      "weight": 0.5
+    },
+    "motion-intensity": {
+      "target": 8,
+      "min": 0,
+      "max": 18,
+      "weight": 0.85
+    },
+    "motion-playfulness": {
+      "target": 0,
+      "min": 0,
+      "max": 18,
+      "weight": 0.5
+    },
+    "information-density": {
+      "target": 48,
+      "min": 30,
+      "max": 66,
+      "weight": 0.5
+    },
+    "icon-frequency": {
+      "target": 20,
+      "min": 2,
+      "max": 38,
+      "weight": 0.5
+    },
+    "illustration-frequency": {
+      "target": 5,
+      "min": 0,
+      "max": 23,
+      "weight": 0.5
+    },
+    "content-prominence": {
+      "target": 98,
+      "min": 88,
+      "max": 100,
+      "weight": 0.85
+    },
+    "navigation-complexity": {
+      "target": 35,
+      "min": 17,
+      "max": 53,
+      "weight": 0.5
+    },
+    "brand-prominence": {
+      "target": 12,
+      "min": 0,
+      "max": 30,
+      "weight": 0.5
+    }
+  },
+  "foundations": {
+    "layout": "service-led",
+    "typography": "service-ui",
+    "color": "service-high-clarity",
+    "shape": "service-functional",
+    "elevation": "flat",
+    "motion": "minimal",
+    "iconography": "sparse",
+    "imagery": "sparse"
+  },
+  "patterns": {
+    "prioritize": [
+      "question-focused-forms",
+      "labels-hints-and-optionality",
+      "error-recovery",
+      "preserve-form-input",
+      "forgiving-input",
+      "review-before-submit",
+      "transaction-confirmation",
+      "responsive-navigation"
+    ],
+    "consider": [
+      "minimal-account-creation",
+      "breadcrumbs-for-hierarchy",
+      "progressive-disclosure"
+    ],
+    "avoid": [
+      "placeholder-only-labels",
+      "premature-validation",
+      "toast-only-critical-feedback",
+      "modal-everything",
+      "spinner-without-progress-context",
+      "hidden-primary-navigation"
+    ]
+  },
+  "content": {
+    "voice": [
+      "plain",
+      "direct",
+      "non-promotional"
+    ],
+    "density": "medium",
+    "guidance": [
+      "Use words users understand rather than organisational terminology.",
+      "Explain eligibility, cost, time, and next steps at the point they matter."
+    ]
+  },
+  "constraints": {
+    "hard": [
+      "Accessibility and task completion outrank brand expression.",
+      "Essential information must not depend on color, motion, hover, or transient feedback."
+    ],
+    "strong_defaults": [
+      "Ask only necessary questions.",
+      "Use simple page structures and explicit headings.",
+      "Preserve valid answers through recovery."
+    ],
+    "exceptions": [
+      "Campaign or informational landing pages may use more visual expression if service entry remains clear."
+    ]
+  },
+  "composition": {
+    "base_weight_min": 0.75,
+    "influence_weight_max": 0.15,
+    "protected_dimensions": [
+      "contrast",
+      "formality",
+      "content-prominence",
+      "accessibility",
+      "transaction-clarity"
+    ]
+  },
+  "brand_safety": {
+    "copy_brand_assets": false,
+    "copy_proprietary_code": false,
+    "imitate_named_product": false
+  },
+  "sources": [
+    {
+      "type": "internal",
+      "title": "Design Distillation synthesis",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    },
+    {
+      "type": "design-system",
+      "title": "GOV.UK Design System — Patterns",
+      "url": "https://design-system.service.gov.uk/patterns/",
+      "accessed": "2026-09-22",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      },
+      "notes": "Used as a design reference only; no source code, brand assets, or proprietary implementation is redistributed."
+    }
+  ]
+}
