@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "migrations": [
     {
       "id": "v0.9-to-v1.0",
@@ -14,6 +14,18 @@
         "Audit report/exception payload versions remain 0.7.0.",
         "v1.0 stabilizes the compatibility and benchmark contracts without rewriting existing artifacts.",
         "The repository distribution is intentionally proprietary/UNLICENSED; no open-source redistribution license is granted."
+      ]
+    },
+    {
+      "id": "v1.0-to-v1.1",
+      "from": ">=1.0.0 <1.1.0",
+      "to": "1.1.0",
+      "breaking": false,
+      "automated": false,
+      "notes": [
+        "Adds the audit-pr CLI as an additive stable v1 command.",
+        "PR auditing reuses the existing 0.7.0 audit-report payload without changing that schema.",
+        "Existing audit, Composer, registry, explorer, and MCP contracts remain compatible."
       ]
     }
   ]

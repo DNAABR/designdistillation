@@ -1,11 +1,11 @@
 {
   "name": "design-distillation",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "description": "Machine-readable design knowledge and benchmarked design pipeline for humans and AI coding agents.",
   "scripts": {
     "validate": "node scripts/validate.mjs",
-    "test": "node --test scripts/token-validator.test.mjs scripts/corpus-validator.test.mjs scripts/recipe-validator.test.mjs scripts/recipe-blender.test.mjs scripts/composer.test.mjs scripts/composer-validator.test.mjs scripts/registry-validator.test.mjs scripts/registry-adapters.test.mjs scripts/auditor-validator.test.mjs scripts/auditor.test.mjs scripts/explorer-validator.test.mjs scripts/explorer-data.test.mjs scripts/retrieval.test.mjs scripts/mcp-server.test.mjs scripts/public-contracts-validator.test.mjs scripts/pipeline-benchmark.test.mjs scripts/visual-fixture.test.mjs",
+    "test": "node --test scripts/token-validator.test.mjs scripts/corpus-validator.test.mjs scripts/recipe-validator.test.mjs scripts/recipe-blender.test.mjs scripts/composer.test.mjs scripts/composer-validator.test.mjs scripts/registry-validator.test.mjs scripts/registry-adapters.test.mjs scripts/auditor-validator.test.mjs scripts/auditor.test.mjs scripts/pr-auditor.test.mjs scripts/explorer-validator.test.mjs scripts/explorer-data.test.mjs scripts/retrieval.test.mjs scripts/mcp-server.test.mjs scripts/public-contracts-validator.test.mjs scripts/pipeline-benchmark.test.mjs scripts/visual-fixture.test.mjs",
     "check": "npm run validate && npm test",
     "compose": "node scripts/compose.mjs",
     "registry": "node scripts/registry-cli.mjs",
@@ -14,7 +14,8 @@
     "mcp": "node scripts/mcp-server.mjs",
     "benchmark:retrieval": "node scripts/retrieval-benchmark.mjs",
     "benchmark:pipeline": "node scripts/pipeline-benchmark.mjs",
-    "visual:fixture": "node scripts/visual-fixture.mjs"
+    "visual:fixture": "node scripts/visual-fixture.mjs",
+    "audit-pr": "node scripts/audit-pr-cli.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/server": "2.0.0",
