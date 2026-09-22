@@ -119,10 +119,20 @@ Exit criterion: agents can retrieve not only advice but vetted implementation pr
 
 ## v0.7 — Anti-slop auditor
 
-- Check spacing/radius/type scale consistency.
-- Detect excessive surface nesting, arbitrary colors, icon-family mixing, missing states, weak hierarchy, and unjustified decorative patterns.
-- Add accessibility and reduced-motion checks.
-- Report errors, warnings, style deviations, and intentional exceptions separately.
+Status: implementation complete on `feat/v0.7-anti-slop-auditor`; awaiting review/merge.
+
+- [x] Add a deterministic source-audit library and CLI driven by a generated design profile.
+- [x] Check raw spacing, radius, typography, color, primitive-token, and low-depth shadow drift.
+- [x] Detect profile-incompatible gradients/backdrop effects instead of banning those aesthetics universally.
+- [x] Detect excessive card/panel/surface nesting and mixed icon-library families.
+- [x] Add static heading-hierarchy and prioritized-pattern implementation-signal checks.
+- [x] Add static accessibility checks for image alt, focus-outline suppression, and input accessible-name review.
+- [x] Add reduced-motion path checks with severity strengthened when the profile requires reduced motion.
+- [x] Report errors, warnings, style deviations, and intentional exceptions separately.
+- [x] Add documented wildcard exceptions that remain visible in the final report.
+- [x] Generate both machine-readable audit-report.json and human-readable AUDIT.md.
+- [x] Keep the source auditor explicitly heuristic and separate from future browser/runtime testing.
+- [x] Add schemas, audit-rule taxonomy, validation, examples, documentation, and regression tests.
 
 Exit criterion: generated UI can be checked against its own design contract.
 

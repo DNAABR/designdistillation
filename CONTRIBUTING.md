@@ -129,6 +129,24 @@ Adapters are transformations, not new design sources. A Tailwind alias may point
 
 Do not publish the registry as an npm package or claim redistributable open-source licensing while the repository remains UNLICENSED.
 
+## Auditor contributions
+
+The auditor should make implementation drift easier to investigate without pretending static source inspection has runtime certainty.
+
+When changing or adding an audit rule:
+
+- give it a stable kebab-case ID and default category in `taxonomy/audit-rules.json`;
+- choose `error` only when source evidence is strong enough to justify failing the audit;
+- use `warning` for likely issues that need runtime or product-context review;
+- use `style-deviation` for profile/token-contract drift rather than universal design prohibitions;
+- report actionable file/line evidence;
+- keep thresholds and pattern signals configurable and validated;
+- add regression fixtures for both detection and false-positive boundaries;
+- preserve deterministic output ordering;
+- keep documented intentional exceptions visible instead of filtering findings away.
+
+An auditor contribution must not claim that keywords or regexes prove accessibility, responsive behavior, or interaction quality. Those checks can direct review; browser/runtime adapters may strengthen evidence in later milestones.
+
 ## Token contributions
 
 Token files are infrastructure, not a palette gallery.

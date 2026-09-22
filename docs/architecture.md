@@ -70,7 +70,11 @@ The machine-readable profile remains canonical. Markdown outputs are generated e
 
 ### 6. Auditor
 
-Checks implementation against the design contract and reports errors, warnings, style deviations, and intentional exceptions.
+v0.7 adds the first deterministic audit layer. It scans supported source files and compares observable implementation choices to the generated design profile and canonical token/pattern rules.
+
+The source auditor reports four distinct categories: errors, warnings, style deviations, and intentional exceptions. Findings include stable rule IDs, file/line locations, messages, and compact evidence. Documented exceptions retain the original category and reason instead of disappearing from the report.
+
+The source layer deliberately distinguishes evidence strength. Missing static image alt or suppressed focus outlines can be errors; pattern-signal absence, heading concerns, or icon-family mixing are warnings; arbitrary token/visual values and profile-incompatible decoration are style deviations. Static heuristics do not claim to replace runtime accessibility, computed-style, responsive, or visual-regression testing.
 
 ## Source-of-truth rule
 
@@ -138,7 +142,9 @@ The repository should therefore favor small, addressable, typed entries over mon
 
 The project must not ban individual aesthetics such as gradients, glass, cards, large radii, or bento layouts. Any of those can be appropriate.
 
-The auditor should instead flag unjustified, inconsistent, or excessive use. The central question is whether a design decision follows from product intent and the design contract.
+The auditor instead flags unjustified, inconsistent, or excessive use relative to the selected profile. The central question is whether a design decision follows from product intent and the design contract.
+
+v0.7 operationalizes this principle with profile-aware thresholds, semantic-token drift checks, source evidence, and explicit intentional exceptions. A gradient or shadow is not inherently wrong; it is flagged when the implementation conflicts with the selected profile or bypasses the semantic contract.
 
 The visual foundations support this by making arbitrary one-off decisions visible: a component that bypasses semantic tokens has intentionally departed from the contract.
 
