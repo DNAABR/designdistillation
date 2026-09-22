@@ -150,7 +150,7 @@ A valid contribution is not automatically a good contribution. Reviewers should 
 - When a benchmark outcome changes, document why the design behavior changed before updating the baseline.
 - Keep visual regression fixtures deterministic and generated from canonical tokens/source-owned registry styling.
 - Do not claim pixel-level regression coverage unless an actual screenshot/diff runner is present.
-- The v1 branch remains release-candidate and UNLICENSED until the user explicitly chooses a license and approves a stable release.
+- v1.0 is stable and intentionally proprietary/UNLICENSED. Do not describe it as open source or assume redistribution permission.
 
 ## Validation
 
@@ -164,4 +164,4 @@ Do not bypass validation to land new corpus, token, recipe, Composer, registry, 
 
 ## Scope control
 
-v1.0 RC establishes compatibility and benchmark gates. Do not change the repository license, publish a public package, tag v1.0.0, or claim final stable/open-source release status without explicit user approval.
+v1.0 establishes stable compatibility and benchmark gates. Do not add an open-source license or enable public package redistribution without explicit user approval.

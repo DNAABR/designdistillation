@@ -1,34 +1,31 @@
-# v1.0 release candidate
+# v1.0 stable release
 
-The repository can now exercise the complete architecture from design knowledge through retrieval and auditing, but this branch is intentionally a release candidate rather than an automatic v1.0.0 release.
+Design Distillation v1.0.0 is the first stable compatibility line for the complete corpus-to-MCP design pipeline.
+
+## Release status
+
+The release is approved as stable.
+
+- package version: 1.0.0
+- public-contract status: stable
+- compatibility line: v1
+- distribution: proprietary
+- package license metadata: UNLICENSED
+
+The repository is publicly visible, but it is not an open-source release and does not grant redistribution rights through an open-source license.
 
 ## Automated gates
 
 CI verifies corpus/tokens, recipe composition, Composer behavior, registry/adapters, auditor rules, explorer generation, retrieval/MCP integration, public-contract consistency, semantic pipeline baselines, and deterministic visual-fixture generation.
 
-## Human release gates
+## Stable v1 guarantees
 
-Two decisions are deliberately not automated:
+The public schemas, documented CLI commands, and MCP tool names listed in schemas/public-manifest.json are stable for the v1 compatibility line under docs/public-api.md.
 
-1. choose the repository license;
-2. explicitly approve the v1.0.0 stable release/tag.
+Breaking public-contract changes require a future major-version decision plus migration documentation and benchmark updates.
 
-Until those happen:
+## Release discipline
 
-- package version remains 1.0.0-rc.1;
-- package license remains UNLICENSED;
-- public surfaces remain v1-candidate;
-- documentation must not claim that the repository is a final open-source v1 release.
+Future v1.x changes must preserve the validated semantic baseline unless a behavior change is intentional and documented.
 
-## Stable-release change
-
-Once the license is chosen and release is approved, the release change should be intentionally small:
-
-- add/confirm the selected LICENSE file and matching package metadata;
-- change package/public manifest version to 1.0.0;
-- change public-contract status from release-candidate to stable;
-- update roadmap/status wording;
-- run the full benchmark suite;
-- tag v1.0.0.
-
-No unrelated product work should be bundled into that release gate.
+No open-source license should be added or public-package redistribution enabled without a separate explicit decision.
