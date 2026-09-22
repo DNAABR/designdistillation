@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" data-dd-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design Distillation Visual Regression Fixture</title>
+  <link rel="stylesheet" href="design-tokens.css">
+  <link rel="stylesheet" href="components.css">
+  <style>
+    body { margin: 0; padding: var(--dd-semantic-space-page-gutter-regular); background: var(--dd-semantic-color-surface-canvas); color: var(--dd-semantic-color-text-primary); font: var(--dd-semantic-type-body-medium); }
+    main { display: grid; gap: var(--dd-semantic-space-section-sm); max-width: 72rem; margin: 0 auto; }
+    section { display: grid; gap: var(--dd-semantic-space-stack-md); }
+    .fixture-row { display: flex; flex-wrap: wrap; gap: var(--dd-semantic-space-inline-sm); align-items: center; }
+    .fixture-column { display: grid; gap: var(--dd-semantic-space-stack-sm); max-width: 36rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <section aria-labelledby="actions"><h1 id="actions">Registry visual contract</h1>
+      <div class="fixture-row">
+        <button class="dd-button dd-button--primary">Primary action</button>
+        <button class="dd-button dd-button--secondary">Secondary action</button>
+        <button class="dd-button dd-button--danger">Delete item</button>
+        <button class="dd-button dd-button--quiet">Quiet action</button>
+        <button class="dd-button dd-button--primary" disabled>Disabled</button>
+      </div>
+    </section>
+    <section aria-labelledby="forms"><h2 id="forms">Fields</h2>
+      <div class="fixture-column">
+        <div class="dd-field"><label class="dd-field__label" for="name">Name</label><div class="dd-field__description" id="name-help">Use the public display name.</div><input class="dd-input" id="name" aria-describedby="name-help" value="Ada Lovelace"></div>
+        <div class="dd-field"><label class="dd-field__label" for="email">Email</label><input class="dd-input" id="email" aria-invalid="true" aria-describedby="email-error" value="bad-address"><div class="dd-field__error" id="email-error">Enter a valid email address.</div></div>
+      </div>
+    </section>
+    <section aria-labelledby="feedback"><h2 id="feedback">Feedback</h2>
+      <div class="fixture-column">
+        <div class="dd-banner dd-banner--info" role="status"><strong class="dd-banner__title">Information</strong><div class="dd-banner__message">A persistent contextual update.</div></div>
+        <div class="dd-banner dd-banner--success" role="status"><strong class="dd-banner__title">Saved</strong><div class="dd-banner__message">Changes are stored.</div></div>
+        <div class="dd-banner dd-banner--warning" role="status"><strong class="dd-banner__title">Review</strong><div class="dd-banner__message">Check these details before continuing.</div></div>
+        <div class="dd-banner dd-banner--danger" role="alert"><strong class="dd-banner__title">Error</strong><div class="dd-banner__message">The action could not be completed.</div></div>
+      </div>
+    </section>
+    <section aria-labelledby="empty"><h2 id="empty">Empty state</h2>
+      <div class="dd-empty-state"><h3 class="dd-empty-state__title">No projects yet</h3><p class="dd-empty-state__description">Create a project to begin organizing the work.</p><div class="dd-empty-state__actions"><button class="dd-button dd-button--primary">Create project</button></div></div>
+    </section>
+  </main>
+</body>
+</html>

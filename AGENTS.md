@@ -141,6 +141,17 @@ A valid contribution is not automatically a good contribution. Reviewers should 
 - Retrieval scoring must remain deterministic, inspectable, and benchmarked for both relevance and response compactness.
 - Do not add a repository-dump tool merely for convenience; token efficiency is part of the product contract.
 
+## v1 compatibility and benchmark rules
+
+- Treat schemas/public-manifest.json as the public compatibility inventory for the v1 line.
+- Do not silently rename/remove required public schema fields, CLI commands, or MCP tool names in v1.
+- Any intentional breaking change requires migration metadata, documentation, compatibility tests where feasible, and a major-version decision.
+- Semantic benchmark baselines are reviewed contracts, not golden files to update automatically.
+- When a benchmark outcome changes, document why the design behavior changed before updating the baseline.
+- Keep visual regression fixtures deterministic and generated from canonical tokens/source-owned registry styling.
+- Do not claim pixel-level regression coverage unless an actual screenshot/diff runner is present.
+- The v1 branch remains release-candidate and UNLICENSED until the user explicitly chooses a license and approves a stable release.
+
 ## Validation
 
 Run:
@@ -149,8 +160,8 @@ Run:
 npm run check
 ~~~
 
-Do not bypass validation to land new corpus, token, recipe, Composer, registry, adapter, auditor, explorer, retrieval, or MCP data.
+Do not bypass validation to land new corpus, token, recipe, Composer, registry, adapter, auditor, explorer, retrieval, MCP, compatibility, migration, or benchmark data.
 
 ## Scope control
 
-v0.9 establishes focused retrieval and the local MCP stdio server. Do not turn this branch into a hosted MCP service, authentication/account system, remote persistence layer, arbitrary filesystem browser, public npm publication, or v1.0 stability declaration. Those require later milestones or explicit decisions.
+v1.0 RC establishes compatibility and benchmark gates. Do not change the repository license, publish a public package, tag v1.0.0, or claim final stable/open-source release status without explicit user approval.

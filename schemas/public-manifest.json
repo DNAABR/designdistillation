@@ -1,0 +1,119 @@
+{
+  "version": "1.0.0-rc.1",
+  "status": "release-candidate",
+  "stable_on_release_tag": "v1.0.0",
+  "blocking_decisions": [
+    "repository-license"
+  ],
+  "compatibility_policy": "docs/public-api.md",
+  "schemas": [
+    {
+      "path": "schemas/corpus-entry.schema.json",
+      "id": "https://designdistillation.dev/schemas/corpus-entry.schema.json",
+      "introduced": "0.1",
+      "surface": "corpus-entry",
+      "stability": "v1-candidate"
+    },
+    {
+      "path": "schemas/token-manifest.schema.json",
+      "id": "https://designdistillation.dev/schemas/token-manifest.schema.json",
+      "introduced": "0.2",
+      "surface": "token-manifest",
+      "stability": "v1-candidate"
+    },
+    {
+      "path": "schemas/pattern-entry.schema.json",
+      "id": "https://designdistillation.dev/schemas/pattern-entry.schema.json",
+      "introduced": "0.3",
+      "surface": "pattern-entry",
+      "stability": "v1-candidate"
+    },
+    {
+      "path": "schemas/recipe-entry.schema.json",
+      "id": "https://designdistillation.dev/schemas/recipe-entry.schema.json",
+      "introduced": "0.4",
+      "surface": "recipe-entry",
+      "stability": "v1-candidate"
+    },
+    {
+      "path": "schemas/recipe-blend.schema.json",
+      "id": "https://designdistillation.dev/schemas/recipe-blend.schema.json",
+      "introduced": "0.4",
+      "surface": "recipe-blend",
+      "stability": "v1-candidate"
+    },
+    {
+      "path": "schemas/composer-input.schema.json",
+      "id": "https://designdistillation.dev/schemas/composer-input.schema.json",
+      "introduced": "0.5",
+      "surface": "composer-input",
+      "stability": "v1-candidate"
+    },
+    {
+      "path": "schemas/design-profile.schema.json",
+      "id": "https://designdistillation.dev/schemas/design-profile.schema.json",
+      "introduced": "0.5",
+      "surface": "design-profile",
+      "stability": "v1-candidate"
+    },
+    {
+      "path": "schemas/registry-entry.schema.json",
+      "id": "https://designdistillation.dev/schemas/registry-entry.schema.json",
+      "introduced": "0.6",
+      "surface": "registry-entry",
+      "stability": "v1-candidate"
+    },
+    {
+      "path": "schemas/audit-exceptions.schema.json",
+      "id": "https://designdistillation.dev/schemas/audit-exceptions.schema.json",
+      "introduced": "0.7",
+      "surface": "audit-exceptions",
+      "stability": "v1-candidate"
+    },
+    {
+      "path": "schemas/audit-report.schema.json",
+      "id": "https://designdistillation.dev/schemas/audit-report.schema.json",
+      "introduced": "0.7",
+      "surface": "audit-report",
+      "stability": "v1-candidate"
+    }
+  ],
+  "commands": [
+    {
+      "name": "compose",
+      "command": "npm run compose -- <input> --out <dir>",
+      "stability": "v1-candidate"
+    },
+    {
+      "name": "registry",
+      "command": "npm run registry -- <list|build|install>",
+      "stability": "v1-candidate"
+    },
+    {
+      "name": "audit",
+      "command": "npm run audit -- --profile <file> --root <dir>",
+      "stability": "v1-candidate"
+    },
+    {
+      "name": "explorer",
+      "command": "npm run explorer -- <build|serve>",
+      "stability": "v1-candidate"
+    },
+    {
+      "name": "mcp",
+      "command": "npm run mcp",
+      "stability": "v1-candidate"
+    }
+  ],
+  "mcp_tools": [
+    "search_patterns",
+    "search_references",
+    "get_design_entry",
+    "get_design_recipe",
+    "select_design_recipes",
+    "compose_design_profile",
+    "search_registry",
+    "get_token",
+    "audit_sources"
+  ]
+}

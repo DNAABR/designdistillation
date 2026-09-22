@@ -1,0 +1,55 @@
+{
+  "version": "0.9.0",
+  "purpose": "Semantic benchmark baseline captured from the validated v0.9 pipeline before the v1 release-candidate layer.",
+  "minimums": {
+    "corpus_entries": 51,
+    "patterns": 30,
+    "anti_patterns": 9,
+    "recipes": 11,
+    "token_paths": 219,
+    "themes": 3,
+    "registry_entries": 6,
+    "audit_rules": 17,
+    "explorer_token_records": 303,
+    "explorer_profiles": 11
+  },
+  "retrieval": {
+    "case_count": 8,
+    "recall_at_requested_limit": 1,
+    "max_average_compact_ratio": 0.12
+  },
+  "composer": {
+    "olympiad_learning": {
+      "base_recipe": "friendly-education",
+      "influence_recipe": "focused-saas",
+      "influence_weight": 0.25,
+      "required_patterns": [
+        "progressive-onboarding",
+        "search-query-state",
+        "save-status-feedback"
+      ],
+      "reduced_motion": "required"
+    },
+    "fintech_wallet": {
+      "base_recipe": "serious-fintech",
+      "required_patterns": [
+        "review-before-submit",
+        "transaction-confirmation"
+      ]
+    }
+  },
+  "registry": {
+    "labeled_input_query_first": "text-field"
+  },
+  "token": {
+    "dark_primary_text_hex": "#f9fafc"
+  },
+  "audit": {
+    "required_fixture_rules": [
+      "arbitrary-color",
+      "arbitrary-spacing",
+      "image-missing-alt",
+      "focus-outline-suppressed"
+    ]
+  }
+}
