@@ -4,7 +4,7 @@ This roadmap keeps the project architecture-first. Each phase should leave the r
 
 ## v0.1 — Corpus contract and architecture
 
-Status: in progress
+Status: merged into `main`; stabilized in v1.0.0.
 
 - [x] Establish repository philosophy and scope.
 - [x] Define corpus entry model and provenance rules.
@@ -15,14 +15,14 @@ Status: in progress
 - [x] Add CI validation.
 - [x] Seed a principle, anti-pattern, UX pattern, and product recipe.
 - [x] Review the initial schema through real contributions.
-- [ ] Decide and add the repository license before calling the project open source.
-- [ ] Declare the first stable v0.1 corpus format.
+- [x] Finalize v1.0 distribution as proprietary/`UNLICENSED`; do not call the project open source.
+- [x] Stabilize the corpus contract as part of the v1.0 compatibility line.
 
 Exit criterion: contributors and coding agents can add structured design knowledge without inventing a new shape for every entry.
 
 ## v0.2 — Tokens and visual foundations
 
-Status: implementation complete on `feat/v0.2-visual-foundations`; awaiting review/merge.
+Status: implementation complete on `feat/v0.2-visual-foundations`; merged into `main`.
 
 - [x] Pin the visual foundation to stable DTCG 2025.10 token documents.
 - [x] Define Design Distillation's explicit multi-file/token-theme composition manifest.
@@ -40,7 +40,7 @@ Exit criterion: a design profile can resolve into coherent framework-neutral vis
 
 ## v0.3 — UX pattern corpus
 
-Status: implementation complete on `feat/v0.3-ux-pattern-corpus`; awaiting review/merge.
+Status: implementation complete on `feat/v0.3-ux-pattern-corpus`; merged into `main`.
 
 - [x] Expand navigation, forms, search, onboarding, settings, data display, permissions, destructive actions, empty states, loading, offline, and recovery patterns.
 - [x] Create a dedicated UX pattern schema and taxonomy.
@@ -59,7 +59,7 @@ Exit criterion: the corpus covers the common product flows an AI usually improvi
 
 ## v0.4 — Design recipes
 
-Status: implementation complete on `feat/v0.4-design-recipes`; awaiting review/merge.
+Status: implementation complete on `feat/v0.4-design-recipes`; merged into `main`.
 
 - [x] Add product recipes for SaaS, fintech, education, consumer social, commerce, editorial, developer tooling, health/wellness, gaming companions, creative software, and public-service interfaces.
 - [x] Require complete 24-axis Design DNA coverage per recipe.
@@ -78,7 +78,7 @@ Exit criterion: product intent can select a coherent starting design language wi
 
 ## v0.5 - Composer
 
-Status: implementation complete on `feat/v0.5-composer`; awaiting review/merge.
+Status: implementation complete on `feat/v0.5-composer`; merged into `main`.
 
 - [x] Add a deterministic library that converts structured product requirements into a design contract.
 - [x] Add a CLI that writes `design-profile.json`, `DESIGN.md`, and `AGENTS.design.md`.
@@ -100,7 +100,7 @@ Exit criterion: a new project can begin with a coherent, explainable design cont
 
 ## v0.6 — Registry and reusable implementation
 
-Status: implementation complete on `feat/v0.6-registry`; awaiting review/merge.
+Status: implementation complete on `feat/v0.6-registry`; merged into `main`.
 
 - [x] Define a canonical registry manifest and registry-entry schema.
 - [x] Add 3 source-owned components: action button, text field, and status banner.
@@ -119,7 +119,7 @@ Exit criterion: agents can retrieve not only advice but vetted implementation pr
 
 ## v0.7 — Anti-slop auditor
 
-Status: implementation complete on `feat/v0.7-anti-slop-auditor`; awaiting review/merge.
+Status: implementation complete on `feat/v0.7-anti-slop-auditor`; merged into `main`.
 
 - [x] Add a deterministic source-audit library and CLI driven by a generated design profile.
 - [x] Check raw spacing, radius, typography, color, primitive-token, and low-depth shadow drift.
@@ -138,7 +138,7 @@ Exit criterion: generated UI can be checked against its own design contract.
 
 ## v0.8 — Website explorer
 
-Status: implementation complete on `feat/v0.8-website-explorer`; awaiting review/merge.
+Status: implementation complete on `feat/v0.8-website-explorer`; merged into `main`.
 
 - [x] Add a dependency-free static explorer build and local server.
 - [x] Compile corpus, registry, token, taxonomy, and Composer data directly from canonical repository sources.
@@ -157,7 +157,7 @@ Exit criterion: non-agent users can understand and configure the system without 
 
 ## v0.9 — Retrieval / MCP layer
 
-Status: implementation complete on `feat/v0.9-mcp-retrieval`; awaiting review/merge.
+Status: implementation complete on `feat/v0.9-mcp-retrieval`; merged into `main`.
 
 - [x] Add deterministic compact search over corpus and registry data instead of repository-wide context dumps.
 - [x] Add focused pattern search and a forward-compatible reference-search surface.
@@ -177,7 +177,7 @@ Exit criterion: coding agents can pull only the design knowledge needed for the 
 
 ## v1.0 — Benchmarked design pipeline
 
-Status: release-candidate implementation complete on `feat/v1.0-release-candidate`; stable release remains blocked on explicit license selection and release approval.
+Status: stable v1.0.0 implementation complete and merged into `main`.
 
 - [x] Add a machine-readable v1 public-contract manifest for schemas, commands, and MCP tools.
 - [x] Add migration policy plus a machine-readable v0.9 -> v1 RC migration record.
@@ -190,7 +190,7 @@ Status: release-candidate implementation complete on `feat/v1.0-release-candidat
 - [x] Add public API compatibility rules for the v1 line.
 - [x] Document future deprecation and breaking-change migration requirements.
 - [x] Add CI/test gates for compatibility manifests, semantic baseline comparisons, and deterministic visual fixture generation.
-- [ ] Choose the repository license.
-- [ ] Explicitly approve/tag the stable `v1.0.0` release.
+- [x] Finalize distribution as proprietary/`UNLICENSED` for v1.0.
+- [x] Explicitly approve the stable `v1.0.0` release.
 
-Exit criterion for code: complete. Final stable-release criterion requires the two human decisions above.
+Exit criterion: complete. v1.0.0 is the stable compatibility line.

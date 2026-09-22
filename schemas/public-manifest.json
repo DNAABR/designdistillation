@@ -1,10 +1,8 @@
 {
-  "version": "1.0.0-rc.1",
-  "status": "release-candidate",
+  "version": "1.0.0",
+  "status": "stable",
   "stable_on_release_tag": "v1.0.0",
-  "blocking_decisions": [
-    "repository-license"
-  ],
+  "blocking_decisions": [],
   "compatibility_policy": "docs/public-api.md",
   "schemas": [
     {
@@ -12,97 +10,97 @@
       "id": "https://designdistillation.dev/schemas/corpus-entry.schema.json",
       "introduced": "0.1",
       "surface": "corpus-entry",
-      "stability": "v1-candidate"
+      "stability": "v1-stable"
     },
     {
       "path": "schemas/token-manifest.schema.json",
       "id": "https://designdistillation.dev/schemas/token-manifest.schema.json",
       "introduced": "0.2",
       "surface": "token-manifest",
-      "stability": "v1-candidate"
+      "stability": "v1-stable"
     },
     {
       "path": "schemas/pattern-entry.schema.json",
       "id": "https://designdistillation.dev/schemas/pattern-entry.schema.json",
       "introduced": "0.3",
       "surface": "pattern-entry",
-      "stability": "v1-candidate"
+      "stability": "v1-stable"
     },
     {
       "path": "schemas/recipe-entry.schema.json",
       "id": "https://designdistillation.dev/schemas/recipe-entry.schema.json",
       "introduced": "0.4",
       "surface": "recipe-entry",
-      "stability": "v1-candidate"
+      "stability": "v1-stable"
     },
     {
       "path": "schemas/recipe-blend.schema.json",
       "id": "https://designdistillation.dev/schemas/recipe-blend.schema.json",
       "introduced": "0.4",
       "surface": "recipe-blend",
-      "stability": "v1-candidate"
+      "stability": "v1-stable"
     },
     {
       "path": "schemas/composer-input.schema.json",
       "id": "https://designdistillation.dev/schemas/composer-input.schema.json",
       "introduced": "0.5",
       "surface": "composer-input",
-      "stability": "v1-candidate"
+      "stability": "v1-stable"
     },
     {
       "path": "schemas/design-profile.schema.json",
       "id": "https://designdistillation.dev/schemas/design-profile.schema.json",
       "introduced": "0.5",
       "surface": "design-profile",
-      "stability": "v1-candidate"
+      "stability": "v1-stable"
     },
     {
       "path": "schemas/registry-entry.schema.json",
       "id": "https://designdistillation.dev/schemas/registry-entry.schema.json",
       "introduced": "0.6",
       "surface": "registry-entry",
-      "stability": "v1-candidate"
+      "stability": "v1-stable"
     },
     {
       "path": "schemas/audit-exceptions.schema.json",
       "id": "https://designdistillation.dev/schemas/audit-exceptions.schema.json",
       "introduced": "0.7",
       "surface": "audit-exceptions",
-      "stability": "v1-candidate"
+      "stability": "v1-stable"
     },
     {
       "path": "schemas/audit-report.schema.json",
       "id": "https://designdistillation.dev/schemas/audit-report.schema.json",
       "introduced": "0.7",
       "surface": "audit-report",
-      "stability": "v1-candidate"
+      "stability": "v1-stable"
     }
   ],
   "commands": [
     {
       "name": "compose",
       "command": "npm run compose -- <input> --out <dir>",
-      "stability": "v1-candidate"
+      "stability": "v1-stable"
     },
     {
       "name": "registry",
       "command": "npm run registry -- <list|build|install>",
-      "stability": "v1-candidate"
+      "stability": "v1-stable"
     },
     {
       "name": "audit",
       "command": "npm run audit -- --profile <file> --root <dir>",
-      "stability": "v1-candidate"
+      "stability": "v1-stable"
     },
     {
       "name": "explorer",
       "command": "npm run explorer -- <build|serve>",
-      "stability": "v1-candidate"
+      "stability": "v1-stable"
     },
     {
       "name": "mcp",
       "command": "npm run mcp",
-      "stability": "v1-candidate"
+      "stability": "v1-stable"
     }
   ],
   "mcp_tools": [
@@ -115,5 +113,7 @@
     "search_registry",
     "get_token",
     "audit_sources"
-  ]
+  ],
+  "distribution": "proprietary",
+  "package_license": "UNLICENSED"
 }

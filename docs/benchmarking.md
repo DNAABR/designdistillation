@@ -49,14 +49,14 @@ The core CI verifies that the fixture builds deterministically. It does not clai
 
 ## Release gate
 
-A v1 stable release should require all of the following:
+The v1.0.0 stable release satisfied the automated gates below; future v1.x releases should continue to require them:
 
 - npm run check passes;
 - pipeline benchmark passes against the approved baseline;
 - retrieval benchmark passes;
 - compatibility/public manifests are internally valid;
 - migration notes are complete;
-- the repository license is explicitly chosen;
-- the release candidate is explicitly approved for a v1.0.0 tag.
+- the distribution/licensing state is explicit;
+- the release is explicitly approved.
 
 The last two conditions are human release decisions, not tasks for the validator to infer.

@@ -1,18 +1,19 @@
 {
-  "version": "1.0.0-rc.1",
+  "version": "1.0.0",
   "migrations": [
     {
-      "id": "v0.9-to-v1.0-rc",
+      "id": "v0.9-to-v1.0",
       "from": ">=0.9.0 <1.0.0",
-      "to": "1.0.0-rc.1",
+      "to": "1.0.0",
       "breaking": false,
       "automated": false,
       "notes": [
         "No canonical schema filename is renamed.",
-        "Composer input and design-profile payload versions remain 0.5.0 in the v1 release candidate.",
+        "Composer input and design-profile payload versions remain 0.5.0 in v1.0.",
         "Registry entry payload version remains 0.6.0.",
         "Audit report/exception payload versions remain 0.7.0.",
-        "The v1 release candidate adds compatibility manifests and pipeline benchmarks without rewriting existing artifacts."
+        "v1.0 stabilizes the compatibility and benchmark contracts without rewriting existing artifacts.",
+        "The repository distribution is intentionally proprietary/UNLICENSED; no open-source redistribution license is granted."
       ]
     }
   ]

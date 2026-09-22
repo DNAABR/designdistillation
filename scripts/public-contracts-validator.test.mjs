@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { validatePublicContracts } from "./public-contracts-validator.mjs";
 
-test("v1 public-contract release candidate is internally consistent", () => {
+test("v1 stable public-contract manifest is internally consistent", () => {
   const errors = [];
   const stats = validatePublicContracts({ root:process.cwd(), errors });
   assert.deepEqual(errors, []);

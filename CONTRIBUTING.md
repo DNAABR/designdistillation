@@ -196,7 +196,7 @@ When changing a public surface:
 - keep visual fixtures deterministic and sourced from canonical tokens/registry styles;
 - never auto-accept new benchmark output merely to make CI green.
 
-The stable v1.0 release and repository license are explicit maintainer decisions and are not inferred from passing CI.
+v1.0 is stable and intentionally proprietary/UNLICENSED. Any future change to licensing or redistribution remains an explicit maintainer decision.
 
 ## Token contributions
 

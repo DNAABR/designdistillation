@@ -156,9 +156,9 @@ Retrieval relevance and compactness are benchmarked. This keeps token efficiency
 
 ## Versioned compatibility and benchmarks
 
-v1.0 RC adds a compatibility layer over the existing architecture without changing which artifacts are canonical.
+v1.0 adds a stable compatibility layer over the existing architecture without changing which artifacts are canonical.
 
-`schemas/public-manifest.json` names the candidate public schemas, CLI commands, and MCP tool names. `migrations/manifest.json` records compatibility transitions. The stable v1 rules become effective only when an explicit v1.0.0 release is approved.
+`schemas/public-manifest.json` names the candidate public schemas, CLI commands, and MCP tool names. `migrations/manifest.json` records compatibility transitions. The stable v1 rules are effective for the v1.0.0 compatibility line.
 
 The benchmark pipeline compares semantic behavior across versions: corpus/token coverage, recipe selection, required UX patterns, registry retrieval, themed token resolution, audit findings, and retrieval relevance/compactness. This intentionally avoids making harmless formatting or implementation changes look like product regressions.
 

@@ -7,9 +7,12 @@ export function validatePublicContracts({ root = process.cwd(), errors = [] } = 
   const packageJson = readJson(path.join(root, "package.json"), root, errors);
   if (!manifest || !migrations || !packageJson) return { schemaCount:0, commandCount:0, toolCount:0, migrationCount:0 };
 
-  if (manifest.status !== "release-candidate") errors.push("schemas/public-manifest.json: v1 branch must remain release-candidate until explicit stable release approval");
+  if (manifest.status !== "stable") errors.push("schemas/public-manifest.json: v1.0 public manifest must be stable");
   if (manifest.stable_on_release_tag !== "v1.0.0") errors.push("schemas/public-manifest.json: stable_on_release_tag must be v1.0.0");
-  if (!(manifest.blocking_decisions ?? []).includes("repository-license")) errors.push("schemas/public-manifest.json: repository-license must remain an explicit release blocker");
+  if ((manifest.blocking_decisions ?? []).length !== 0) errors.push("schemas/public-manifest.json: stable v1.0 must not have unresolved blocking decisions");
+  if (manifest.distribution !== "proprietary") errors.push("schemas/public-manifest.json: v1.0 distribution must be explicitly proprietary");
+  if (manifest.package_license !== "UNLICENSED") errors.push("schemas/public-manifest.json: v1.0 package license must be UNLICENSED");
+  if (packageJson.license !== manifest.package_license) errors.push("package.json license must match public manifest package_license");
   if (packageJson.version !== manifest.version) errors.push("package.json and public manifest version must match");
 
   const ids = new Set();
@@ -22,13 +25,14 @@ export function validatePublicContracts({ root = process.cwd(), errors = [] } = 
     if (surfaces.has(item.surface)) errors.push("schemas/public-manifest.json: duplicate public surface " + item.surface);
     ids.add(item.id);
     surfaces.add(item.surface);
-    if (item.stability !== "v1-candidate") errors.push("schemas/public-manifest.json: public schema stability must remain v1-candidate in RC");
+    if (item.stability !== "v1-stable") errors.push("schemas/public-manifest.json: public schema stability must be v1-stable");
   }
 
   const commandNames = new Set();
   for (const command of manifest.commands ?? []) {
     if (commandNames.has(command.name)) errors.push("schemas/public-manifest.json: duplicate command " + command.name);
     commandNames.add(command.name);
+    if (command.stability !== "v1-stable") errors.push("schemas/public-manifest.json: public command stability must be v1-stable");
   }
   const toolNames = new Set(manifest.mcp_tools ?? []);
   if (toolNames.size !== (manifest.mcp_tools ?? []).length) errors.push("schemas/public-manifest.json: duplicate MCP tool names");

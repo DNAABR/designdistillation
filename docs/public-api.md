@@ -1,8 +1,8 @@
 # Public API and compatibility policy
 
-This document defines the v1 compatibility contract. The current branch is a release candidate, not a final v1.0 release.
+This document defines the v1 compatibility contract. The v1.0.0 compatibility line is stable.
 
-## Release-candidate status
+## Stable v1 status
 
 The machine-readable compatibility manifest is schemas/public-manifest.json.
 

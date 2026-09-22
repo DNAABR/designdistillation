@@ -2,11 +2,11 @@
 
 Design Distillation treats schema evolution, CLI behavior, MCP tools, and generated artifacts as versioned contracts.
 
-## v0.9 to v1.0 release candidate
+## v0.9 to v1.0
 
 No migration is required for existing canonical artifacts.
 
-The v1 RC adds a public-contract manifest, semantic cross-version benchmark baselines, a deterministic pipeline benchmark, a reusable visual-regression fixture, and explicit migration policy.
+v1.0 adds a public-contract manifest, semantic cross-version benchmark baselines, a deterministic pipeline benchmark, a reusable visual-regression fixture, and explicit migration policy.
 
 It does not rename canonical schemas or rewrite existing Composer, registry, or audit payload versions.
 
