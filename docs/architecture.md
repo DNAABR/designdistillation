@@ -134,17 +134,25 @@ The static HTML/CSS/JavaScript layer is a distribution view. Machine-readable re
 
 ## Retrieval-first architecture
 
-AI agents should not ingest the entire repository. Later versions should expose targeted retrieval primitives such as:
+v0.9 exposes focused retrieval instead of asking agents to ingest the entire repository.
 
-- `get_design_recipe`;
+The retrieval layer uses deterministic weighted search to return compact projections first. Full corpus entries, full recipes, Composer output, token values, registry metadata, or audit reports are returned only through the tool that owns that deeper task.
+
+The local MCP stdio server exposes:
+
 - `search_patterns`;
-- `get_reference`;
+- `search_references`;
+- `get_design_entry`;
+- `get_design_recipe`;
+- `select_design_recipes`;
 - `compose_design_profile`;
-- `get_motion_recipe`;
-- `audit_design_profile`;
-- `audit_page`.
+- `search_registry`;
+- `get_token`;
+- `audit_sources`.
 
-The repository should therefore favor small, addressable, typed entries over monolithic prose.
+The MCP server delegates to canonical libraries rather than reproducing design logic. Audit input is explicit source content supplied by the host, so the MCP surface does not become an arbitrary local-filesystem browser.
+
+Retrieval relevance and compactness are benchmarked. This keeps token efficiency as an architectural requirement rather than an informal goal.
 
 ## Anti-slop philosophy
 
@@ -169,6 +177,6 @@ Later adapters may add:
 - shadcn-compatible registry packaging where it adds value;
 - Vue/native targets;
 - additional platform-specific resources;
-- MCP/agent retrieval tools.
+- additional hosted/remote MCP transports if a real deployment need emerges.
 
 The repository license must be chosen before these artifacts are published as a redistributable package. Adapters may transform representation, but they must preserve semantic meaning.

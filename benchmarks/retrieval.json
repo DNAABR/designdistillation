@@ -1,0 +1,96 @@
+{
+  "version": "0.9.0",
+  "target_recall": 1,
+  "max_average_compact_ratio": 0.12,
+  "cases": [
+    {
+      "id": "destructive-confirmation",
+      "query": "confirm irreversible destructive delete",
+      "kinds": [
+        "pattern"
+      ],
+      "limit": 3,
+      "expected_any": [
+        "destructive-confirmation"
+      ]
+    },
+    {
+      "id": "preserve-form",
+      "query": "preserve form input after validation error",
+      "kinds": [
+        "pattern"
+      ],
+      "limit": 3,
+      "expected_any": [
+        "preserve-form-input"
+      ]
+    },
+    {
+      "id": "offline",
+      "query": "offline network recovery reconnect",
+      "kinds": [
+        "pattern"
+      ],
+      "limit": 3,
+      "expected_any": [
+        "offline-resilience"
+      ]
+    },
+    {
+      "id": "primary-nav",
+      "query": "persistent primary navigation recurring destinations",
+      "kinds": [
+        "pattern"
+      ],
+      "limit": 3,
+      "expected_any": [
+        "primary-navigation"
+      ]
+    },
+    {
+      "id": "filter-sort",
+      "query": "filter sort data table controls",
+      "kinds": [
+        "pattern"
+      ],
+      "limit": 3,
+      "expected_any": [
+        "filters-and-sort",
+        "data-table-controls"
+      ]
+    },
+    {
+      "id": "fintech-recipe",
+      "query": "financial transactions trust banking money",
+      "kinds": [
+        "recipe"
+      ],
+      "limit": 3,
+      "expected_any": [
+        "serious-fintech"
+      ]
+    },
+    {
+      "id": "education-recipe",
+      "query": "students lessons learning quizzes education",
+      "kinds": [
+        "recipe"
+      ],
+      "limit": 3,
+      "expected_any": [
+        "friendly-education"
+      ]
+    },
+    {
+      "id": "developer-recipe",
+      "query": "developer code api logs tooling",
+      "kinds": [
+        "recipe"
+      ],
+      "limit": 3,
+      "expected_any": [
+        "developer-tooling"
+      ]
+    }
+  ]
+}

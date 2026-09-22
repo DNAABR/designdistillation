@@ -1,16 +1,25 @@
 {
   "name": "design-distillation",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "private": true,
-  "description": "Machine-readable design knowledge, profiles, reusable implementation, auditing, and a static explorer for humans and AI coding agents.",
+  "description": "Machine-readable design knowledge, Composer, reusable implementation, auditing, explorer, and focused MCP retrieval for humans and AI coding agents.",
   "scripts": {
     "validate": "node scripts/validate.mjs",
-    "test": "node --test scripts/token-validator.test.mjs scripts/corpus-validator.test.mjs scripts/recipe-validator.test.mjs scripts/recipe-blender.test.mjs scripts/composer.test.mjs scripts/composer-validator.test.mjs scripts/registry-validator.test.mjs scripts/registry-adapters.test.mjs scripts/auditor-validator.test.mjs scripts/auditor.test.mjs scripts/explorer-validator.test.mjs scripts/explorer-data.test.mjs",
+    "test": "node --test scripts/token-validator.test.mjs scripts/corpus-validator.test.mjs scripts/recipe-validator.test.mjs scripts/recipe-blender.test.mjs scripts/composer.test.mjs scripts/composer-validator.test.mjs scripts/registry-validator.test.mjs scripts/registry-adapters.test.mjs scripts/auditor-validator.test.mjs scripts/auditor.test.mjs scripts/explorer-validator.test.mjs scripts/explorer-data.test.mjs scripts/retrieval.test.mjs scripts/mcp-server.test.mjs",
     "check": "npm run validate && npm test",
     "compose": "node scripts/compose.mjs",
     "registry": "node scripts/registry-cli.mjs",
     "audit": "node scripts/audit-cli.mjs",
-    "explorer": "node scripts/explorer-cli.mjs"
+    "explorer": "node scripts/explorer-cli.mjs",
+    "mcp": "node scripts/mcp-server.mjs",
+    "benchmark:retrieval": "node scripts/retrieval-benchmark.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "2.0.0",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/client": "2.0.0"
   },
   "engines": {
     "node": ">=20"
