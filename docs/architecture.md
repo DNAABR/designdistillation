@@ -154,6 +154,16 @@ The MCP server delegates to canonical libraries rather than reproducing design l
 
 Retrieval relevance and compactness are benchmarked. This keeps token efficiency as an architectural requirement rather than an informal goal.
 
+## Versioned compatibility and benchmarks
+
+v1.0 RC adds a compatibility layer over the existing architecture without changing which artifacts are canonical.
+
+`schemas/public-manifest.json` names the candidate public schemas, CLI commands, and MCP tool names. `migrations/manifest.json` records compatibility transitions. The stable v1 rules become effective only when an explicit v1.0.0 release is approved.
+
+The benchmark pipeline compares semantic behavior across versions: corpus/token coverage, recipe selection, required UX patterns, registry retrieval, themed token resolution, audit findings, and retrieval relevance/compactness. This intentionally avoids making harmless formatting or implementation changes look like product regressions.
+
+A deterministic registry gallery provides a stable visual-regression input generated from canonical token variables and source-owned CSS. Core CI verifies fixture determinism but does not claim pixel-level visual regression until an actual browser screenshot/diff runner is configured.
+
 ## Anti-slop philosophy
 
 The project must not ban individual aesthetics such as gradients, glass, cards, large radii, or bento layouts. Any of those can be appropriate.

@@ -177,10 +177,20 @@ Exit criterion: coding agents can pull only the design knowledge needed for the 
 
 ## v1.0 — Benchmarked design pipeline
 
-- Maintain prompt/task benchmarks.
-- Compare generated results across versions.
-- Add visual-regression fixtures where useful.
-- Document stable public schemas and contribution APIs.
-- Publish migration rules for future schema changes.
+Status: release-candidate implementation complete on `feat/v1.0-release-candidate`; stable release remains blocked on explicit license selection and release approval.
 
-Exit criterion: Design Distillation behaves like dependable open design infrastructure, not an inspiration archive.
+- [x] Add a machine-readable v1 public-contract manifest for schemas, commands, and MCP tools.
+- [x] Add migration policy plus a machine-readable v0.9 -> v1 RC migration record.
+- [x] Capture the validated v0.9 semantic behavior as a versioned baseline.
+- [x] Add a cross-layer pipeline benchmark covering corpus/tokens, Composer, registry retrieval, themed tokens, auditing, explorer coverage, and focused retrieval.
+- [x] Compare semantic outcomes rather than brittle whole-file snapshots.
+- [x] Require retrieval relevance/compactness to remain within the validated baseline.
+- [x] Add a deterministic registry visual-regression fixture generated from canonical tokens and source-owned CSS.
+- [x] Keep the visual fixture runner-agnostic instead of forcing browser automation into core dependencies.
+- [x] Add public API compatibility rules for the v1 line.
+- [x] Document future deprecation and breaking-change migration requirements.
+- [x] Add CI/test gates for compatibility manifests, semantic baseline comparisons, and deterministic visual fixture generation.
+- [ ] Choose the repository license.
+- [ ] Explicitly approve/tag the stable `v1.0.0` release.
+
+Exit criterion for code: complete. Final stable-release criterion requires the two human decisions above.

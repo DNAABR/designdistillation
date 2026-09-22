@@ -182,6 +182,22 @@ When changing retrieval or MCP behavior:
 
 Do not add a generic dump-everything tool merely to make one agent workflow easier.
 
+## v1 compatibility and benchmark contributions
+
+The v1 line treats schemas, documented CLI commands, and MCP tool names as compatibility surfaces listed in schemas/public-manifest.json.
+
+When changing a public surface:
+
+- decide whether the change is compatible, additive, deprecated, or breaking;
+- update public API documentation and the compatibility manifest when needed;
+- add a migration record for breaking or migration-relevant changes;
+- update semantic baselines only with a written rationale for the behavior change;
+- preserve prior benchmark expectations when implementation refactors do not intentionally change design behavior;
+- keep visual fixtures deterministic and sourced from canonical tokens/registry styles;
+- never auto-accept new benchmark output merely to make CI green.
+
+The stable v1.0 release and repository license are explicit maintainer decisions and are not inferred from passing CI.
+
 ## Token contributions
 
 Token files are infrastructure, not a palette gallery.
