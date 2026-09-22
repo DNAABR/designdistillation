@@ -49,7 +49,7 @@ function withRepo(run) {
 test("PR auditor discovers changed auditable files and excludes docs", () => {
   withRepo((repository) => {
     write(repository, "src/Page.tsx", 'export const Page = () => <main><h1>Home</h1><img src="x.png" /></main>;\n');
-    write(repository, "src/styles.css", ".card { color: #123456; }\n");
+    write(repository, "src/styles.css", ".card {\n  color: #123456;\n}\n");
     write(repository, "README.md", "# Fixture changed\n");
     git(repository, ["add", "."]);
     git(repository, ["commit", "-m", "feature"]);
