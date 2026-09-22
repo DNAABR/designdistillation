@@ -15,7 +15,7 @@ Design Distillation is designed as six connected layers:
 5. **Design composer** — product intent + audience + brand personality -> a coherent design contract.
 6. **Design auditor** — automated checks for incoherence, accessibility failures, missing states, and common AI-design failure modes.
 
-## Current milestone: v1.0 stable
+## Current milestone: v1.1 PR auditing
 
 v0.1 established the corpus contract and architecture. v0.2 added framework-neutral visual foundations. v0.3 added a structured UX pattern graph. v0.4 added canonical product-archetype recipes and bounded recipe composition. v0.5 added the deterministic design compiler. v0.6 added the source-owned registry. v0.7 added the anti-slop auditor. v0.8 added the static human-facing explorer. v0.9 added focused retrieval and MCP. v1.0 stabilizes the complete pipeline with cross-layer semantic benchmarks, explicit public-contract/migration manifests, and deterministic visual-regression fixtures.
 
@@ -46,7 +46,57 @@ The current system includes:
 - a cross-layer semantic benchmark against the validated v0.9 baseline;
 - a deterministic registry visual fixture suitable for external screenshot-regression runners.
 
-See [docs/release-v1.md](./docs/release-v1.md), [docs/benchmarking.md](./docs/benchmarking.md), [docs/public-api.md](./docs/public-api.md), and [docs/migrations.md](./docs/migrations.md).
+v1.1 adds a first-class pull-request workflow: agents can use focused MCP retrieval while reviewing a PR, and the local `audit-pr` command can automatically audit only the changed frontend/source files in a Git diff.\n\nSee [docs/release-v1.md](./docs/release-v1.md), [docs/benchmarking.md](./docs/benchmarking.md), [docs/public-api.md](./docs/public-api.md), and [docs/migrations.md](./docs/migrations.md).
+
+## Review a pull request with Design Distillation
+
+There are two complementary ways to use Design Distillation during a frontend PR review.
+
+### Agent + MCP workflow
+
+Run the Design Distillation MCP server and configure it in your coding agent:
+
+~~~bash
+npm install
+npm run mcp
+~~~
+
+Then open the application repository/PR in the coding agent and ask it to review the changed UI with Design Distillation. A practical prompt is:
+
+> Review this PR using Design Distillation. Determine the appropriate existing design recipe/profile, retrieve the relevant UX patterns and semantic tokens, inspect registry primitives when useful, and audit the frontend files changed by this PR. Report accessibility errors, design-contract violations, style deviations, missing UX states, and unjustified UI choices. Fix clear implementation defects, but explain intentional product/design changes before redesigning them.
+
+A useful agent sequence is:
+
+1. use `select_design_recipes` only when the project does not already have a Design Distillation profile;
+2. use `search_patterns` and then `get_design_entry` for the UX involved in the PR;
+3. use `get_token` for semantic-token questions;
+4. use `search_registry` when a vetted implementation primitive may already exist;
+5. use `audit_sources` on the changed frontend files.
+
+If the application already has a generated `design-profile.json`, keep that profile as the contract. Do not select a fresh recipe for every PR.
+
+### Local diff-scoped audit
+
+From the Design Distillation repository, audit another Git repository's current PR branch:
+
+~~~bash
+npm run audit-pr -- \
+  --profile ../my-app/design-profile.json \
+  --repo ../my-app \
+  --base origin/main \
+  --out ./audit-output
+~~~
+
+`--base` is optional. The command checks GitHub Actions' base ref first, then `origin/main`, `main`, `origin/master`, and `master`. The head defaults to `HEAD`.
+
+The command uses `git diff base...head`, filters to the configured auditable source extensions, skips deleted/build/generated files, and writes:
+
+~~~text
+audit-report.json
+PR_AUDIT.md
+~~~
+
+Only committed changes in the selected Git refs are included. The PR audit is intentionally diff-scoped: global/static heuristics see only changed auditable files, so it complements rather than replaces full-project, runtime, accessibility, responsive, or visual testing.
 
 ## Token and implementation architecture
 
@@ -146,6 +196,6 @@ Validation covers the full corpus-to-MCP pipeline, public-contract consistency, 
 
 ## Status
 
-Design Distillation v1.0.0 is the stable v1 compatibility line. The repository remains `UNLICENSED`/proprietary and is not an open-source release.
+Design Distillation v1.1.0 extends the stable v1 compatibility line with additive PR-scoped auditing. The repository remains `UNLICENSED`/proprietary and is not an open-source release.
 
 See [implementationplan.md](./implementationplan.md), [docs/architecture.md](./docs/architecture.md), [CONTRIBUTING.md](./CONTRIBUTING.md), and [AGENTS.md](./AGENTS.md).

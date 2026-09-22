@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "stable",
   "stable_on_release_tag": "v1.0.0",
   "blocking_decisions": [],
@@ -90,6 +90,11 @@
     {
       "name": "audit",
       "command": "npm run audit -- --profile <file> --root <dir>",
+      "stability": "v1-stable"
+    },
+    {
+      "name": "audit-pr",
+      "command": "npm run audit-pr -- --profile <file> --repo <git-repo> [--base <ref>]",
       "stability": "v1-stable"
     },
     {

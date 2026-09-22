@@ -7,7 +7,7 @@ test("v1 stable public-contract manifest is internally consistent", () => {
   const stats = validatePublicContracts({ root:process.cwd(), errors });
   assert.deepEqual(errors, []);
   assert.equal(stats.schemaCount, 10);
-  assert.equal(stats.commandCount, 5);
+  assert.equal(stats.commandCount, 6);
   assert.equal(stats.toolCount, 9);
-  assert.equal(stats.migrationCount, 1);
+  assert.equal(stats.migrationCount, 2);
 });

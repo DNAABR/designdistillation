@@ -24,6 +24,24 @@ AUDIT.md
 
 By default the CLI exits non-zero only when error findings exist. Warnings and style deviations remain visible without automatically failing the command. Use \`--no-fail\` when the report is informational.
 
+## Audit a pull request
+
+Use `audit-pr` when you want the same auditor scoped to files changed by a Git PR branch instead of a whole source directory:
+
+~~~bash
+npm run audit-pr -- \
+  --profile ../my-app/design-profile.json \
+  --repo ../my-app \
+  --base origin/main \
+  --out ./audit-output
+~~~
+
+The command compares `base...head` using Git merge-base semantics. `--head` defaults to `HEAD`; `--base` auto-detects the GitHub Actions base ref, origin/main, main, origin/master, or master when omitted.
+
+It ignores deleted files, non-source extensions, configured generated/build directories, and symlinked files. It writes the stable machine-readable `audit-report.json` plus a PR-focused `PR_AUDIT.md` with diff metadata and the audited changed-file list.
+
+Because only changed files are supplied to the static auditor, cross-file/global heuristics can see only that diff scope. Use a full `npm run audit` or runtime review when unchanged project context matters.
+
 ## Finding categories
 
 - **error** — a concrete contract/accessibility failure with sufficiently strong static evidence.

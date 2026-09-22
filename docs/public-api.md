@@ -12,7 +12,7 @@ The remaining release blocker is the repository license decision. The RC does no
 
 ## Stable-contract rules for v1
 
-After v1.0 is released:
+For the stable v1 line:
 
 - existing required fields will not be removed or renamed in a v1 minor/patch release;
 - enum values may be added only where consumers are expected to tolerate extension;
