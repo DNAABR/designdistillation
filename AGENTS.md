@@ -119,6 +119,17 @@ A valid contribution is not automatically a good contribution. Reviewers should 
 - Source checks must report file, line, rule, message, and compact evidence so a coding agent can act on them.
 - Do not claim static source scanning replaces browser accessibility testing, computed-style inspection, responsive/device testing, or visual regression.
 
+## Explorer rules
+
+- The website explorer is a generated human view over canonical machine-readable data; it is not a second CMS or data source.
+- Keep explorer data compilation deterministic and source-linked.
+- Every browsable corpus, registry, and token record must preserve a path/link back to its machine source.
+- Use the real Composer to generate baseline recipe profiles; do not reimplement recipe composition in browser code.
+- Interactive Design DNA controls must remain inside the selected recipe ranges.
+- Browser changes are previews. Mark them as such and provide a Composer input for canonical recompilation.
+- Do not introduce a frontend framework or backend solely for static browsing needs without a demonstrated requirement.
+- Preserve keyboard/focus usability and reduced-motion behavior in the explorer itself.
+
 ## Validation
 
 Run:
@@ -127,8 +138,8 @@ Run:
 npm run check
 ~~~
 
-Do not bypass validation to land new corpus, token, recipe, Composer, registry, adapter, or auditor data.
+Do not bypass validation to land new corpus, token, recipe, Composer, registry, adapter, auditor, or explorer data.
 
 ## Scope control
 
-v0.7 establishes the deterministic source auditor. Do not turn this branch into the website explorer, MCP server, hosted AI service, visual-regression/browser automation suite, npm publication, or a broad component-library clone. Those belong to later milestones or require separate architecture decisions.
+v0.8 establishes the static human explorer. Do not turn this branch into the MCP retrieval server, hosted AI service, account system, editable CMS, visual-regression/browser automation suite, npm publication, or a broad component-library clone. Those belong to later milestones or separate architecture decisions.

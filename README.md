@@ -15,9 +15,9 @@ Design Distillation is designed as six connected layers:
 5. **Design composer** — product intent + audience + brand personality -> a coherent design contract.
 6. **Design auditor** — automated checks for incoherence, accessibility failures, missing states, and common AI-design failure modes.
 
-## Current milestone: v0.7 anti-slop auditor
+## Current milestone: v0.8 website explorer
 
-v0.1 established the corpus contract and architecture. v0.2 added framework-neutral visual foundations. v0.3 added a structured UX pattern graph. v0.4 added canonical product-archetype recipes and bounded recipe composition. v0.5 added the deterministic design compiler. v0.6 added the first source-owned reusable implementation registry. v0.7 adds a deterministic source auditor that checks implementation evidence against the generated design contract.
+v0.1 established the corpus contract and architecture. v0.2 added framework-neutral visual foundations. v0.3 added a structured UX pattern graph. v0.4 added canonical product-archetype recipes and bounded recipe composition. v0.5 added the deterministic design compiler. v0.6 added the source-owned registry. v0.7 added the anti-slop auditor. v0.8 adds a static human-facing explorer compiled directly from canonical repository data.
 
 The current system includes:
 
@@ -35,9 +35,11 @@ The current system includes:
 - validation tying registry entries back to canonical patterns, taxonomy, source files, and semantic tokens;
 - non-negotiable brand-safety and accessibility rules;
 - 17 anti-slop audit rules covering token drift, arbitrary visual values, excessive surface nesting, icon-family mixing, missing pattern signals, hierarchy, accessibility, and reduced motion;
-- separate error, warning, style-deviation, and intentional-exception reporting with file/line evidence.
+- separate error, warning, style-deviation, and intentional-exception reporting with file/line evidence;
+- a static searchable explorer for corpus/registry entries and DTCG token records;
+- a bounded Design DNA Lab backed by 11 real Composer-generated baseline profiles and source links.
 
-See [docs/auditor.md](./docs/auditor.md), [docs/registry.md](./docs/registry.md), and [docs/composer.md](./docs/composer.md).
+See [docs/explorer.md](./docs/explorer.md), [docs/auditor.md](./docs/auditor.md), and [docs/registry.md](./docs/registry.md).
 
 ## Token and implementation architecture
 
@@ -67,7 +69,8 @@ schemas/      machine-readable contracts
 taxonomy/     shared vocabulary and Composer rules
 examples/     example requests and generated-contract inputs
 docs/         architecture and design rationale
-scripts/      validation, Composer, registry, adapter, and audit tooling
+scripts/      validation, Composer, registry, audit, and explorer tooling
+explorer/     static browser source generated from canonical data
 .github/      CI
 ~~~
 
@@ -97,13 +100,22 @@ npm run audit -- --profile ./generated-design/design-profile.json --root ../my-a
 
 The source auditor is intentionally heuristic. It reports concrete source evidence and does not claim to replace browser/runtime accessibility, responsive, or visual-regression testing.
 
+## Browse the explorer
+
+~~~bash
+npm run explorer -- build --out .design-distillation/explorer
+npm run explorer -- serve --port 4173
+~~~
+
+The explorer is static and carries machine-source links for every browsable record. Design DNA changes are bounded preview overrides; download the generated Composer input to produce a canonical design contract.
+
 ## Validate
 
 ~~~bash
 npm run check
 ~~~
 
-Validation covers corpus knowledge, recipes, visual foundations, Composer behavior, registry contracts, semantic-token references, source-owned implementation metadata, deterministic adapter generation, and auditor configuration/regression tests.
+Validation covers corpus knowledge, recipes, visual foundations, Composer behavior, registry contracts, semantic-token references, source-owned implementation metadata, deterministic adapters, auditor rules, explorer source linking, baseline profile generation, and static explorer builds.
 
 ## Status
 

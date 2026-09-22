@@ -124,6 +124,14 @@ A design profile is the normalized output of the composer. It combines:
 
 The legacy focused-SaaS example and the v0.5 composer request demonstrate the contract at different stages of the architecture.
 
+## Human explorer
+
+v0.8 compiles the canonical corpus, registry, tokens, taxonomy, and deterministic Composer baselines into a static browser dataset. The explorer provides search/filtering, token inspection, provenance/source links, and a bounded Design DNA Lab without introducing a second database.
+
+Every recipe preview begins as real Composer output. Browser slider changes stay inside the recipe's declared ranges, are marked as explorer-preview provenance, and can be downloaded as Composer input for canonical regeneration.
+
+The static HTML/CSS/JavaScript layer is a distribution view. Machine-readable repository files remain authoritative.
+
 ## Retrieval-first architecture
 
 AI agents should not ingest the entire repository. Later versions should expose targeted retrieval primitives such as:
