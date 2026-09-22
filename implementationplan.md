@@ -138,11 +138,20 @@ Exit criterion: generated UI can be checked against its own design contract.
 
 ## v0.8 — Website explorer
 
-- Browse/search the corpus.
-- Inspect patterns, references, recipes, tokens, and provenance.
-- Interactively tune Design DNA.
-- Preview generated design profiles.
-- Link every human-facing view back to machine-readable source data.
+Status: implementation complete on `feat/v0.8-website-explorer`; awaiting review/merge.
+
+- [x] Add a dependency-free static explorer build and local server.
+- [x] Compile corpus, registry, token, taxonomy, and Composer data directly from canonical repository sources.
+- [x] Add searchable/filterable corpus and registry browsing.
+- [x] Add primitive, semantic, and theme token inspection.
+- [x] Preserve provenance/source paths and clickable machine-source links for every browsable record.
+- [x] Generate one real deterministic Composer baseline profile for each of the 11 design recipes.
+- [x] Add a recipe-bound Design DNA Lab covering all 24 axes.
+- [x] Constrain every interactive axis to the selected recipe min/max range.
+- [x] Add theme preview, foundation-strategy summaries, and structured profile preview.
+- [x] Allow users to download a Composer input reflecting preview settings instead of editing JSON manually.
+- [x] Mark browser-adjusted profiles as explorer previews rather than canonical Composer artifacts.
+- [x] Add deterministic dataset/build validation and regression tests.
 
 Exit criterion: non-agent users can understand and configure the system without editing JSON.
 

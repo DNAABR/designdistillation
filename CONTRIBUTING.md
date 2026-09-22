@@ -147,6 +147,23 @@ When changing or adding an audit rule:
 
 An auditor contribution must not claim that keywords or regexes prove accessibility, responsive behavior, or interaction quality. Those checks can direct review; browser/runtime adapters may strengthen evidence in later milestones.
 
+## Explorer contributions
+
+The explorer exists to make canonical Design Distillation data understandable without creating a parallel content store.
+
+When changing the explorer:
+
+- generate records from existing corpus/token/registry sources instead of copying content into browser-specific JSON;
+- keep machine-source links intact;
+- keep baseline profiles generated through the real Composer;
+- constrain Design DNA controls to declared recipe ranges;
+- distinguish preview overrides from canonical Composer output;
+- keep the static build deterministic and dependency-light;
+- preserve keyboard navigation, visible focus, responsive layout, and reduced-motion behavior;
+- add regression tests when compilation, source linking, or preview behavior changes.
+
+Do not add an editable CMS or browser-side design taxonomy. Changes to design knowledge belong in the canonical machine-readable sources.
+
 ## Token contributions
 
 Token files are infrastructure, not a palette gallery.
