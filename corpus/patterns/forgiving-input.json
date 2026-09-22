@@ -1,0 +1,79 @@
+{
+  "id": "forgiving-input",
+  "kind": "pattern",
+  "title": "Forgiving input normalization",
+  "summary": "Accept harmless formatting variations and normalize them when the meaning is unambiguous instead of forcing users to match machine formatting.",
+  "problem": "Rigid formatting rules create avoidable validation errors for spaces, punctuation, casing, or common human formats.",
+  "use_when": [
+    "Equivalent user formats can be safely normalized",
+    "The system can distinguish harmless formatting from ambiguous or incorrect data"
+  ],
+  "avoid_when": [
+    "Normalization could change meaning",
+    "The exact entered representation has legal, cryptographic, or audit significance"
+  ],
+  "rationale": [
+    "Validation should protect data meaning, not formatting preferences.",
+    "Accepting benign variation prevents unnecessary error-recovery loops."
+  ],
+  "tags": [
+    "forms"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "input",
+  "family": "forms",
+  "evidence": "design-system-backed",
+  "states": [
+    "default",
+    "focus",
+    "error",
+    "success"
+  ],
+  "decision": {
+    "prefer_alternatives_if": [
+      "Exact formatting is itself meaningful or required"
+    ],
+    "use_if": [
+      "Equivalent user formats can be safely normalized",
+      "The system can distinguish harmless formatting from ambiguous or incorrect data"
+    ]
+  },
+  "accessibility": {
+    "requirements": [
+      "Explain true format constraints before submission when they matter.",
+      "Do not require users to visually detect invisible formatting characters."
+    ]
+  },
+  "implementation": {
+    "requirements": [
+      "Trim or ignore harmless formatting where safe.",
+      "Reject ambiguity, not harmless presentation differences.",
+      "Normalize after capture rather than forcing exact keystrokes."
+    ]
+  },
+  "related": {
+    "patterns": [
+      "error-recovery",
+      "labels-hints-and-optionality"
+    ],
+    "anti_patterns": [
+      "premature-validation"
+    ]
+  },
+  "sources": [
+    {
+      "type": "design-system",
+      "title": "GOV.UK Design System ? Recover from validation errors",
+      "url": "https://design-system.service.gov.uk/patterns/validation/",
+      "accessed": "2026-09-22",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      },
+      "notes": "Guidance paraphrased and distilled; no GOV.UK code or assets redistributed."
+    }
+  ]
+}

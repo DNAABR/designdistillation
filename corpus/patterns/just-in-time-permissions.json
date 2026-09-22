@@ -1,0 +1,73 @@
+{
+  "id": "just-in-time-permissions",
+  "kind": "pattern",
+  "title": "Just-in-time permission requests",
+  "summary": "Ask for protected capabilities when a user initiates a feature that needs them, with a clear explanation of value and fallback.",
+  "problem": "Permission prompts during startup lack context, reduce trust, and can block later functionality after an uninformed denial.",
+  "use_when": [
+    "A feature requires a protected platform or account capability"
+  ],
+  "avoid_when": [
+    "The product can provide value without the capability and the user has not expressed intent to use the dependent feature"
+  ],
+  "rationale": [
+    "Context helps users understand why access is requested.",
+    "Denial should lead to a recoverable path rather than a dead end."
+  ],
+  "tags": [
+    "permissions"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "input",
+  "family": "permissions",
+  "evidence": "synthesis",
+  "states": [
+    "default",
+    "permission-denied",
+    "success",
+    "first-use"
+  ],
+  "decision": {
+    "use_if": [
+      "A feature requires a protected platform or account capability"
+    ],
+    "prefer_alternatives_if": [
+      "The feature can work with manual input or a less sensitive capability"
+    ]
+  },
+  "accessibility": {
+    "requirements": [
+      "Explain the purpose in ordinary text before or around the platform prompt when needed.",
+      "Provide a keyboard and screen-reader reachable recovery path after denial."
+    ]
+  },
+  "implementation": {
+    "requirements": [
+      "Request only the minimum capability needed.",
+      "Trigger the request from an understandable user action.",
+      "Explain how to recover after denial when the platform allows it."
+    ]
+  },
+  "related": {
+    "patterns": [
+      "progressive-onboarding",
+      "error-recovery"
+    ],
+    "anti_patterns": [
+      "modal-everything"
+    ]
+  },
+  "sources": [
+    {
+      "type": "internal",
+      "title": "Design Distillation synthesis",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    }
+  ]
+}

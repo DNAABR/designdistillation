@@ -1,0 +1,85 @@
+{
+  "id": "destructive-confirmation",
+  "kind": "pattern",
+  "title": "Consequential destructive confirmation",
+  "summary": "Confirm destructive actions when the consequence is difficult to reverse, using explicit object and action wording and a safe focus model.",
+  "problem": "Generic confirmation dialogs fail to communicate scope and can make destructive actions visually equivalent to cancel.",
+  "use_when": [
+    "Deletion or change is irreversible or expensive to recover",
+    "The action affects multiple objects, access, billing, or important user data"
+  ],
+  "avoid_when": [
+    "The action is easily reversible with a reliable undo",
+    "Repeated confirmations would create habituation for low-risk actions"
+  ],
+  "rationale": [
+    "Confirmation should exist for consequence, not merely because an action is red.",
+    "Specific wording helps users verify scope before commitment."
+  ],
+  "tags": [
+    "destructive-actions",
+    "dialog"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "feedback",
+  "family": "destructive-actions",
+  "evidence": "standard-backed",
+  "states": [
+    "default",
+    "focus",
+    "success",
+    "error",
+    "keyboard"
+  ],
+  "decision": {
+    "use_if": [
+      "Deletion or change is irreversible or expensive to recover",
+      "The action affects multiple objects, access, billing, or important user data"
+    ],
+    "prefer_alternatives_if": [
+      "A reliable immediate undo can make the action safer with less interruption"
+    ]
+  },
+  "accessibility": {
+    "requirements": [
+      "A modal confirmation must manage focus and keep background content inert.",
+      "Provide a visible close or cancel path.",
+      "Return focus meaningfully when the dialog closes."
+    ],
+    "keyboard": [
+      "Escape closes or cancels when safe and consistent with dialog behavior."
+    ]
+  },
+  "implementation": {
+    "requirements": [
+      "Name the affected object and consequence.",
+      "Keep cancel visually and structurally clear.",
+      "Do not preselect the destructive action when accidental confirmation risk is high."
+    ]
+  },
+  "related": {
+    "patterns": [
+      "undo-reversible-actions",
+      "review-before-submit"
+    ],
+    "anti_patterns": [
+      "destructive-action-without-recovery",
+      "modal-everything"
+    ]
+  },
+  "sources": [
+    {
+      "type": "standard",
+      "title": "WAI-ARIA APG — Dialog (Modal) Pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/",
+      "accessed": "2026-09-22",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    }
+  ]
+}

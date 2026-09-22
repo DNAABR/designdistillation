@@ -14,7 +14,7 @@ Status: in progress
 - [x] Add dependency-free corpus validation.
 - [x] Add CI validation.
 - [x] Seed a principle, anti-pattern, UX pattern, and product recipe.
-- [ ] Review the initial schema through real contributions.
+- [x] Review the initial schema through real contributions.
 - [ ] Decide and add the repository license before calling the project open source.
 - [ ] Declare the first stable v0.1 corpus format.
 
@@ -40,10 +40,20 @@ Exit criterion: a design profile can resolve into coherent framework-neutral vis
 
 ## v0.3 — UX pattern corpus
 
-- Expand navigation, forms, search, onboarding, settings, data display, permissions, destructive actions, empty states, loading, offline, and recovery patterns.
-- Model complete interaction states rather than happy-path screenshots.
-- Add accessibility requirements per pattern.
-- Add deduplication/review guidance.
+Status: implementation complete on feat/v0.3-ux-pattern-corpus; awaiting review/merge.
+
+- [x] Expand navigation, forms, search, onboarding, settings, data display, permissions, destructive actions, empty states, loading, offline, and recovery patterns.
+- [x] Create a dedicated UX pattern schema and taxonomy.
+- [x] Model relevant interaction states rather than happy-path screenshots.
+- [x] Add explicit decision rules for when to use a pattern and when to prefer an alternative.
+- [x] Add accessibility and implementation requirements per pattern.
+- [x] Add evidence levels and provenance rules for standard/design-system-backed patterns.
+- [x] Link related patterns and anti-patterns as a validated graph.
+- [x] Add anti-pattern audit signals for common flow failures.
+- [x] Enforce coverage across all declared pattern families.
+- [x] Add duplicate-title, broken-reference, evidence/source, and pattern-contract validation.
+- [x] Add regression tests for the corpus validator.
+- [x] Add deduplication and contribution guidance.
 
 Exit criterion: the corpus covers the common product flows an AI usually improvises badly.
 

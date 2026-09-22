@@ -1,0 +1,79 @@
+{
+  "id": "transaction-confirmation",
+  "kind": "pattern",
+  "title": "Transaction confirmation with next steps",
+  "summary": "After a consequential transaction succeeds, confirm completion, preserve any reference or receipt information, and explain what happens next.",
+  "problem": "Success toasts or redirects can leave users unsure whether an application, payment, upload, or account change actually completed.",
+  "use_when": [
+    "A transaction has a meaningful completion boundary",
+    "Users may need proof, a reference, follow-up timing, or next steps"
+  ],
+  "avoid_when": [
+    "The action is tiny, local, immediately visible, and reversible"
+  ],
+  "rationale": [
+    "Completion needs stronger feedback as consequence increases.",
+    "Next-step expectations reduce duplicate submissions and support requests."
+  ],
+  "tags": [
+    "feedback",
+    "confirmation"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "conversion",
+  "family": "feedback",
+  "evidence": "design-system-backed",
+  "states": [
+    "success",
+    "default",
+    "focus"
+  ],
+  "decision": {
+    "use_if": [
+      "A transaction has a meaningful completion boundary",
+      "Users may need proof, a reference, follow-up timing, or next steps"
+    ],
+    "prefer_alternatives_if": [
+      "Immediate visible state change is sufficient for a low-consequence reversible action"
+    ]
+  },
+  "accessibility": {
+    "requirements": [
+      "Use a clear heading or status message.",
+      "Do not rely on a transient toast for critical confirmation.",
+      "Keep reference information selectable and readable."
+    ]
+  },
+  "implementation": {
+    "requirements": [
+      "Say what completed.",
+      "Show reference or receipt data when applicable.",
+      "Explain expected next steps and timing.",
+      "Prevent accidental duplicate resubmission."
+    ]
+  },
+  "related": {
+    "patterns": [
+      "review-before-submit",
+      "save-status-feedback"
+    ],
+    "anti_patterns": [
+      "toast-only-critical-feedback"
+    ]
+  },
+  "sources": [
+    {
+      "type": "design-system",
+      "title": "GOV.UK Design System — Confirmation pages",
+      "url": "https://design-system.service.gov.uk/patterns/confirmation-pages/",
+      "accessed": "2026-09-22",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    }
+  ]
+}

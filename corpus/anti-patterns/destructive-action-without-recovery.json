@@ -1,0 +1,43 @@
+{
+  "id": "destructive-action-without-recovery",
+  "kind": "anti-pattern",
+  "title": "Destructive action without confirmation or recovery",
+  "summary": "Irreversible or expensive destructive actions need either meaningful confirmation before commitment or a reliable recovery path after it.",
+  "problem": "A slip can permanently destroy user work when destructive controls behave like ordinary actions.",
+  "use_when": [
+    "Auditing delete, revoke, reset, remove, cancel, or destructive bulk operations"
+  ],
+  "avoid_when": [
+    "The action is low consequence and fully reversible through a clearly available undo"
+  ],
+  "rationale": [
+    "Protection should scale with consequence and reversibility.",
+    "Not every destructive-looking action needs a modal, but every costly irreversible action needs protection."
+  ],
+  "tags": [
+    "destructive-actions",
+    "safety"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "feedback",
+  "audit": {
+    "severity": "error",
+    "signals": [
+      "irreversible delete occurs on single ambiguous action",
+      "bulk destructive action provides neither scope confirmation nor undo"
+    ]
+  },
+  "sources": [
+    {
+      "type": "internal",
+      "title": "Design Distillation synthesis",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    }
+  ]
+}

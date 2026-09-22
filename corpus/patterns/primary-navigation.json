@@ -1,0 +1,99 @@
+{
+  "id": "primary-navigation",
+  "kind": "pattern",
+  "title": "Stable primary navigation",
+  "summary": "Keep the product's highest-frequency destinations in a predictable primary navigation structure instead of reshuffling them between screens.",
+  "problem": "Users lose orientation when core destinations move, disappear behind context-specific controls, or compete with secondary links.",
+  "use_when": [
+    "A product has several recurring top-level destinations",
+    "Users revisit the same major areas across sessions"
+  ],
+  "avoid_when": [
+    "The experience is a short linear transaction with no need to switch sections",
+    "There is only one meaningful destination"
+  ],
+  "rationale": [
+    "Stable placement reduces relearning.",
+    "Primary navigation should describe information architecture, not every available action."
+  ],
+  "tags": [
+    "navigation"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "navigation",
+  "family": "navigation",
+  "evidence": "design-system-backed",
+  "states": [
+    "default",
+    "focus",
+    "active",
+    "selected",
+    "mobile",
+    "desktop",
+    "keyboard"
+  ],
+  "decision": {
+    "prefer_alternatives_if": [
+      "The flow is intentionally linear and leaving the step would create data loss or confusion"
+    ],
+    "use_if": [
+      "A product has several recurring top-level destinations",
+      "Users revisit the same major areas across sessions"
+    ]
+  },
+  "accessibility": {
+    "requirements": [
+      "Expose navigation landmarks and meaningful link names.",
+      "Make current location perceivable without relying on color alone.",
+      "Keep every destination keyboard reachable."
+    ],
+    "keyboard": [
+      "Navigation items follow normal tab order unless a documented composite-widget pattern is used."
+    ]
+  },
+  "implementation": {
+    "requirements": [
+      "Separate destinations from page actions.",
+      "Keep labels concise and stable.",
+      "Represent current location explicitly."
+    ],
+    "responsive": [
+      "Transform presentation at smaller widths without hiding access to core destinations."
+    ]
+  },
+  "related": {
+    "patterns": [
+      "responsive-navigation",
+      "breadcrumbs-for-hierarchy"
+    ],
+    "anti_patterns": [
+      "hidden-primary-navigation"
+    ]
+  },
+  "sources": [
+    {
+      "type": "design-system",
+      "title": "GOV.UK Design System ? Patterns",
+      "url": "https://design-system.service.gov.uk/patterns/",
+      "accessed": "2026-09-22",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      },
+      "notes": "Guidance paraphrased and distilled; no GOV.UK code or assets redistributed."
+    },
+    {
+      "type": "internal",
+      "title": "Design Distillation synthesis",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      },
+      "notes": "Original synthesis; no external code or assets redistributed."
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "id": "settings-by-user-goal",
+  "kind": "pattern",
+  "title": "Settings grouped by user goal",
+  "summary": "Organize settings around understandable user goals and consequences rather than internal services, database models, or engineering ownership.",
+  "problem": "Settings pages become dumping grounds where unrelated controls are grouped by implementation rather than what users are trying to accomplish.",
+  "use_when": [
+    "A product exposes multiple preferences, account controls, access controls, or integrations",
+    "Users need to revisit settings over time"
+  ],
+  "avoid_when": [
+    "There are only a few simple settings that fit clearly in one small view"
+  ],
+  "rationale": [
+    "User-goal grouping improves scanning and makes consequences easier to predict.",
+    "Dangerous or rare controls should not compete visually with routine preferences."
+  ],
+  "tags": [
+    "settings"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "system",
+  "family": "settings",
+  "evidence": "synthesis",
+  "states": [
+    "default",
+    "focus",
+    "saved",
+    "unsaved",
+    "error",
+    "mobile",
+    "desktop"
+  ],
+  "decision": {
+    "use_if": [
+      "A product exposes multiple preferences, account controls, access controls, or integrations",
+      "Users need to revisit settings over time"
+    ],
+    "prefer_alternatives_if": [
+      "A setting belongs in the immediate context where its effect is understood better"
+    ]
+  },
+  "accessibility": {
+    "requirements": [
+      "Use headings and landmarks to make groups navigable.",
+      "Keep labels and current values programmatically associated.",
+      "Do not make toggles ambiguous about what on and off mean."
+    ]
+  },
+  "implementation": {
+    "requirements": [
+      "Group by user intent.",
+      "Keep dangerous account or billing actions separated from routine preferences.",
+      "Show save semantics clearly: instant, explicit, or pending."
+    ]
+  },
+  "related": {
+    "patterns": [
+      "save-status-feedback",
+      "destructive-confirmation",
+      "just-in-time-permissions"
+    ],
+    "anti_patterns": [
+      "card-everything"
+    ]
+  },
+  "sources": [
+    {
+      "type": "internal",
+      "title": "Design Distillation synthesis",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    }
+  ]
+}

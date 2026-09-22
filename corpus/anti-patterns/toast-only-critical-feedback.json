@@ -1,0 +1,43 @@
+{
+  "id": "toast-only-critical-feedback",
+  "kind": "anti-pattern",
+  "title": "Toast-only critical feedback",
+  "summary": "Critical errors, transaction completion, save failures, or recovery actions should not exist only in a transient message that can disappear unnoticed.",
+  "problem": "Transient messages are easy to miss, difficult to revisit, and may not provide a stable recovery path.",
+  "use_when": [
+    "Auditing important state changes communicated only by auto-dismiss notifications"
+  ],
+  "avoid_when": [
+    "The message is low consequence, supplemental, and the resulting state remains visible elsewhere"
+  ],
+  "rationale": [
+    "Feedback persistence should scale with consequence.",
+    "Critical state belongs near the affected task or in a stable status region."
+  ],
+  "tags": [
+    "feedback",
+    "notifications"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "feedback",
+  "audit": {
+    "severity": "error",
+    "signals": [
+      "save failure only appears in auto-dismiss toast",
+      "transaction confirmation exists only as transient message"
+    ]
+  },
+  "sources": [
+    {
+      "type": "internal",
+      "title": "Design Distillation synthesis",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    }
+  ]
+}

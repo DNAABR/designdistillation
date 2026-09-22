@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.3.0",
   "entryKinds": [
     "principle",
     "pattern",
@@ -75,5 +75,52 @@
       "navigation-complexity",
       "brand-prominence"
     ]
-  }
+  },
+  "patternFamilies": [
+    "navigation",
+    "forms",
+    "search",
+    "onboarding",
+    "permissions",
+    "feedback",
+    "destructive-actions",
+    "data-display",
+    "settings",
+    "responsive"
+  ],
+  "patternStates": [
+    "default",
+    "hover",
+    "focus",
+    "active",
+    "disabled",
+    "loading",
+    "empty",
+    "error",
+    "warning",
+    "success",
+    "partial-data",
+    "offline",
+    "permission-denied",
+    "unauthenticated",
+    "first-use",
+    "selected",
+    "expanded",
+    "collapsed",
+    "no-results",
+    "submitting",
+    "saved",
+    "unsaved",
+    "retrying",
+    "mobile",
+    "tablet",
+    "desktop",
+    "keyboard",
+    "reduced-motion"
+  ],
+  "evidenceLevels": [
+    "standard-backed",
+    "design-system-backed",
+    "synthesis"
+  ]
 }

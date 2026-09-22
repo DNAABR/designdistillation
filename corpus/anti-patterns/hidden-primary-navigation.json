@@ -1,0 +1,43 @@
+{
+  "id": "hidden-primary-navigation",
+  "kind": "anti-pattern",
+  "title": "Needlessly hidden primary navigation",
+  "summary": "Hiding frequent top-level destinations behind generic menus or unlabeled icons reduces discoverability when there is enough space to show them.",
+  "problem": "Users repeatedly spend interaction cost revealing destinations that could remain visible and stable.",
+  "use_when": [
+    "Auditing desktop or wide layouts where core destinations are hidden without a space or focus rationale"
+  ],
+  "avoid_when": [
+    "Narrow screens require a disclosure transformation or the product intentionally prioritizes immersive content"
+  ],
+  "rationale": [
+    "Visibility should reflect frequency and importance.",
+    "Responsive collapse is not a reason to hide navigation everywhere."
+  ],
+  "tags": [
+    "navigation",
+    "discoverability"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "navigation",
+  "audit": {
+    "severity": "style-deviation",
+    "signals": [
+      "desktop primary navigation exists only behind generic menu icon",
+      "frequent destinations require extra reveal action with ample width"
+    ]
+  },
+  "sources": [
+    {
+      "type": "internal",
+      "title": "Design Distillation synthesis",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    }
+  ]
+}

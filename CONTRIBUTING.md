@@ -47,6 +47,27 @@ focused-saas
 
 Avoid branding an abstract pattern with a company name when the actual concept can be described generically.
 
+## UX pattern contributions
+
+Patterns need more structure than generic corpus entries because future agents must be able to choose between them.
+
+Every pattern must include:
+
+- a declared pattern family;
+- an evidence level;
+- relevant interaction/product states;
+- positive decision rules;
+- explicit conditions where an alternative is preferable;
+- accessibility requirements;
+- implementation requirements;
+- related pattern and anti-pattern IDs.
+
+Before adding a new pattern, search for an existing entry that solves the same user problem. A new product name, component name, or visual treatment is not enough reason to create another pattern.
+
+Evidence levels are provenance classifications, not quality scores. standard-backed entries need a standard source. design-system-backed entries need a design-system source. synthesis entries represent original Design Distillation synthesis.
+
+When using external standards or design-system guidance, distill the principle and interaction contract. Do not copy example code or proprietary assets merely because the source is public.
+
 ## Token contributions
 
 Token files are infrastructure, not a palette gallery.
@@ -82,7 +103,7 @@ A reviewer should be able to answer:
 Run:
 
 ~~~bash
-npm run validate
+npm run check
 ~~~
 
 CI runs the same validator on pull requests. Validation is necessary but not sufficient: a mechanically valid token or corpus entry can still be rejected for weak design reasoning.

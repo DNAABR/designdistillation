@@ -1,0 +1,79 @@
+{
+  "id": "offline-resilience",
+  "kind": "pattern",
+  "title": "Offline and reconnect resilience",
+  "summary": "When connectivity is lost, preserve usable local state, explain what is unavailable, and make sync or retry behavior explicit.",
+  "problem": "Network loss often destroys work or makes all content appear broken even when cached or local functionality could continue.",
+  "use_when": [
+    "The product performs network-dependent work or sync",
+    "Users may spend meaningful time composing or editing before a request"
+  ],
+  "avoid_when": [
+    "The product genuinely cannot perform any useful action without connectivity and no local state exists"
+  ],
+  "rationale": [
+    "Offline is a state, not necessarily a fatal error.",
+    "Preserving unsynced work prevents data loss."
+  ],
+  "tags": [
+    "feedback",
+    "offline"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "system",
+  "family": "feedback",
+  "evidence": "synthesis",
+  "states": [
+    "offline",
+    "unsaved",
+    "retrying",
+    "saved",
+    "error",
+    "partial-data"
+  ],
+  "decision": {
+    "use_if": [
+      "The product performs network-dependent work or sync",
+      "Users may spend meaningful time composing or editing before a request"
+    ],
+    "prefer_alternatives_if": [
+      "A short transient request failure can be retried transparently without misleading the user"
+    ]
+  },
+  "accessibility": {
+    "requirements": [
+      "Announce connectivity or sync status changes without repeatedly stealing focus.",
+      "Do not rely on icon or color alone to indicate unsynced work."
+    ]
+  },
+  "implementation": {
+    "requirements": [
+      "Preserve local edits where safe.",
+      "Differentiate offline from server rejection.",
+      "Show when work is unsynced and when it becomes saved."
+    ]
+  },
+  "related": {
+    "patterns": [
+      "save-status-feedback",
+      "error-recovery",
+      "loading-feedback"
+    ],
+    "anti_patterns": [
+      "toast-only-critical-feedback"
+    ]
+  },
+  "sources": [
+    {
+      "type": "internal",
+      "title": "Design Distillation synthesis",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    }
+  ]
+}

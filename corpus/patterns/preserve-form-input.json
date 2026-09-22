@@ -1,0 +1,90 @@
+{
+  "id": "preserve-form-input",
+  "kind": "pattern",
+  "title": "Preserve valid form input",
+  "summary": "Retain user-entered values across validation failures, navigation within a transaction, and recoverable interruptions whenever doing so is safe.",
+  "problem": "Erasing correct answers after one invalid field turns small mistakes into repeated work and increases abandonment.",
+  "use_when": [
+    "A submission can fail validation or a multi-step transaction allows correction",
+    "Returning to a previous step is part of the intended flow"
+  ],
+  "avoid_when": [
+    "Retaining the value creates a security or privacy risk",
+    "The input is inherently one-time and must be invalidated"
+  ],
+  "rationale": [
+    "Users should correct the smallest possible part of a failed task.",
+    "Preservation also helps users understand what was accepted."
+  ],
+  "tags": [
+    "forms"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "input",
+  "family": "forms",
+  "evidence": "design-system-backed",
+  "states": [
+    "default",
+    "error",
+    "submitting",
+    "saved",
+    "unsaved"
+  ],
+  "decision": {
+    "prefer_alternatives_if": [
+      "Security policy requires sensitive fields to be cleared"
+    ],
+    "use_if": [
+      "A submission can fail validation or a multi-step transaction allows correction",
+      "Returning to a previous step is part of the intended flow"
+    ]
+  },
+  "accessibility": {
+    "requirements": [
+      "Return focus to a meaningful location after validation.",
+      "Ensure retained values remain associated with their labels and errors."
+    ]
+  },
+  "implementation": {
+    "requirements": [
+      "Retain valid answers after validation failure.",
+      "Prepopulate previously entered data when the user intentionally returns to edit it.",
+      "Document exceptions for sensitive inputs."
+    ]
+  },
+  "related": {
+    "patterns": [
+      "error-recovery",
+      "review-before-submit"
+    ],
+    "anti_patterns": []
+  },
+  "sources": [
+    {
+      "type": "design-system",
+      "title": "GOV.UK Design System ? Recover from validation errors",
+      "url": "https://design-system.service.gov.uk/patterns/validation/",
+      "accessed": "2026-09-22",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      },
+      "notes": "Guidance paraphrased and distilled; no GOV.UK code or assets redistributed."
+    },
+    {
+      "type": "design-system",
+      "title": "GOV.UK Design System ? Check answers",
+      "url": "https://design-system.service.gov.uk/patterns/check-answers/",
+      "accessed": "2026-09-22",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      },
+      "notes": "Guidance paraphrased and distilled; no GOV.UK code or assets redistributed."
+    }
+  ]
+}

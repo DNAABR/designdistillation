@@ -130,6 +130,93 @@
           }
         }
       }
+    },
+    "family": {
+      "type": "string"
+    },
+    "evidence": {
+      "type": "string"
+    },
+    "states": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "decision": {
+      "type": "object",
+      "properties": {
+        "use_if": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "prefer_alternatives_if": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "accessibility": {
+      "type": "object",
+      "properties": {
+        "requirements": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "keyboard": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "semantics": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "screen_reader": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "touch": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "reduced_motion": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "related": {
+      "type": "object",
+      "properties": {
+        "patterns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "anti_patterns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
     }
   },
   "additionalProperties": true

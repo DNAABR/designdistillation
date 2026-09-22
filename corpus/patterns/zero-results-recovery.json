@@ -1,0 +1,71 @@
+{
+  "id": "zero-results-recovery",
+  "kind": "pattern",
+  "title": "Zero-results recovery",
+  "summary": "Treat zero results as a recoverable state that explains active constraints and offers useful ways to broaden, clear, or change them.",
+  "problem": "Blank result areas make users guess whether there are truly no matches, the system failed, or hidden filters are active.",
+  "use_when": [
+    "Search, filtering, or browsing can legitimately produce zero matches"
+  ],
+  "avoid_when": [
+    "No-results actually represents a system failure and should be shown as an error"
+  ],
+  "rationale": [
+    "A zero-result state is information, not an error.",
+    "Showing active constraints helps users recover without starting over."
+  ],
+  "tags": [
+    "search"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "feedback",
+  "family": "search",
+  "evidence": "synthesis",
+  "states": [
+    "no-results",
+    "default",
+    "focus"
+  ],
+  "decision": {
+    "use_if": [
+      "Search, filtering, or browsing can legitimately produce zero matches"
+    ],
+    "prefer_alternatives_if": [
+      "The request failed or data has not loaded; use an error or loading state instead"
+    ]
+  },
+  "accessibility": {
+    "requirements": [
+      "Use clear text, not illustration alone, to explain the state.",
+      "Keep reset and refinement actions keyboard reachable."
+    ]
+  },
+  "implementation": {
+    "requirements": [
+      "State that there are no matches.",
+      "Show or summarize relevant filters or query.",
+      "Offer the smallest useful recovery action."
+    ]
+  },
+  "related": {
+    "patterns": [
+      "search-query-state",
+      "filters-and-sort",
+      "empty-state-next-action"
+    ],
+    "anti_patterns": []
+  },
+  "sources": [
+    {
+      "type": "internal",
+      "title": "Design Distillation synthesis",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    }
+  ]
+}

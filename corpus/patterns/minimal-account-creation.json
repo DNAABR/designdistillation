@@ -1,0 +1,76 @@
+{
+  "id": "minimal-account-creation",
+  "kind": "pattern",
+  "title": "Minimal account creation",
+  "summary": "Delay nonessential profile setup and collect only the information needed to create a usable account or satisfy the immediate transaction.",
+  "problem": "Large signup forms turn future personalization needs into immediate acquisition friction.",
+  "use_when": [
+    "Users can receive value before completing a rich profile",
+    "Many profile fields are optional or can be collected later"
+  ],
+  "avoid_when": [
+    "Identity, compliance, or transaction rules require specific information before access"
+  ],
+  "rationale": [
+    "Account creation should unlock value rather than become a separate data-collection project.",
+    "Progressive profile completion can happen when each field becomes relevant."
+  ],
+  "tags": [
+    "onboarding"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "conversion",
+  "family": "onboarding",
+  "evidence": "synthesis",
+  "states": [
+    "default",
+    "focus",
+    "error",
+    "submitting",
+    "success",
+    "unauthenticated"
+  ],
+  "decision": {
+    "use_if": [
+      "Users can receive value before completing a rich profile",
+      "Many profile fields are optional or can be collected later"
+    ],
+    "prefer_alternatives_if": [
+      "Required verification or compliance data must be collected before account use"
+    ]
+  },
+  "accessibility": {
+    "requirements": [
+      "Use proper labels and error recovery.",
+      "Do not block password managers or paste without a specific security reason."
+    ]
+  },
+  "implementation": {
+    "requirements": [
+      "Separate required account data from optional profile data.",
+      "Offer alternative sign-in methods only when they genuinely help, not as the sole path.",
+      "Explain verification requirements before submission."
+    ]
+  },
+  "related": {
+    "patterns": [
+      "progressive-onboarding",
+      "labels-hints-and-optionality",
+      "error-recovery"
+    ],
+    "anti_patterns": []
+  },
+  "sources": [
+    {
+      "type": "internal",
+      "title": "Design Distillation synthesis",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    }
+  ]
+}

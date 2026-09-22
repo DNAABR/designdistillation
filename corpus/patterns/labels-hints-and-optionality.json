@@ -1,0 +1,92 @@
+{
+  "id": "labels-hints-and-optionality",
+  "kind": "pattern",
+  "title": "Persistent labels, useful hints, explicit optionality",
+  "summary": "Give controls persistent labels, add concise hints only when they help answer correctly, and identify optional information explicitly.",
+  "problem": "Placeholder-only or vague form controls force users to remember context after typing and make requirements difficult to understand.",
+  "use_when": [
+    "Collecting user input with text fields, choices, dates, uploads, or other controls",
+    "A field has format, purpose, or optionality users may not infer"
+  ],
+  "avoid_when": [
+    "A hint merely repeats the label or adds no useful information"
+  ],
+  "rationale": [
+    "Persistent labels survive interaction state.",
+    "Useful hints prevent errors better than corrective messages after submission."
+  ],
+  "tags": [
+    "forms"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "input",
+  "family": "forms",
+  "evidence": "design-system-backed",
+  "states": [
+    "default",
+    "focus",
+    "disabled",
+    "error",
+    "mobile",
+    "desktop"
+  ],
+  "decision": {
+    "prefer_alternatives_if": [
+      "The control's accessible name and visible context are already explicit and no hint is needed"
+    ],
+    "use_if": [
+      "Collecting user input with text fields, choices, dates, uploads, or other controls",
+      "A field has format, purpose, or optionality users may not infer"
+    ]
+  },
+  "accessibility": {
+    "requirements": [
+      "Every control needs a persistent accessible name.",
+      "Associate hints and errors programmatically with their control.",
+      "Do not encode required/optional state with color or punctuation alone."
+    ]
+  },
+  "implementation": {
+    "requirements": [
+      "Use labels that describe requested information, not implementation terms.",
+      "Keep examples out of placeholders when they must remain visible after entry."
+    ]
+  },
+  "related": {
+    "patterns": [
+      "question-focused-forms",
+      "error-recovery"
+    ],
+    "anti_patterns": [
+      "placeholder-only-labels"
+    ]
+  },
+  "sources": [
+    {
+      "type": "design-system",
+      "title": "GOV.UK Design System ? Question pages",
+      "url": "https://design-system.service.gov.uk/patterns/question-pages/",
+      "accessed": "2026-09-22",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      },
+      "notes": "Guidance paraphrased and distilled; no GOV.UK code or assets redistributed."
+    },
+    {
+      "type": "standard",
+      "title": "WCAG 2.2",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "accessed": "2026-09-22",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      },
+      "notes": "Accessibility guidance distilled; no example code redistributed."
+    }
+  ]
+}

@@ -2,56 +2,98 @@
   "id": "error-recovery",
   "kind": "pattern",
   "title": "Actionable error recovery",
-  "summary": "Error states should explain what failed, preserve recoverable user input, and provide the clearest next action rather than merely announcing failure.",
-  "problem": "Generic error messages leave users without a recovery path and often cause repeated work or data loss.",
+  "summary": "When input or an operation fails, explain what happened, preserve recoverable work, associate the problem with its source, and provide the clearest next action.",
+  "problem": "Generic errors, erased input, and inaccessible summaries leave users without a recovery path and cause repeated work.",
   "use_when": [
-    "Forms, uploads, authentication, payments, saves, sync, network requests, and destructive actions can fail",
-    "A user may need to correct input or retry an operation"
+    "Forms, uploads, authentication, saves, sync, or network operations can fail",
+    "A user can correct input or retry an operation"
   ],
   "avoid_when": [
     "The system can transparently recover without interrupting the user",
-    "A transient non-critical event does not require user action"
+    "A transient non-critical event requires no user action"
   ],
   "rationale": [
-    "A failure message is useful only when the user can understand the consequence and next step.",
-    "Preserving valid input reduces repeated work.",
-    "Inline errors are usually more actionable when the problem belongs to a specific field or control."
+    "Errors are part of a flow, not isolated text.",
+    "Preserving valid work reduces recovery cost.",
+    "Field-level and summary feedback serve different navigation needs."
   ],
   "tags": [
-    "errors",
-    "feedback",
-    "forms",
-    "resilience"
+    "forms"
   ],
   "platforms": [
     "cross-platform"
   ],
   "stage": "feedback",
-  "implementation": {
-    "states": [
-      "invalid-input",
-      "request-failed",
-      "permission-denied",
-      "offline",
-      "retrying",
-      "recovered"
+  "family": "forms",
+  "evidence": "design-system-backed",
+  "states": [
+    "error",
+    "focus",
+    "retrying",
+    "success",
+    "offline",
+    "permission-denied",
+    "keyboard"
+  ],
+  "decision": {
+    "prefer_alternatives_if": [
+      "The failure can be safely recovered without user involvement"
     ],
+    "use_if": [
+      "Forms, uploads, authentication, saves, sync, or network operations can fail",
+      "A user can correct input or retry an operation"
+    ]
+  },
+  "accessibility": {
     "requirements": [
-      "Preserve valid user-entered data where safe.",
-      "Associate field-specific errors with the relevant control.",
-      "Offer retry or correction when the user can resolve the failure.",
-      "Do not expose internal stack traces or implementation details."
+      "Associate field errors with the relevant controls.",
+      "For page-level form failure, provide an easy-to-find summary and move or announce focus appropriately.",
+      "Do not identify errors by color alone."
+    ]
+  },
+  "implementation": {
+    "requirements": [
+      "Preserve safe user-entered values.",
+      "Say what is wrong and how to fix it.",
+      "Offer retry only when retry can plausibly help.",
+      "Do not expose internal stack traces."
+    ]
+  },
+  "related": {
+    "patterns": [
+      "preserve-form-input",
+      "forgiving-input",
+      "offline-resilience"
+    ],
+    "anti_patterns": [
+      "premature-validation",
+      "toast-only-critical-feedback"
     ]
   },
   "sources": [
     {
-      "type": "internal",
-      "title": "Design Distillation synthesis",
+      "type": "design-system",
+      "title": "GOV.UK Design System ? Recover from validation errors",
+      "url": "https://design-system.service.gov.uk/patterns/validation/",
+      "accessed": "2026-09-22",
       "license": null,
       "redistribution": {
         "code": false,
         "assets": false
-      }
+      },
+      "notes": "Guidance paraphrased and distilled; no GOV.UK code or assets redistributed."
+    },
+    {
+      "type": "standard",
+      "title": "WCAG 2.2",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "accessed": "2026-09-22",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      },
+      "notes": "Accessibility guidance distilled; no example code redistributed."
     }
   ]
 }

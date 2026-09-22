@@ -1,0 +1,75 @@
+{
+  "id": "undo-reversible-actions",
+  "kind": "pattern",
+  "title": "Undo for reversible actions",
+  "summary": "Prefer immediate completion plus a contextual undo for low-to-medium-risk reversible actions instead of interrupting every action with confirmation.",
+  "problem": "Excess confirmation dialogs slow routine work and train users to confirm without reading.",
+  "use_when": [
+    "The action can be reliably reversed without hidden side effects",
+    "The user benefits from fast repetitive work"
+  ],
+  "avoid_when": [
+    "The action is irreversible, legally consequential, or reversal cannot restore the prior state"
+  ],
+  "rationale": [
+    "Undo keeps momentum while still protecting against slips.",
+    "Confirmation is more valuable when consequence is genuinely hard to recover."
+  ],
+  "tags": [
+    "destructive-actions",
+    "undo"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "feedback",
+  "family": "destructive-actions",
+  "evidence": "synthesis",
+  "states": [
+    "success",
+    "focus",
+    "error"
+  ],
+  "decision": {
+    "use_if": [
+      "The action can be reliably reversed without hidden side effects",
+      "The user benefits from fast repetitive work"
+    ],
+    "prefer_alternatives_if": [
+      "The operation cannot be fully or reliably reversed"
+    ]
+  },
+  "accessibility": {
+    "requirements": [
+      "Make undo reachable by keyboard and assistive technology.",
+      "Do not rely on a disappearing visual message as the only recovery path for significant actions."
+    ]
+  },
+  "implementation": {
+    "requirements": [
+      "Only promise undo when restoration is complete and reliable.",
+      "Keep recovery visible long enough for the task context.",
+      "Explain when reversal has downstream consequences."
+    ]
+  },
+  "related": {
+    "patterns": [
+      "destructive-confirmation"
+    ],
+    "anti_patterns": [
+      "destructive-action-without-recovery",
+      "modal-everything"
+    ]
+  },
+  "sources": [
+    {
+      "type": "internal",
+      "title": "Design Distillation synthesis",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    }
+  ]
+}

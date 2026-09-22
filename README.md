@@ -15,19 +15,22 @@ Design Distillation is designed as six connected layers:
 5. **Design composer** — product intent + audience + brand personality -> a coherent design contract.
 6. **Design auditor** — automated checks for incoherence, accessibility failures, missing states, and common AI-design failure modes.
 
-## Current milestone: v0.2 visual foundations
+## Current milestone: v0.3 UX pattern corpus
 
-v0.1 established the corpus contract and architecture. v0.2 adds the framework-neutral visual layer that future composers and adapters can consume.
+v0.1 established the corpus contract and architecture. v0.2 added framework-neutral visual foundations. v0.3 now gives AI agents structured task-level UX decisions instead of forcing them to improvise entire flows from components.
 
-The current foundation includes:
+The current corpus includes:
 
-- DTCG 2025.10-aligned token documents;
-- primitive color, spacing, radius, border, typography, elevation, and motion scales;
-- semantic spacing, sizing, typography, elevation, and motion roles;
-- light, dark, and high-contrast semantic color themes;
-- explicit reduced-motion semantics;
-- token alias, cycle, scale, theme-parity, type-shape, and contrast validation;
-- a design-profile example wired to the token manifest.
+- 30 canonical UX patterns across 10 pattern families;
+- explicit use/avoid decision rules for every pattern;
+- relevant interaction-state coverage;
+- accessibility and implementation requirements;
+- evidence levels and source provenance;
+- graph links between related patterns and anti-patterns;
+- 9 anti-patterns with future auditor signals;
+- validation for family coverage, broken references, duplicate titles, evidence/source mismatches, and missing pattern requirements.
+
+See [docs/ux-pattern-corpus.md](./docs/ux-pattern-corpus.md) and [corpus/patterns/README.md](./corpus/patterns/README.md).
 
 ## Token architecture
 
@@ -73,7 +76,7 @@ scripts/      validation tooling
 .github/      CI
 ~~~
 
-Later milestones add a much broader UX-pattern corpus, product recipes, the composer, source-owned components, adapters, the anti-slop auditor, website explorer, MCP retrieval, and benchmarks.
+Later milestones add richer product recipes, the composer, source-owned components, adapters, the anti-slop auditor, website explorer, MCP retrieval, and benchmarks.
 
 ## Validate
 
@@ -83,7 +86,7 @@ Requires Node.js 20+.
 npm run validate
 ~~~
 
-Validation checks both the corpus and visual foundations, including token references, circular aliases, DTCG value shapes, configured scale ordering, theme semantic parity, and configured contrast pairs.
+Validation checks both the UX corpus and visual foundations, including pattern family/state contracts, accessibility requirements, evidence/source alignment, related-entry references, token references, circular aliases, DTCG value shapes, scale ordering, theme semantic parity, and configured contrast pairs.
 
 ## Status
 

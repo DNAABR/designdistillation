@@ -1,0 +1,94 @@
+{
+  "id": "table-vs-grid",
+  "kind": "pattern",
+  "title": "Static table versus interactive grid",
+  "summary": "Use a semantic table for primarily read-only tabular information and a managed grid only when cell-level interaction or directional navigation materially benefits the task.",
+  "problem": "Turning every data table into a grid creates complex keyboard behavior, while static tables become inefficient when users need spreadsheet-like interaction.",
+  "use_when": [
+    "Choosing how to represent structured rows and columns",
+    "A data surface may include selection, editing, or dense cell interaction"
+  ],
+  "avoid_when": [
+    "The information is not genuinely tabular"
+  ],
+  "rationale": [
+    "Table and grid have different keyboard and focus models.",
+    "Native table semantics are simpler when cell-level interaction is unnecessary."
+  ],
+  "tags": [
+    "data-display",
+    "table",
+    "grid"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "content",
+  "family": "data-display",
+  "evidence": "standard-backed",
+  "states": [
+    "default",
+    "focus",
+    "selected",
+    "keyboard",
+    "mobile",
+    "desktop"
+  ],
+  "decision": {
+    "use_if": [
+      "Choosing how to represent structured rows and columns",
+      "A data surface may include selection, editing, or dense cell interaction"
+    ],
+    "prefer_alternatives_if": [
+      "Cards or lists better reflect non-tabular content relationships"
+    ]
+  },
+  "accessibility": {
+    "requirements": [
+      "Use native table semantics when possible for static data.",
+      "If implementing a grid, provide managed keyboard navigation and a clear focus model.",
+      "Keep headers associated with data cells."
+    ],
+    "keyboard": [
+      "A grid needs directional navigation; a static table does not turn every cell into a managed focus target."
+    ]
+  },
+  "implementation": {
+    "requirements": [
+      "Decide interaction model before choosing roles.",
+      "Do not use grid solely for visual styling.",
+      "Keep row and column relationships perceivable at responsive widths."
+    ]
+  },
+  "related": {
+    "patterns": [
+      "data-table-controls",
+      "bulk-selection-actions"
+    ],
+    "anti_patterns": []
+  },
+  "sources": [
+    {
+      "type": "standard",
+      "title": "WAI-ARIA APG — Table Pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/table/",
+      "accessed": "2026-09-22",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    },
+    {
+      "type": "standard",
+      "title": "WAI-ARIA APG — Grid Pattern",
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/grid/",
+      "accessed": "2026-09-22",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    }
+  ]
+}

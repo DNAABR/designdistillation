@@ -1,0 +1,43 @@
+{
+  "id": "spinner-without-progress-context",
+  "kind": "anti-pattern",
+  "title": "Spinner without progress context",
+  "summary": "An indefinite spinner by itself does not explain what is loading, whether existing content remains usable, or what the user can do if the wait fails.",
+  "problem": "Users cannot distinguish normal work from a stalled request and may lose context while the interface blanks.",
+  "use_when": [
+    "Auditing loading states that replace substantial content with a generic centered spinner"
+  ],
+  "avoid_when": [
+    "A very short local operation has obvious scope and completes before richer feedback would help"
+  ],
+  "rationale": [
+    "Loading feedback should match wait length and task scope.",
+    "Existing content can often remain visible while refresh occurs."
+  ],
+  "tags": [
+    "feedback",
+    "loading"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "feedback",
+  "audit": {
+    "severity": "warning",
+    "signals": [
+      "whole page replaced with indefinite spinner for partial refresh",
+      "no error or retry state follows failed loading"
+    ]
+  },
+  "sources": [
+    {
+      "type": "internal",
+      "title": "Design Distillation synthesis",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    }
+  ]
+}

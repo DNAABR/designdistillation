@@ -1,0 +1,45 @@
+{
+  "id": "placeholder-only-labels",
+  "kind": "anti-pattern",
+  "title": "Placeholder-only labels",
+  "summary": "Using placeholder text as the only visible label makes a field's purpose disappear as soon as the user types and weakens accessibility.",
+  "problem": "Users must remember field meaning after entry, and placeholders are often lower contrast or inconsistently announced.",
+  "use_when": [
+    "Auditing text inputs where the placeholder carries the only field name"
+  ],
+  "avoid_when": [
+    "A persistent visible label already exists and the placeholder is only a nonessential example"
+  ],
+  "rationale": [
+    "Labels should survive interaction state.",
+    "Examples and labels serve different purposes."
+  ],
+  "tags": [
+    "forms",
+    "accessibility"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "input",
+  "audit": {
+    "severity": "error",
+    "signals": [
+      "input has placeholder but no persistent visible label",
+      "placeholder contains field name needed after typing"
+    ]
+  },
+  "sources": [
+    {
+      "type": "standard",
+      "title": "WCAG 2.2",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "accessed": "2026-09-22",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    }
+  ]
+}

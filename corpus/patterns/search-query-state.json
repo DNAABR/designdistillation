@@ -1,0 +1,78 @@
+{
+  "id": "search-query-state",
+  "kind": "pattern",
+  "title": "Search as explicit query state",
+  "summary": "Make the active search query visible, editable, shareable or restorable when useful, and clearly connected to the displayed results.",
+  "problem": "Search experiences become confusing when the query disappears, results update without context, or navigation loses the user's search state.",
+  "use_when": [
+    "Search is a recurring product task",
+    "Users may refine, revisit, or share result states"
+  ],
+  "avoid_when": [
+    "Search is a one-off command where retaining state provides no value"
+  ],
+  "rationale": [
+    "Visible query state helps users explain why results look the way they do.",
+    "Persisting meaningful state supports back navigation and recovery."
+  ],
+  "tags": [
+    "search"
+  ],
+  "platforms": [
+    "cross-platform"
+  ],
+  "stage": "navigation",
+  "family": "search",
+  "evidence": "synthesis",
+  "states": [
+    "default",
+    "focus",
+    "loading",
+    "no-results",
+    "error",
+    "partial-data"
+  ],
+  "decision": {
+    "use_if": [
+      "Search is a recurring product task",
+      "Users may refine, revisit, or share result states"
+    ],
+    "prefer_alternatives_if": [
+      "The input is a command launcher rather than a result-query model"
+    ]
+  },
+  "accessibility": {
+    "requirements": [
+      "Label the search input and results region clearly.",
+      "Announce meaningful result-count or status changes without moving focus unnecessarily."
+    ]
+  },
+  "implementation": {
+    "requirements": [
+      "Keep the query editable after results appear.",
+      "Preserve query state across result-detail navigation where useful.",
+      "Distinguish loading, zero-results, and failure."
+    ]
+  },
+  "related": {
+    "patterns": [
+      "zero-results-recovery",
+      "filters-and-sort",
+      "combobox-suggestions"
+    ],
+    "anti_patterns": [
+      "toast-only-critical-feedback"
+    ]
+  },
+  "sources": [
+    {
+      "type": "internal",
+      "title": "Design Distillation synthesis",
+      "license": null,
+      "redistribution": {
+        "code": false,
+        "assets": false
+      }
+    }
+  ]
+}
